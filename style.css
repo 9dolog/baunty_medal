@@ -1,0 +1,53 @@
+/* 現在の背景画像設定 */
+body {
+    background-image: url('スクリーンショット\ 2024-09-24\ 223848.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* メダルのスタイル */
+.medal {
+    display: flex;
+    flex-direction: column; /* 縦に並べる */
+    justify-content: center; /* メダル内のコンテンツを中央に配置 */
+    align-items: center; /* 縦方向にも中央に配置 */
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    width: 90%;
+    max-width: 600px;
+    box-sizing: border-box;
+}
+
+/* メダル名のスタイル */
+.medal-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* 能力のスタイル */
+.medal-ability {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* タグのスタイル */
+.medal-tags {
+    font-size: 14px;
+    color: #666;
+}
+
+.drop-zone.has-medal::before {
+    content: "";  /* ドロップ後にテキストを非表示に */
+}
+
+#tagEffects {
+    border-top: 1px dashed #ddd; /* 点線の区切り線 */
+    padding-top: 10px;
+    margin-top: 10px;
+}
