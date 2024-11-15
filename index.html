@@ -32,36 +32,48 @@
             margin-right: 320px;
         }
         
-        @media only screen and (max-width: 768px) {
-    #medalSelector {
+        /* スマホ版のメディアクエリ */
+@media (max-width: 768px) {
+    #medalSelector, #result {
         position: fixed;
-        bottom: 15px;
-        right: 15px;
-        width: 200px;
-        height: 600px !important; /* 3つ分の高さ */
-        padding: 5px;
+        bottom: 15px;  /* 下から15px */
+        right: 15px;   /* 右から15px */
+        width: 100%;   /* 幅を100%に変更 */
+        max-width: 400px;  /* 最大幅を400pxに指定 */
+        padding: 15px; /* パディングを大きく */
         background-color: rgba(249, 249, 249, 0.8);
         box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
         z-index: 1000;
-        font-size: 10px;
+        font-size: 14px; /* フォントサイズを少し大きく */
         overflow-y: auto;
         border-radius: 5px;
+        display: block;  /* 必要に応じて表示設定 */
     }
 
     #result {
-        position: fixed;
-        bottom: 15px;
-        right: calc(15px + 220px);
-        width: 150px;
-        height: 100px !important; /* ドロップエリアに合わせる */
-        padding: 5px;
-        background-color: rgba(249, 249, 249, 0.8);
-        box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
-        font-size: 10px;
-        overflow-y: auto;
-        border-radius: 5px;
+        display: block;  /* 必ずブロック要素として表示 */
+        visibility: visible;  /* 見えるように */
     }
 }
+
+/* その他のデバイス用のスタイル */
+@media (min-width: 769px) {
+    #medalSelector, #result {
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        width: 400px;
+        padding: 15px;
+        background-color: rgba(249, 249, 249, 0.8);
+        box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        font-size: 14px;
+        overflow-y: auto;
+        border-radius: 5px;
+        display: block;
+    }
+}
+
 
 
 
