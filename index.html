@@ -19,11 +19,34 @@
     <title>メダルセットセレクター</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: row;
-            padding: 10px;
-        }
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; /* 縦並び */
+    align-items: center; /* 中央揃え（必要に応じて） */
+    margin: 0;
+    padding: 0;
+}
+
+/* 自己紹介エリアを上部に固定 */
+#introduction {
+    width: 100%; /* 横幅いっぱい */
+    background-color:  rgba(249, 249, 249, 0.9);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd; /* セクション間の仕切り */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);}
+
+    @media (max-width: 768px) {
+        #introduction {
+    width: 100%; /* 横幅いっぱい */
+    background-color:  rgba(249, 249, 249, 0.9);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd; /* セクション間の仕切り */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 11px;
+}
+    }
 
         /* Windows版のスタイル */
 @media (min-width: 769px) {
@@ -42,6 +65,7 @@
     #medalSelector {
         width: 400px; /* Windows版の幅 */
         right: 15px; /* 画面右端に配置 */
+        height:55%;
     }
 
     #result {
@@ -78,8 +102,69 @@
     }
 }
 
+/* タグを固定 */
+#tagFilter {
+    position: fixed;
+    top: 180px; /* 画面上部からの位置 */
+    left: 15px; /* 画面左端からの位置 */
+    width: 235px; /* 固定幅 */
+    height: 200px; /* 高さを固定 */
+    overflow-y: auto; /* 縦スクロールを有効化 */
+    background-color: rgba(249, 249, 249, 0.9);
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 1000;
+    height: 100%;
+}
+/* スマホ版のスタイル */
+@media (max-width: 768px) {
+    #tagFilter {
+    position: fixed;
+    top: 173px; /* 画面上部からの位置 */
+    width: 100%; /* 固定幅 */
+    height: 200px; /* 高さを固定 */
+    overflow-y: auto; /* 縦スクロールを有効化 */
+    background-color: rgba(249, 249, 249, 0.9);
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 1000;
+    }
+}
 
+/* メダル一覧をタグの下に固定 */
+#medalList {
+    position: fixed;
+    top: 180px; /* #tagFilterの高さ + マージン（200px + 15px + 20px） */
+    left: 280px; /* 画面左端からの位置 */
+    width: 235px; /* 固定幅 */
+    height: calc(100vh - 250px); /* 画面の高さからタグの高さを引く */
+    overflow-y: auto; /* 縦スクロールを有効化 */
+    background-color: rgba(249, 249, 249, 0.9);
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 1000;
+    height: 100%;
+}
 
+/* スマホ版のスタイル */
+@media (max-width: 768px) {
+    #medalList {
+    position: fixed;
+    top: 395px; /* #tagFilterの高さ + マージン（200px + 15px + 20px） */
+    left: 15px; /* 画面左端からの位置 */
+    width: 235px; /* 固定幅 */
+    height: calc(100vh - 250px); /* 画面の高さからタグの高さを引く */
+    overflow-y: auto; /* 縦スクロールを有効化 */
+    background-color: rgba(249, 249, 249, 0.9);
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 1000;
+}
+}
 
 
 
@@ -105,7 +190,7 @@
             word-wrap: break-word;
             display: flex;
             align-items: center;
-            width: 150px;
+            width: 210px;
         }
 
         .medal img {
@@ -123,7 +208,7 @@
         .drop-zone {
     border: 2px dashed #ddd;
     padding: 10px;
-    min-height: 100px;
+    min-height: 40px;
     margin-bottom: 20px;
     text-align: center;
     position: relative;
@@ -159,11 +244,35 @@
             margin-bottom: 5px;
         }
 
+        /* タグの項目を横並びに */
+#tagCheckboxContainer {
+    display: flex; /* Flexboxを有効化 */
+    flex-wrap: wrap; /* 横に収まりきらない場合は折り返し */
+    gap: 10px; /* 項目間のスペース */
+}
+
+/* 各タグ項目のスタイル */
+#tagCheckboxContainer div {
+    display: flex; /* ラベルとチェックボックスを並べる */
+    align-items: center; /* 縦方向で中央揃え */
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
     </style>
 </head>
 <body>
+<!-- 自己紹介エリア -->
+<div id="introduction">
+    <h1>バウンティラッシュ　メダル作成ツール</h1>
+    <p>このサイトの管理人は109シーズンランカーです。立ち回りも大事ですが、メダル編成も大事です。使うキャラに合わせたタグを意識してメダルを選びましょう。</p>
+</div>
+    
+    
     <div id="medalSelector">
-        <h1>メダルセットセレクター</h1>
+        <h1>メダルセット</h1>
         <form>
             <label>メダル1: <div id="medal1" class="drop-zone" ondrop="drop(event, 'medal1')" ondragover="allowDrop(event)"></div></label>
             <label>メダル2: <div id="medal2" class="drop-zone" ondrop="drop(event, 'medal2')" ondragover="allowDrop(event)"></div></label>
@@ -172,7 +281,7 @@
     </div>
     
     <div id="tagFilter">
-        <h3>タグフィルター</h3>
+        <h3>タグ</h3>
         <div id="tagCheckboxContainer"></div>
     </div>
     
@@ -1063,6 +1172,7 @@
 
         filterMedals(); // メダルのフィルタリングを更新
     }
+    
 
     function updateResult() {
     const selectedMedals = ['medal1', 'medal2', 'medal3']
