@@ -44,7 +44,7 @@
     text-align: center;
     border-bottom: 1px solid #ddd; /* セクション間の仕切り */
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    font-size: 11px;
+    font-size: 10px;
 }
     }
 
@@ -94,11 +94,13 @@
 
     #medalSelector {
         right: 0; /* 画面右端に配置 */
+        width: 20%;
     }
 
     #result {
         right: 0; /* 画面右端に配置 */
-        margin-right: 38%; /* #medalSelectorとの間隔 */
+        margin-right: 28%; /* #medalSelectorとの間隔 */
+        width: 30%;
     }
 }
 
@@ -117,22 +119,10 @@
     z-index: 1000;
     height: 70%;
 }
-/* スマホ版のスタイル */
+/* モバイル版（768px以下）では非表示 */
 @media (max-width: 768px) {
-    #tagFilter {
-    position: fixed;
-    top: 200px; /* 画面上部からの位置 */
-    width: 50%; /* 固定幅 */
-    height: 200px; /* 高さを固定 */
-    overflow-y: auto; /* 縦スクロールを有効化 */
-    background-color: rgba(249, 249, 249, 0.9);
-    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 10px;
-    z-index: 1000;
-    height: 20%;
-    }
-}
+     #tagFilter{
+        display: none;}}
 
 /* メダル一覧をタグの下に固定 */
 #medalList {
@@ -154,9 +144,9 @@
 @media (max-width: 768px) {
     #medalList {
     position: fixed;
-    top: 370px; /* #tagFilterの高さ + マージン（200px + 15px + 20px） */
-    left: 15px; /* 画面左端からの位置 */
-    width: 50%; /* 固定幅 */
+    top: 200px; /* #tagFilterの高さ + マージン（200px + 15px + 20px） */
+    left: 0px; /* 画面左端からの位置 */
+    width: 95%; /* 固定幅 */
     height: calc(100vh - 250px); /* 画面の高さからタグの高さを引く */
     overflow-y: auto; /* 縦スクロールを有効化 */
     background-color: rgba(249, 249, 249, 0.9);
@@ -164,6 +154,7 @@
     border-radius: 10px;
     padding: 10px;
     z-index: 1000;
+    height: 68%;
 }
 }
 
@@ -191,8 +182,31 @@
             word-wrap: break-word;
             display: flex;
             align-items: center;
-            width: 180px;
+            width: 150px;
         }
+    
+        /* スマホ版のスタイル */
+@media (max-width: 768px) {
+    #medalList {
+            background-color: rgba(249, 249, 249, 0.8);
+            margin-right: 320px;
+            padding: 10px;
+            word-wrap: break-word;
+            border-radius: 5px;
+        }
+
+        .medal {
+            margin-bottom: 10px;
+            padding: 2px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: grab;
+            font-size: 10px;
+            word-wrap: break-word;
+            display: flex;
+            align-items: center;
+            width: 110px;
+        }}
 
         .medal img {
             width: 100px;
@@ -290,6 +304,7 @@
         <h2>メダル一覧</h2>
         <input type="text" id="searchInput" placeholder="メダル名、能力、タグで検索" oninput="filterMedals()">
         <div id="medalContainer"></div>
+        
     </div>
     
     <div id="result">
