@@ -28,10 +28,46 @@
     border-radius: 5px;
 }
 
-
         #result {
             margin-right: 320px;
         }
+        
+        @media only screen and (max-width: 768px) {
+    #medalSelector {
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        width: 200px;
+        height: 600px !important; /* 3つ分の高さ */
+        padding: 5px;
+        background-color: rgba(249, 249, 249, 0.8);
+        box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        font-size: 10px;
+        overflow-y: auto;
+        border-radius: 5px;
+    }
+
+    #result {
+        position: fixed;
+        bottom: 15px;
+        right: calc(15px + 220px);
+        width: 150px;
+        height: 100px !important; /* ドロップエリアに合わせる */
+        padding: 5px;
+        background-color: rgba(249, 249, 249, 0.8);
+        box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+        font-size: 10px;
+        overflow-y: auto;
+        border-radius: 5px;
+    }
+}
+
+
+
+
+
+
 
         #medalList {
             background-color: rgba(249, 249, 249, 0.8);
@@ -133,6 +169,7 @@
         <input type="text" id="searchInput" placeholder="メダル名、能力、タグで検索" oninput="filterMedals()">
         <div id="medalContainer"></div>
     </div>
+    
 
     <script>
         const medals = [
