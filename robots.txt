@@ -1,0 +1,8 @@
+# このサイトはすべての検索エンジンにインデックスされることを許可します
+User-agent: *  # すべてのクローラーに適用
+
+# 特にクロールしないディレクトリやページがない場合、基本的にすべて許可
+Disallow:  # 何も指定しないので、すべて許可
+
+# サイトマップのURLを指定（あれば）
+Sitemap: https://your-username.github.io/your-repository/sitemap.xml  # sitemap.xml があれば指定
