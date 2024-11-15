@@ -1,6 +1,4 @@
 
 User-agent: *  
 
-Disallow: 
-
 Sitemap: https://9dolog.github.io/baunty_medal/sitemap.xml 
