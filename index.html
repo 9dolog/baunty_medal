@@ -856,7 +856,7 @@
         const slotDiv = document.getElementById(medalSlot);
 
         // 画像の表示
-        slotDiv.innerHTML = `<https://github.com/9dolog/baunty_medal/raw/main/${medal.romaji}.png" class="medalImageOnly" alt="${medal.name}">`;
+        slotDiv.innerHTML = `<https://github.com/9dolog/baunty_medal/raw/main/${medal.romaji}.PNG" class="medalImageOnly" alt="${medal.name}">`;
 
         // ドロップ後にテキストを非表示にする
         slotDiv.classList.add("has-medal");  // クラスを追加して、テキストを非表示にする
@@ -945,7 +945,7 @@
             // タッチイベントを追加
             medalDiv.addEventListener('touchstart', (event) => touchStart(event, medal));
 
-            medalDiv.innerHTML = `<img src="https://github.com/9dolog/baunty_medal/raw/main/${medal.romaji}.png" class="medalImageOnly" alt="${medal.name}">
+            medalDiv.innerHTML = `<img src="https://github.com/9dolog/baunty_medal/raw/main/${medal.romaji}.PNG" class="medalImageOnly" alt="${medal.name}">
 <strong>${medal.name}</strong><br><em>${medal.ability}</em><br>タグ: ${medal.tags.join(', ')}`;
             container.appendChild(medalDiv);
         });
