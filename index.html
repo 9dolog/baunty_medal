@@ -14,65 +14,60 @@
             padding: 10px;
         }
 
-        #medalSelector, #result {
-    position: fixed;
-    bottom: 15px; /* 下から15px */
-    right: 15px;  /* 右から15px */
-    width: 300px;
-    padding: 10px;
-    background-color: rgba(249, 249, 249, 0.8);
-    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    font-size: 12px;
-    overflow-y: auto;
-    border-radius: 5px;
-}
-
-        #result {
-            margin-right: 320px;
-        }
-        
-        /* スマホ版のメディアクエリ */
-@media (max-width: 768px) {
-    #medalSelector, #result {
-        position: fixed;
-        bottom: 15px;  /* 下から15px */
-        right: 15px;   /* 右から15px */
-        width: 100%;   /* 幅を100%に変更 */
-        max-width: 400px;  /* 最大幅を400pxに指定 */
-        padding: 15px; /* パディングを大きく */
-        background-color: rgba(249, 249, 249, 0.8);
-        box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-        font-size: 14px; /* フォントサイズを少し大きく */
-        overflow-y: auto;
-        border-radius: 5px;
-        display: block;  /* 必要に応じて表示設定 */
-    }
-
-    #result {
-        display: block;  /* 必ずブロック要素として表示 */
-        visibility: visible;  /* 見えるように */
-    }
-}
-
-/* その他のデバイス用のスタイル */
+        /* Windows版のスタイル */
 @media (min-width: 769px) {
     #medalSelector, #result {
         position: fixed;
         bottom: 15px;
-        right: 15px;
-        width: 400px;
+        padding: 20px;
+        background-color: rgba(249, 249, 249, 0.9);
+        box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        font-size: 8%;
+        overflow-y: auto;
+        border-radius: 10px;
+    }
+
+    #medalSelector {
+        width: 400px; /* Windows版の幅 */
+        right: 15px; /* 画面右端に配置 */
+    }
+
+    #result {
+        width: 150px; /* Windows版の幅 */
+        right: 15px; /* 画面右端に配置 */
+        margin-right: 450px; /* #medalSelectorの幅と間隔 */
+    }
+}
+
+/* スマホ版のスタイル */
+@media (max-width: 768px) {
+    #medalSelector, #result {
+        position: fixed;
+        bottom: 10px;
+        display: inline-block;
+        vertical-align: bottom; /* 下に揃える */
+        width: 30%; /* 横並びで2つを表示 */
         padding: 15px;
         background-color: rgba(249, 249, 249, 0.8);
         box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
         z-index: 1000;
-        font-size: 14px;
+        font-size: 1%;
         overflow-y: auto;
-        border-radius: 5px;
-        display: block;
+        border-radius: 8px;
+    }
+
+    #medalSelector {
+        right: 0; /* 画面右端に配置 */
+    }
+
+    #result {
+        right: 0; /* 画面右端に配置 */
+        margin-right: 38%; /* #medalSelectorとの間隔 */
     }
 }
+
+
 
 
 
@@ -163,24 +158,24 @@
             <label>メダル2: <div id="medal2" class="drop-zone" ondrop="drop(event, 'medal2')" ondragover="allowDrop(event)"></div></label>
             <label>メダル3: <div id="medal3" class="drop-zone" ondrop="drop(event, 'medal3')" ondragover="allowDrop(event)"></div></label>
         </form>
-        <div id="result">
-            <h2>選択されたメダルセット</h2>
-            <ul id="selectedMedals"></ul>
-            <h3>タグ効果</h3>
-            <ul id="tagEffects"></ul>
-        </div>
     </div>
-
+    
     <div id="tagFilter">
         <h3>タグフィルター</h3>
         <div id="tagCheckboxContainer"></div>
     </div>
-
+    
     <div id="medalList">
         <h2>メダル一覧</h2>
         <input type="text" id="searchInput" placeholder="メダル名、能力、タグで検索" oninput="filterMedals()">
         <div id="medalContainer"></div>
     </div>
+    
+    <div id="result">
+        <h3>タグ効果</h3>
+        <ul id="tagEffects"></ul>
+    </div>
+    
     
 
     <script>
@@ -900,19 +895,23 @@
     }
 
     function drop(event, medalSlot) {
-        event.preventDefault();
-        const medal = JSON.parse(event.dataTransfer.getData("text"));
-        const slotDiv = document.getElementById(medalSlot);
+    event.preventDefault();
+    const medal = JSON.parse(event.dataTransfer.getData("text"));
+    const slotDiv = document.getElementById(medalSlot);
 
-        // 画像の表示
-        slotDiv.innerHTML = `<https://github.com/9dolog/baunty_medal/raw/main/${medal.romaji}.PNG" class="medalImageOnly" alt="${medal.name}">`;
+    // 画像とabilityを表示
+    slotDiv.innerHTML = `
+        <img src="https://github.com/9dolog/baunty_medal/raw/main/${medal.romaji}.PNG" class="medalImageOnly" alt="${medal.name}">
+        <p>${medal.ability}</p>
+    `;
 
-        // ドロップ後にテキストを非表示にする
-        slotDiv.classList.add("has-medal");  // クラスを追加して、テキストを非表示にする
+    // ドロップ後にテキストを非表示にする
+    slotDiv.classList.add("has-medal");  // クラスを追加して、テキストを非表示にする
 
-        slotDiv.dataset.medalName = medal.name;
-        updateResult();
-    }
+    slotDiv.dataset.medalName = medal.name;
+    updateResult();
+}
+
 
     // タッチ対応のドラッグ開始
     function touchStart(event, medal) {
@@ -1055,35 +1054,31 @@
     }
 
     function updateResult() {
-        const selectedMedals = ['medal1', 'medal2', 'medal3']
-            .map(id => medals.find(m => m.name === document.getElementById(id).dataset.medalName))
-            .filter(Boolean);
+    const selectedMedals = ['medal1', 'medal2', 'medal3']
+        .map(id => medals.find(m => m.name === document.getElementById(id).dataset.medalName))
+        .filter(Boolean);
 
-        const tagCounts = {};
-        selectedMedals.forEach(medal => {
-            medal.tags.forEach(tag => {
-                if (!tagCounts[tag]) {
-                    tagCounts[tag] = new Set();
-                }
-                tagCounts[tag].add(medal.name);
-            });
+    const tagCounts = {};
+    selectedMedals.forEach(medal => {
+        medal.tags.forEach(tag => {
+            if (!tagCounts[tag]) {
+                tagCounts[tag] = new Set();
+            }
+            tagCounts[tag].add(medal.name);
         });
+    });
 
-        const ul = document.getElementById('selectedMedals');
-        ul.innerHTML = selectedMedals.map(medal => 
-            `<li>${medal.name}<br><em>${medal.ability}</em></li>`
-        ).join('');
+    // タグ効果を更新
+    const tagEffectsList = document.getElementById('tagEffects');
+    tagEffectsList.innerHTML = Object.entries(tagCounts)
+        .map(([tag, set]) => {
+            const count = set.size;
+            const effect = tagEffects[tag] ? tagEffects[tag][count] : '';
+            return `<li class="${count > 1 ? 'duplicated-tag' : ''}">${tag}: ${effect || "効果なし"}</li>`;
+        })
+        .join('');
+}
 
-        // 重複していないタグも表示
-        const tagEffectsList = document.getElementById('tagEffects');
-        tagEffectsList.innerHTML = Object.entries(tagCounts)
-            .map(([tag, set]) => {
-                const count = set.size;
-                const effect = tagEffects[tag] ? tagEffects[tag][count] : '';
-                return `<li class="${count > 1 ? 'duplicated-tag' : ''}">${tag}: ${effect || "効果なし"}</li>`;
-            })
-            .join('');
-    }
 
     window.onload = () => {
         createTagCheckboxes();
