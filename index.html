@@ -121,8 +121,8 @@
 @media (max-width: 768px) {
     #tagFilter {
     position: fixed;
-    top: 173px; /* 画面上部からの位置 */
-    width: 100%; /* 固定幅 */
+    top: 200px; /* 画面上部からの位置 */
+    width: 50%; /* 固定幅 */
     height: 200px; /* 高さを固定 */
     overflow-y: auto; /* 縦スクロールを有効化 */
     background-color: rgba(249, 249, 249, 0.9);
@@ -130,6 +130,7 @@
     border-radius: 10px;
     padding: 10px;
     z-index: 1000;
+    height: 20%;
     }
 }
 
@@ -153,9 +154,9 @@
 @media (max-width: 768px) {
     #medalList {
     position: fixed;
-    top: 395px; /* #tagFilterの高さ + マージン（200px + 15px + 20px） */
+    top: 370px; /* #tagFilterの高さ + マージン（200px + 15px + 20px） */
     left: 15px; /* 画面左端からの位置 */
-    width: 235px; /* 固定幅 */
+    width: 50%; /* 固定幅 */
     height: calc(100vh - 250px); /* 画面の高さからタグの高さを引く */
     overflow-y: auto; /* 縦スクロールを有効化 */
     background-color: rgba(249, 249, 249, 0.9);
@@ -190,7 +191,7 @@
             word-wrap: break-word;
             display: flex;
             align-items: center;
-            width: 210px;
+            width: 180px;
         }
 
         .medal img {
