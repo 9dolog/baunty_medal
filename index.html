@@ -94,12 +94,12 @@
 
     #medalSelector {
         right: 0; /* 画面右端に配置 */
-        width: 20%;
+        width: 30%;
     }
 
     #result {
         right: 0; /* 画面右端に配置 */
-        margin-right: 28%; /* #medalSelectorとの間隔 */
+        margin-right: 38%; /* #medalSelectorとの間隔 */
         width: 30%;
     }
 }
@@ -275,6 +275,19 @@
     border-radius: 5px;
     background-color: #f9f9f9;
     cursor: pointer;
+}
+
+#searchInput {
+    position: sticky; /* 固定する */
+    top: 0; /* 上部に固定 */
+    z-index: 10; /* 他の要素より前面に配置 */
+    background-color: white; /* 背景色を指定（透明だと下が透ける） */
+    padding: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* 下部に影を追加 */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: calc(100% - 10px); /* 親要素に収まるよう調整 */
 }
     </style>
 </head>
