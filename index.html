@@ -122,8 +122,30 @@
 /* モバイル版（768px以下）では非表示 */
 @media (max-width: 768px) {
      #tagFilter{
-        display: none;}}
+        position: fixed;
+    top: 138px; /* #tagFilterの高さ + マージン（200px + 15px + 20px） */
+    left: 0px;/* 画面左端からの位置 */
+    width: 95%; /* 固定幅 */
+    height: calc(100vh - 250px); /* 画面の高さからタグの高さを引く */
+    overflow-y: auto; /* 縦スクロールを有効化 */
+    background-color: rgba(249, 249, 249, 0.9);
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 1500;
+    height: 27%;
+    }
 
+    #tagCheckboxContainer div {
+    display: flex; /* ラベルとチェックボックスを並べる */
+    align-items: center; /* 縦方向で中央揃え */
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+}
 /* メダル一覧をタグの下に固定 */
 #medalList {
     position: fixed;
@@ -144,7 +166,7 @@
 @media (max-width: 768px) {
     #medalList {
     position: fixed;
-    top: 200px; /* #tagFilterの高さ + マージン（200px + 15px + 20px） */
+    top: 340px; /* #tagFilterの高さ + マージン（200px + 15px + 20px） */
     left: 0px; /* 画面左端からの位置 */
     width: 95%; /* 固定幅 */
     height: calc(100vh - 250px); /* 画面の高さからタグの高さを引く */
@@ -308,6 +330,18 @@
     margin: 0;
     padding: 0;
 }
+@media (max-width: 768px) {
+    #tagEffects{
+        display: flex;           /* タグを横並びにする場合 */
+    flex-wrap: wrap;         /* 横に収まりきらない場合は折り返す */
+    gap: 10px;               /* タグ間のスペース */
+    list-style: none;        /* リストのマーカーを非表示 */
+    margin: 0;
+    padding: 0;
+    font-size: 5px;
+    }
+}
+
 
 #tagEffects li {
     padding: 5px 10px;
