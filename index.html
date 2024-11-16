@@ -289,6 +289,33 @@
     border-radius: 5px;
     width: calc(100% - 10px); /* 親要素に収まるよう調整 */
 }
+#tagEffectsContainer {
+    display: flex;           /* 横並びに配置 */
+    align-items: center;     /* Y軸（垂直方向）を中央に揃える */
+    gap: 10px;               /* タイトルとリストの間に余白を設定 */
+}
+
+#tagEffectsTitle {
+    margin: 0;               /* 余計な余白を削除 */
+    font-size: 16px;         /* タイトルのフォントサイズ */
+}
+
+#tagEffects {
+    display: flex;           /* タグを横並びにする場合 */
+    flex-wrap: wrap;         /* 横に収まりきらない場合は折り返す */
+    gap: 10px;               /* タグ間のスペース */
+    list-style: none;        /* リストのマーカーを非表示 */
+    margin: 0;
+    padding: 0;
+}
+
+#tagEffects li {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
     </style>
 </head>
 <body>
