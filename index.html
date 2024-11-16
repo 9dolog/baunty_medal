@@ -19,207 +19,149 @@
     <title>メダルセット</title>
     <style>
         body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column; /* 縦並び */
-    align-items: center; /* 中央揃え（必要に応じて） */
-    margin: 0;
-    padding: 0;
-    
-}
-
-/* 自己紹介エリアを上部に固定 */
-#introduction {
-    width: 100%; /* 横幅いっぱい */
-    background-color:  rgba(249, 249, 249, 0.9);
-    padding: 20px;
-    text-align: center;
-    border-bottom: 1px solid #ddd; /* セクション間の仕切り */
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);}
-
-    @media (max-width: 768px) {
-        #introduction {
-    width: 100%; /* 横幅いっぱい */
-    background-color:  rgba(249, 249, 249, 0.9);
-    padding: 20px;
-    text-align: center;
-    border-bottom: 1px solid #ddd; /* セクション間の仕切り */
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    font-size: 10px;
-}
-    }
-
-    
-
-        /* Windows版のスタイル */
-@media (min-width: 769px) {
-    #medalSelector, #result {
-        position: fixed;
-        bottom: 15px;
-        padding: 20px;
-        background-color: rgba(249, 249, 249, 0.9);
-        box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-        font-size: 8%;
-        overflow-y: auto;
-        border-radius: 10px;
-    }
-
-    #medalSelector {
-        width: 400px; /* Windows版の幅 */
-        right: 15px; /* 画面右端に配置 */
-        height:55%;
-    }
-
-    #result {
-        width: 150px; /* Windows版の幅 */
-        right: 15px; /* 画面右端に配置 */
-        margin-right: 450px; /* #medalSelectorの幅と間隔 */
-    }
-}
-
-/* スマホ版のスタイル */
-@media (max-width: 768px) {
-    #medalSelector, #result {
-        position: fixed;
-        bottom: 10px;
-        display: inline-block;
-        vertical-align: bottom; /* 下に揃える */
-        width: 30%; /* 横並びで2つを表示 */
-        padding: 15px;
-        background-color: rgba(249, 249, 249, 0.8);
-        box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
-        z-index: 2000;
-        font-size: 1%;
-        overflow-y: auto;
-        border-radius: 8px;
-    }
-
-    #medalSelector {
-        right: 0; /* 画面右端に配置 */
-        width: 20%;
-    }
-
-    #result {
-        right: 0; /* 画面右端に配置 */
-        margin-right: 29%; /* #medalSelectorとの間隔 */
-        width: 29%;
-    }
-}
-
-/* タグを固定 */
-#tagFilter {
-    position: fixed;
-    top: 180px; /* 画面上部からの位置 */
-    left: 15px; /* 画面左端からの位置 */
-    width: 235px; /* 固定幅 */
-    height: 200px; /* 高さを固定 */
-    overflow-y: auto; /* 縦スクロールを有効化 */
-    background-color: rgba(249, 249, 249, 0.9);
-    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 10px;
-    z-index: 1000;
-    height: 70%;
-}
-/* モバイル版（768px以下）では非表示 */
-@media (max-width: 768px) {
-     #tagFilter{
-        position: fixed;
-    top: 138px; /* #tagFilterの高さ + マージン（200px + 15px + 20px） */
-    left: 0px;/* 画面左端からの位置 */
-    width: 95%; /* 固定幅 */
-    height: calc(100vh - 250px); /* 画面の高さからタグの高さを引く */
-    overflow-y: auto; /* 縦スクロールを有効化 */
-    background-color: rgba(249, 249, 249, 0.9);
-    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 10px;
-    z-index: 1500;
-    height: 27%;
-    }
-
-    #tagCheckboxContainer div {
-    display: flex; /* ラベルとチェックボックスを並べる */
-    align-items: center; /* 縦方向で中央揃え */
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    cursor: pointer;
-}
-}
-/* メダル一覧をタグの下に固定 */
-#medalList {
-    position: fixed;
-    top: 180px; /* #tagFilterの高さ + マージン（200px + 15px + 20px） */
-    left: 280px; /* 画面左端からの位置 */
-    width: 235px; /* 固定幅 */
-    height: calc(100vh - 250px); /* 画面の高さからタグの高さを引く */
-    overflow-y: auto; /* 縦スクロールを有効化 */
-    background-color: rgba(249, 249, 249, 0.9);
-    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 10px;
-    z-index: 1000;
-    height: 70%;
-}
-
-/* スマホ版のスタイル */
-@media (max-width: 768px) {
-    #medalList {
-    position: fixed;
-    top: 340px; /* #tagFilterの高さ + マージン（200px + 15px + 20px） */
-    left: 0px; /* 画面左端からの位置 */
-    width: 95%; /* 固定幅 */
-    height: calc(100vh - 250px); /* 画面の高さからタグの高さを引く */
-    overflow-y: auto; /* 縦スクロールを有効化 */
-    background-color: rgba(249, 249, 249, 0.9);
-    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 10px;
-    z-index: 1000;
-    height: 68%;
-}
-}
-
-
-
-
-
-
-
-        #medalList {
-            background-color: rgba(249, 249, 249, 0.8);
-            margin-right: 320px;
-            padding: 10px;
-            word-wrap: break-word;
-            border-radius: 5px;
-        }
-
-        .medal {
-            margin-bottom: 10px;
-            padding: 2px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            cursor: grab;
-            font-size: 10px;
-            word-wrap: break-word;
+            font-family: Arial, sans-serif;
             display: flex;
-            align-items: center;
-            width: 150px;
+            flex-direction: column; /* 縦並び */
+            align-items: center; /* 中央揃え（必要に応じて） */
+            margin: 0;
+            padding: 0;
+        }
+    
+        .introduction {
+            height: 200px; /* 任意の高さを設定 */
+            overflow-y: auto; /* スクロール可能にする */
+        }
+    
+        /* 自己紹介エリア */
+        #introduction {
+            width: 100%; /* 横幅いっぱい */
+            background-color: rgba(249, 249, 249, 0.9);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    
+        @media (max-width: 768px) {
+            #introduction {
+                width: 100%;
+                background-color: rgba(249, 249, 249, 0.9);
+                padding: 20px;
+                text-align: center;
+                border-bottom: 1px solid #ddd;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+                font-size: 10px;
+            }
+        }
+    
+        /* #medalSelector と #result を右下に固定 */
+        #medalSelector, #result {
+            padding: 20px;
+            background-color: rgba(249, 249, 249, 0.9);
+            box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            font-size: 8%;
+            overflow-y: auto;
+            border-radius: 10px;
+        }
+    
+        /* Windows版のスタイル */
+        @media (min-width: 769px) {
+            #medalSelector {
+                width: 400px; /* Windows版の幅 */
+                position: fixed;
+                bottom: 20px; /* 画面下に固定 */
+                right: 15px; /* 画面右端に配置 */
+                height: 70%;
+                z-index: 8000;
+            }
+    
+            #result {
+                width: 150px; /* Windows版の幅 */
+                position: fixed;
+                bottom: 20px; /* 画面下に固定 */
+                right: 15px; /* 画面右端に配置 */
+                margin-right: 450px; /* #medalSelectorの幅と間隔 */
+                font-size: 10px;
+            }
         }
     
         /* スマホ版のスタイル */
-@media (max-width: 768px) {
-    #medalList {
-            background-color: rgba(249, 249, 249, 0.8);
-            margin-right: 320px;
-            padding: 10px;
-            word-wrap: break-word;
-            border-radius: 5px;
+        @media (max-width: 768px) {
+            #medalSelector, #result {
+                display: inline-block;
+                vertical-align: bottom; /* 下に揃える */
+                width: 30%; /* 横並びで2つを表示 */
+                padding: 15px;
+                background-color: rgba(249, 249, 249, 0.8);
+                box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+                z-index: 2000;
+                font-size: 1%;
+                overflow-y: auto;
+                border-radius: 8px;
+                position: fixed;
+                bottom: 20px; /* 画面下に固定 */
+                right: 0; /* 画面右端に配置 */
+            }
+    
+            #result {
+                right: 0; /* 画面右端に配置 */
+                margin-right: 38%; /* #medalSelectorとの間隔 */
+                width: 20%;
+            }
         }
 
+        
+    
+        /* タグフィルターを固定しない */
+        #tagFilter {
+            position: static; /* 固定解除 */
+            background-color: rgba(249, 249, 249, 0.9);
+            box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 10px;
+            z-index: 1000;
+            height: 70%;
+        }
+    
+        @media (max-width: 768px) {
+            #tagFilter {
+                position: static; /* 固定解除 */
+                width: 95%;
+                height: calc(100vh - 250px);
+                overflow-y: auto;
+                background-color: rgba(249, 249, 249, 0.9);
+                box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 10px;
+                z-index: 1500;
+                height: 27%;
+            }
+    
+            #tagCheckboxContainer div {
+                display: flex;
+                align-items: center;
+                padding: 5px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                background-color: #f9f9f9;
+                cursor: pointer;
+            }
+        }
+    
+        /* メダル一覧を固定しない */
+        #medalList {
+            position: static; /* 固定解除 */
+            background-color: rgba(249, 249, 249, 0.9);
+            box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 10px;
+            z-index: 1000;
+            height: 70%;
+            width: 100%;
+        }
+    
+        /* その他のスタイルはそのまま */
         .medal {
             margin-bottom: 10px;
             padding: 2px;
@@ -230,91 +172,118 @@
             word-wrap: break-word;
             display: flex;
             align-items: center;
-            width: 110px;
-        }}
-
+            width: 550px;
+        }
+    
+        /* スマホ版のスタイル */
+        @media (max-width: 768px) {
+            #medalList {
+                background-color: rgba(249, 249, 249, 0.8);
+                
+                padding: 10px;
+                word-wrap: break-word;
+                border-radius: 5px;
+            }
+    
+            .medal {
+                margin-bottom: 10px;
+                padding: 2px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                cursor: grab;
+                font-size: 10px;
+                word-wrap: break-word;
+                display: flex;
+                align-items: center;
+                width: 360px;
+            }
+        }
+    
         .medal img {
             width: 100px;
             height: 100px;
             margin-right: 10px;
             border-radius: 5px;
         }
-
+    
         .duplicated-tag {
             font-weight: bold;
             color: red;
         }
-
+    
         .drop-zone {
-    border: 2px dashed #ddd;
-    padding: 10px;
-    min-height: 40px;
-    margin-bottom: 20px;
-    text-align: center;
-    position: relative;
-}
-
-.drop-zone::before {
-    content: "ここにドラッグ＆ドロップ";
-    color: #888;
-    font-size: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none; /* テキストがクリックされないようにする */
-}
-
-
+            border: 2px dashed #ddd;
+            padding: 10px;
+            min-height: 40px;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+        }
+    
+        .drop-zone::before {
+            content: "ここにドラッグ＆ドロップ";
+            color: #888;
+            font-size: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+    
         .medalImageOnly {
             max-width: 50px;
             max-height: 50px;
         }
+    
+        /* タグフィルターのスタイル */
+    #tagFilter {
+        position: static;
+        background-color: rgba(249, 249, 249, 0.9);
+        box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        padding: 10px;
+        z-index: 1000;
+        height: 70%;
+        width: 100%;
+    }
 
-        #tagFilter {
-            background-color: rgba(249, 249, 249, 0.8);
-            padding: 10px;
+    /* #tagCheckboxContainer の横並びスタイル */
+    #tagCheckboxContainer {
+        display: flex;
+        flex-wrap: wrap; /* 横書きで改行される */
+        gap: 10px;
+        white-space: nowrap;
+        overflow-x: auto; /* 横に溢れる場合はスクロール */
+        padding: 10px;
+    }
+
+    /* タグアイテムのスタイル */
+    #tagCheckboxContainer div {
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        cursor: pointer;
+        font-size: 10px; /* 文字サイズを小さく */
+    }
+    
+        #searchInput {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background-color: white;
+            padding: 5px;
+            margin-bottom: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
             border: 1px solid #ddd;
             border-radius: 5px;
-            margin-bottom: 10px;
-            font-size: 8px;
+            width: calc(100% - 10px);
         }
-
-        #tagCheckboxContainer div {
-            margin-bottom: 5px;
-        }
-
-        /* タグの項目を横並びに */
-#tagCheckboxContainer {
-    display: flex; /* Flexboxを有効化 */
-    flex-wrap: wrap; /* 横に収まりきらない場合は折り返し */
-    gap: 10px; /* 項目間のスペース */
-}
-
-/* 各タグ項目のスタイル */
-#tagCheckboxContainer div {
-    display: flex; /* ラベルとチェックボックスを並べる */
-    align-items: center; /* 縦方向で中央揃え */
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    cursor: pointer;
-}
-
-#searchInput {
-    position: sticky; /* 固定する */
-    top: 0; /* 上部に固定 */
-    z-index: 10; /* 他の要素より前面に配置 */
-    background-color: white; /* 背景色を指定（透明だと下が透ける） */
-    padding: 5px;
-    margin-bottom: 10px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* 下部に影を追加 */
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: calc(100% - 10px); /* 親要素に収まるよう調整 */
-}
-#tagEffectsContainer {
+    
+        #tagEffectsContainer {
     display: flex;           /* 横並びに配置 */
     align-items: center;     /* Y軸（垂直方向）を中央に揃える */
     gap: 10px;               /* タイトルとリストの間に余白を設定 */
@@ -322,7 +291,7 @@
 
 #tagEffectsTitle {
     margin: 0;               /* 余計な余白を削除 */
-    font-size: 16px;         /* タイトルのフォントサイズ */
+    font-size: 7px;         /* タイトルのフォントサイズ */
 }
 
 #tagEffects {
@@ -341,7 +310,7 @@
     list-style: none;        /* リストのマーカーを非表示 */
     margin: 0;
     padding: 0;
-    font-size: 10px;
+    font-size: 8px;
     }
 }
 
@@ -354,12 +323,111 @@
 }
 
     </style>
+    
 </head>
 <body>
 <!-- 自己紹介エリア -->
 <div id="introduction">
-    <h1>バウンティラッシュ　メダル作成ツール</h1>
-    <p>このサイトの管理人は109シーズンランカーです。立ち回りも大事ですが、メダル編成も大事です。使うキャラに合わせたタグを意識してメダルを選びましょう。</p>
+    <h1>バウンティラッシュ メダル作成ツール</h1>
+    <p>このサイトの管理人は109シーズンランカーです。立ち回りも大事ですが、メダル編成も大事です。使うキャラに合わせたタグを意識してメダルを選びましょう。正直トップ層には実力では敵いませんが、メダルをしっかり考えるだけでランカーにはなれます。メダルを考えたのち、立ち回りを勉強していきましょう。</p>
+    <div id="profileImagesContainer"></div>
+    <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/profile.PNG" alt="プロフィール写真">
+    <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/profile2.PNG" alt="プロフィール写真2">
+    
+    <style>
+        /* 画像を並べるコンテナ */
+    #profileImagesContainer {
+        display: flex;              /* Flexboxで横並び */
+        justify-content: center;    /* コンテナ内で中央揃え */
+        gap: 20px;                  /* 画像間のスペース */
+    }
+        /* プロフィール画像のスタイル */
+        #profileImage {
+            width: 150px;          /* 画像の幅を指定 */
+            height: auto;          /* 高さを自動調整（アスペクト比を維持） */
+       
+        }
+    
+        @media (max-width: 768px) {
+            #profileImage {
+                width: 100px;      /* スマホ画面用のサイズ調整 */
+            }
+        }
+    </style>
+    
+    <p>以下はオススメメダルセットです。作成ツールは下にあります。</p>
+    <p>【アタッカー用】</p>
+    <img id="medalexample1" src="https://github.com/9dolog/baunty_medal/raw/main/medalexample1.PNG" alt="メダルセット例1">
+    <style>
+        
+        #medalexample1 {
+            width: 50%;          /* 画像の幅を指定 */
+            height: auto;          /* 高さを自動調整（アスペクト比を維持） */
+          
+        }
+    
+        @media (max-width: 768px) {
+            #medalexample1 {
+                width: 200px;      /* スマホ画面用のサイズ調整 */
+            }
+        }
+    </style>
+    <p>１．大猿王銃メダル：自分がいるお宝エリアに味方がいないとき与ダメ増加　２．火拳銃メダル：敵旗にいるとき与ダメ増加　３．業火拳銃メダル：得意属性に与ダメ増加</p>
+    <p>特に瞬間移動スキル（例：緑シャンクス）を持っているアタッカーにお勧めです。一瞬で敵のいるお宝エリアに飛べるので、ガンガンダメージを与えられます。</p>
+    <p>【ゲッター用1】</p>
+    <img id="medalexample2" src="https://github.com/9dolog/baunty_medal/raw/main/medalexample2.PNG" alt="メダルセット例2">
+    <style>
+        
+        #medalexample2 {
+            width: 50%;          /* 画像の幅を指定 */
+            height: auto;          /* 高さを自動調整（アスペクト比を維持） */
+          
+        }
+    
+        @media (max-width: 768px) {
+            #medalexample2 {
+                width: 200px;      /* スマホ画面用のサイズ調整 */
+            }
+        }
+    </style>
+    <p>１．大猿王銃メダル：自分がいるお宝エリアに味方がいないとき与ダメ増加　２．火拳銃メダル：敵旗にいるとき与ダメ増加　３．ルーシー（ルフィ）メダル：お宝奪取時体力回復</p>
+    <p>こちらは対面性能の高いゲッターにお勧めのメダルです。いわゆる戦うゲッターメダルです。</p>
+    <p>【ゲッター用2】</p>
+    <img id="medalexample3" src="https://github.com/9dolog/baunty_medal/raw/main/medalexample3.PNG" alt="メダルセット例3">
+    <style>
+        
+        #medalexample3 {
+            width: 50%;          /* 画像の幅を指定 */
+            height: auto;          /* 高さを自動調整（アスペクト比を維持） */
+          
+        }
+    
+        @media (max-width: 768px) {
+            #medalexample3 {
+                width: 200px;      /* スマホ画面用のサイズ調整 */
+            }
+        }
+    </style>
+    <p>１．メスメダル：体力70％以上のとき、奪取速度増加　２．大波白糸メダル：敵旗ゲージが50％以上のとき、奪取速度増加　３．キッド＆ローメダル：体力70％以上のとき、奪取速度増加</p>
+    <p>こちらは対面性能は高くないゲッターにお勧めです。マップをよく見て敵が来ない旗を握りましょう。</p>
+    <p>【ディフェンダー用】</p>
+    <img id="medalexample4" src="https://github.com/9dolog/baunty_medal/raw/main/medalexample4.PNG" alt="メダルセット例4">
+    <style>
+        
+        #medalexample4 {
+            width: 50%;          /* 画像の幅を指定 */
+            height: auto;          /* 高さを自動調整（アスペクト比を維持） */
+          
+        }
+    
+        @media (max-width: 768px) {
+            #medalexample4 {
+                width: 200px;      /* スマホ画面用のサイズ調整 */
+            }
+        }
+    </style>
+    <p>１．カイドウメダル：敵から攻撃されるとスキル1短縮　２．熱息メダル：自チームのお宝エリアにいるとき、与ダメ増加　３．カイドウ（人獣型）メダル：敵をK.O.したときスキル1短縮</p>
+    <p>このメダルセットはかなり人気のメダルセットです。スキル1が強力なキャラ（S-スネーク）が使うと無限に旗を守れることもあります。カイドウ（人獣型）メダルは火災メダルでも代用可能です。</p>
     
 </div>
 
