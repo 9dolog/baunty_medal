@@ -1343,7 +1343,7 @@
     // タッチ対応のドラッグ開始
     function touchStart(event, medal) {
         const touch = event.touches[0];
-        event.dataTransfer.setData("text", JSON.stringify(medal.romaji));  // タッチしたメダル情報を設定
+        event.dataTransfer.setData("text", JSON.stringify(medal));  // タッチしたメダル情報を設定
         document.body.addEventListener('touchmove', (e) => touchMove(e, medal));
         document.body.addEventListener('touchend', (e) => touchEnd(e, medal));
     }
@@ -1415,7 +1415,7 @@
             medalDiv.className = 'medal';
             medalDiv.id = medal.name;
             medalDiv.draggable = true;
-            medalDiv.ondragstart = event => event.dataTransfer.setData("text", JSON.stringify(medal.romaji));
+            medalDiv.ondragstart = event => event.dataTransfer.setData("text", JSON.stringify(medal));
 
             // タッチイベントを追加
             medalDiv.addEventListener('touchstart', (event) => touchStart(event, medal));
