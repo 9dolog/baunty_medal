@@ -330,90 +330,108 @@
         }
     
         /* タグフィルターのスタイル */
-        #tagFilter {
-            position: static;
-            background-color: rgba(249, 249, 249, 0.9);
-            box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            padding: 10px;
-            z-index: 1000;
-            height: 70%;
-            width: 100%;
-        }
+#tagFilter {
+    position: static;
+    background-color: rgba(249, 249, 249, 0.9);
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 1000;
+    height: 70%;
+    width: 100%;
+}
 
-        /* #tagCheckboxContainer の横並びスタイル */
-        #tagCheckboxContainer {
-            display: flex;
-            flex-wrap: wrap; /* 横書きで改行される */
-            gap: 10px;
-            white-space: nowrap;
-            overflow-x: auto; /* 横に溢れる場合はスクロール */
-            padding: 10px;
-        }
+/* #tagCheckboxContainer の横並びスタイル */
+#tagCheckboxContainer {
+    display: flex;
+    flex-wrap: wrap; /* 横書きで改行される */
+    gap: 10px;
+    padding: 10px;
+    overflow-x: auto; /* 横に溢れる場合はスクロール */
+}
 
-        /* タグアイテムのスタイル */
-        #tagCheckboxContainer div {
-            display: flex;
-            align-items: center;
-            padding: 5px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-            cursor: pointer;
-            font-size: 10px; /* 文字サイズを小さく */
-        }
-    
-        #searchInput {
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            background-color: white;
-            padding: 5px;
-            margin-bottom: 10px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            width: calc(100% - 10px);
-        }
-    
-        #tagEffectsContainer {
-            display: flex;           /* 横並びに配置 */
-            align-items: center;     /* Y軸（垂直方向）を中央に揃える */
-            gap: 10px;               /* タイトルとリストの間に余白を設定 */
-        }
+/* タグアイテムのスタイル */
+#tagCheckboxContainer div {
+    display: flex;
+    align-items: center; /* 縦方向中央揃え */
+    gap: 5px; /* チェックボックスと文字の間のスペース */
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    font-size: 10px; /* 文字サイズを小さく */
+    flex-wrap: wrap; /* 横書きで改行される */
+}
 
-        #tagEffectsTitle {
-            margin: 0;               /* 余計な余白を削除 */
-            font-size: 7px;         /* タイトルのフォントサイズ */
-        }
+/* チェックボックスのスタイル */
+#tagCheckboxContainer div input[type="checkbox"] {
+    margin: 0; /* デフォルト余白を削除 */
+    width: 16px; /* チェックボックスのサイズ調整 */
+    height: 16px;
+}
 
-        #tagEffects {
-            display: flex;           /* タグを横並びにする場合 */
-            flex-wrap: wrap;         /* 横に収まりきらない場合は折り返す */
-            gap: 10px;               /* タグ間のスペース */
-            list-style: none;        /* リストのマーカーを非表示 */
-            margin: 0;
-            padding: 0;
-        }
+/* 検索入力ボックス */
+#searchInput {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: white;
+    padding: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: calc(100% - 10px);
+}
 
-        @media (max-width: 768px) {
-        #tagEffects{
-            display: flex;           /* タグを横並びにする場合 */
-            flex-wrap: wrap;         /* 横に収まりきらない場合は折り返す */
-            gap: 10px;               /* タグ間のスペース */
-            list-style: none;        /* リストのマーカーを非表示 */
-            margin: 0;
-            padding: 0;
-            font-size: 8px;
-            }
-        }
+/* タグ効果コンテナ */
+#tagEffectsContainer {
+    display: flex;           /* 横並びに配置 */
+    align-items: center;     /* Y軸（垂直方向）を中央に揃える */
+    gap: 10px;               /* タイトルとリストの間に余白を設定 */
+}
 
-        #tagEffects li {
-            padding: 5px 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
+/* タグ効果のタイトル */
+#tagEffectsTitle {
+    margin: 0;               /* 余計な余白を削除 */
+    font-size: 7px;          /* タイトルのフォントサイズ */
+}
+
+/* タグリスト */
+#tagEffects {
+    display: flex;           /* タグを横並びにする場合 */
+    flex-wrap: wrap;         /* 横に収まりきらない場合は折り返す */
+    gap: 10px;               /* タグ間のスペース */
+    list-style: none;        /* リストのマーカーを非表示 */
+    margin: 0;
+    padding: 0;
+}
+
+/* モバイル向け調整 */
+@media (max-width: 768px) {
+    #tagCheckboxContainer div {
+        font-size: 8px;      /* 文字を小さく */
+        padding: 3px;        /* 内側余白を調整 */
+    }
+
+    #tagCheckboxContainer div input[type="checkbox"] {
+        width: 14px;
+        height: 14px;        /* チェックボックスのサイズも縮小 */
+    }
+
+    #tagEffects {
+        font-size: 8px;      /* タグ全体の文字サイズ縮小 */
+    }
+}
+
+/* タグリストアイテム */
+#tagEffects li {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
 
         body {
             margin: 0;
@@ -1325,7 +1343,7 @@
     // タッチ対応のドラッグ開始
     function touchStart(event, medal) {
         const touch = event.touches[0];
-        event.dataTransfer.setData("text", JSON.stringify(medal));  // タッチしたメダル情報を設定
+        event.dataTransfer.setData("text", JSON.stringify(medal.romaji));  // タッチしたメダル情報を設定
         document.body.addEventListener('touchmove', (e) => touchMove(e, medal));
         document.body.addEventListener('touchend', (e) => touchEnd(e, medal));
     }
@@ -1397,7 +1415,7 @@
             medalDiv.className = 'medal';
             medalDiv.id = medal.name;
             medalDiv.draggable = true;
-            medalDiv.ondragstart = event => event.dataTransfer.setData("text", JSON.stringify(medal));
+            medalDiv.ondragstart = event => event.dataTransfer.setData("text", JSON.stringify(medal.romaji));
 
             // タッチイベントを追加
             medalDiv.addEventListener('touchstart', (event) => touchStart(event, medal));
