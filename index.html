@@ -27,35 +27,7 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
     
-    <!-- modify this form HTML and place wherever you want your form -->
-    <form
-    action="https://formspree.io/f/xzzbvwvj"
-    method="POST"
-    >
-    <label>
-    Your email:
-    <input type="email" name="email">
-    </label>
-    <label>
-    Your message:
-    <textarea name="message"></textarea>
-    <label>
-    <input type="checkbox" required> 個人情報の取り扱いに同意します
-    </label>
-    </label>
-    <!-- your other form fields go here -->
-    <button type="submit">Send</button>
-    </form>
-    <footer>
-        <p>&copy; 2024 Baunty Medal Tool. All Rights Reserved.</p>
-        <nav>
-            <ul>
-                
-                <li><a href="index.html">ホーム</a></li>
-                <li><a href="https://9dolog.github.io/baunty_medal/privacy-policy.html">プライバシーポリシー</a></li>
-            </ul>
-        </nav>
-    </footer>
+    
 
     
     
@@ -81,47 +53,109 @@
         height: auto; /* 必要に応じて調整 */
         }
 
-        form {
-        width: 100%; /* 横幅いっぱい */
-        background-color: rgba(249, 249, 249, 0.9);
-        padding: 20px;
-        text-align: center;
-        border-bottom: 1px solid #ddd;
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-        }
+ /* フォーム全体のデザイン */
+form {
+    background-color: #ffffff; /* 背景白 */
+    border: 1px solid #dddddd; /* 薄いグレーの境界線 */
+    border-radius: 5px; /* 角を丸くする */
+    padding: 20px; /* 内側の余白 */
+    width: 100%; /* 横幅100%に設定 */
+    box-sizing: border-box; /* 内側の余白を幅に含む */
+    text-align: center; /* フォーム内の文字を中央揃え */
+    background-color: rgba(249, 249, 249, 0.9);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-        label {
-        font-weight: bold;
-        }
+/* フォーム内のラベル */
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
 
-        input, textarea, button {
-        width: 100%;
-        margin: 10px 0;
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        }
+/* 入力フィールドとテキストエリア */
+form input[type="email"],
+form textarea {
+    width: 100%; /* 横幅100% */
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
 
-        button {
-        background-color: #007BFF;
-        color: white;
-        border: none;
-        cursor: pointer;
-        }
+/* テキストエリアの高さ調整 */
+form textarea {
+    height: 60px;
+    resize: none;
+}
 
-        button:hover {
-        background-color: #0056b3;
-        
-        }
+/* チェックボックスのコンテナ */
+form .checkbox-container {
+    margin: 10px 0;
+}
 
-        footer {
-            width: 100%; /* 横幅いっぱい */
-            background-color: rgba(249, 249, 249, 0.9);
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid #ddd;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-        }
+/* ボタンのスタイル */
+form button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    width: 100%; /* ボタンも横幅100% */
+    box-sizing: border-box;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* フッターのデザイン */
+footer {
+    background-color: rgba(249, 249, 249, 0.9);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    text-align: center;
+    font-size: 12px;
+    color: #666666;
+    width: 100%;
+}
+
+/* フッターのナビゲーション */
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+footer nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+footer nav ul li a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+footer nav ul li a:hover {
+    text-decoration: underline;
+}
+
+
+.checkbox-container {
+    display: flex; /* フレックスボックスを有効化 */
+    justify-content: center; /* 横方向のセンタリング */
+    align-items: center; /* 必要に応じて縦方向も中央揃え */
+    margin: 10px 0; /* 上下の余白を追加 */
+}
+
+
+
 
 
         body {
@@ -465,7 +499,11 @@
     
     <!-- 自己紹介エリア -->
     <div id="introduction">
-    <h1>バウンティラッシュ メダル作成ツール</h1>
+    <h1>【初心者・中級者向け】バウンティラッシュ メダル編成ツール</h1>
+    <!-- タグ一覧へのリンク -->
+<p><a href="#tagCheckboxContainer">今すぐメダルを編成する</a></p>
+
+    
     <p>このサイトの管理人は109シーズンランカーです。立ち回りも大事ですが、メダル編成も大事です。使うキャラに合わせたタグを意識してメダルを選びましょう。正直トップ層には実力では敵いませんが、メダルをしっかり考えるだけでランカーにはなれます。メダルを考えたのち、立ち回りを勉強していきましょう。</p>
     <div id="profileImagesContainer"></div>
     <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/profile.PNG" alt="プロフィール写真">
@@ -492,7 +530,7 @@
         }
     </style>
     
-    <p>以下はオススメメダルセットです。作成ツールは下にあります。</p>
+    <p>以下はオススメメダルセットです。</p>
     <p>【アタッカー用】</p>
     <img id="medalexample1" src="https://github.com/9dolog/baunty_medal/raw/main/medalexample1.PNG" alt="メダルセット例1">
     <style>
@@ -551,16 +589,7 @@
     <img id="medalexample4" src="https://github.com/9dolog/baunty_medal/raw/main/medalexample4.PNG" alt="メダルセット例4">
     <p>１．カイドウメダル：敵から攻撃されるとスキル1短縮　２．熱息メダル：自チームのお宝エリアにいるとき、与ダメ増加　３．カイドウ（人獣型）メダル：敵をK.O.したときスキル1短縮</p>
     <p>このメダルセットはかなり人気のメダルセットです。スキル1が強力なキャラ（S-スネーク）が使うと無限に旗を守れることもあります。カイドウ（人獣型）メダルは火災メダルでも代用可能です。</p>
-    
-    <h1>プライバシーポリシー</h1>
-    <p>当サイトでは、広告やサービス向上のため、クッキー（Cookie）を使用しています。クッキーは、お客様の閲覧履歴に基づいて最適な広告を提供するために利用されます。</p>
-    <h2>収集する情報</h2>
-    <ul>
-    <li>閲覧履歴</li>
-    <li>広告のクリック情報</li>
-    </ul>
-    <h2>Google AdSense の使用</h2>
-    <p>当サイトでは Google AdSense を利用して広告を表示しています。Google は、クッキーを使用してユーザーに適した広告を配信します。</p>
+
 
     <style>
         
@@ -579,6 +608,36 @@
     
     
     </div>
+    <!-- modify this form HTML and place wherever you want your form -->
+    <form
+    action="https://formspree.io/f/xzzbvwvj"
+    method="POST"
+    >
+    <label>
+    あなたのニックネーム
+    <input type="email" name="email">
+    </label>
+    <label>
+    問い合わせ内容
+    <textarea name="message"></textarea>
+    <div class="checkbox-container"></div>
+    <label>
+    <input type="checkbox" required> 個人情報の取り扱いに同意します
+    </label>
+    </label>
+    <!-- your other form fields go here -->
+    <button type="submit">送信</button>
+    </form>
+    <footer>
+        <p>&copy; 2024 Baunty Medal Tool. All Rights Reserved.</p>
+        <nav>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="https://9dolog.github.io/baunty_medal/privacy-policy.html">プライバシーポリシー</a></li>
+            </ul>
+            
+        </nav>
+    </footer>
 
     
     
