@@ -239,7 +239,7 @@ footer nav ul li a:hover {
         #medalSelector, #result {
             display: inline-block;
             vertical-align: bottom; /* 下に揃える */
-            width: 30%; /* 横並びで2つを表示 */
+            width: 40%; /* 横並びで2つを表示 */
             padding: 15px;
             background-color: rgba(249, 249, 249, 0.8);
             box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
@@ -251,6 +251,7 @@ footer nav ul li a:hover {
             bottom: 20px; /* 画面下に固定 */
             right: 0; /* 画面右端に配置 */
             }
+
     
             #result {  
             margin-right: 75%; /* #medalSelectorとの間隔 */
@@ -336,11 +337,12 @@ footer nav ul li a:hover {
             border: 1px solid #ddd;
             border-radius: 5px;
             cursor: grab;
-            font-size: 10px;
+            font-size: 8px;
             word-wrap: break-word;
             display: flex;
             align-items: center;
-            width: 360px;
+            width: 130px;
+            margin-left: 27%;
             }
         }
     
@@ -363,8 +365,10 @@ footer nav ul li a:hover {
             margin-bottom: 20px;
             text-align: center;
             position: relative;
+            font-size: 10px;
         }
     
+
         .drop-zone::before {
             content: "ここにドラッグ＆ドロップ";
             color: #888;
@@ -375,7 +379,8 @@ footer nav ul li a:hover {
             transform: translate(-50%, -50%);
             pointer-events: none;
         }
-    
+        
+        
         .medalImageOnly {
             max-width: 50px;
             max-height: 50px;
