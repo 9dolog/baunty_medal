@@ -203,76 +203,61 @@ footer nav ul li a:hover {
         }
     
         /* #medalSelector と #result を右下に固定 */
-#medalSelector, #result {
-    padding: 20px;
-    background-color: rgba(249, 249, 249, 0.9);
-    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    font-size: 8%;
+        #medalSelector, #result {
+            padding: 20px;
+            background-color: rgba(249, 249, 249, 0.9);
+            box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            font-size: 8%;
+            overflow-y: auto;
+            border-radius: 10px;
+        }
     
-    border-radius: 10px;
-}
+        /* Windows版のスタイル */
+        @media (min-width: 769px) {
+        #medalSelector {
+            width: 400px; /* Windows版の幅 */
+            position: fixed;
+            bottom: 20px; /* 画面下に固定 */
+            right: 15px; /* 画面右端に配置 */
+            height: 50%;
+            z-index: 8000;
+            }
+    
+        #result {
+            width: 150px; /* Windows版の幅 */
+            position: fixed;
+            bottom: 20px; /* 画面下に固定 */
+            margin-right: 450px; /* #medalSelectorの幅と間隔 */
+            right: 15px; /* 画面右端に配置 */
+            font-size: 10px;
+            }
+        }
+    
+        /* スマホ版のスタイル */
+        @media (max-width: 768px) {
+        #medalSelector, #result {
+            display: inline-block;
+            vertical-align: bottom; /* 下に揃える */
+            width: 33%; /* 横並びで2つを表示 */
+            padding: 15px;
+            background-color: rgba(249, 249, 249, 0.8);
+            box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+            z-index: 2000;
+            font-size: 5px;
+            overflow-y: auto;
+            border-radius: 8px;
+            position: fixed;
+            bottom: 20px; /* 画面下に固定 */
+            right: 0; /* 画面右端に配置 */
+            }
 
-/* Windows版のスタイル */
-@media (min-width: 769px) {
-    #medalSelector {
-        width: 400px; /* 固定幅 */
-        position: fixed;
-        bottom: 20px; /* 画面下に固定 */
-        right: 15px; /* 画面右端に配置 */
-        height: 50%; /* 高さを固定 */
-        overflow-y: auto; /* スクロールを可能にする */
-        box-sizing: border-box; /* パディング込みで計算 */
-        z-index: 8000;
-    }
-
-    #result {
-        width: 150px; /* 固定幅 */
-        position: fixed;
-        bottom: 20px; /* 画面下に固定 */
-        margin-right: 450px; /* #medalSelectorの幅と間隔 */
-        right: 15px; /* 画面右端に配置 */
-        height: auto; /* 高さを固定 */
-        font-size: 10px;
-        
-        box-sizing: border-box; /* パディング込みで計算 */
-    }
-}
-
-/* スマホ版のスタイル */
-@media (max-width: 768px) {
-    #medalSelector, #result {
-        display: inline-block;
-        vertical-align: bottom; /* 下に揃える */
-        width: 33%; /* 横並びで表示 */
-        padding: 15px;
-        background-color: rgba(249, 249, 249, 0.8);
-        box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
-        z-index: 2000;
-        font-size: 5px;
-        
-        border-radius: 8px;
-        position: fixed;
-        bottom: 20px; /* 画面下に固定 */
-        right: 0; /* 画面右端に配置 */
-        height: 40%; /* 高さを固定 */
-        box-sizing: border-box; /* パディング込みで計算 */
-    }
-
-    #medalSelector{
-        height: auto;
-    }
-
-    #result {  
-        margin-right: 75%; /* #medalSelectorとの間隔 */
-        width: 20%; /* 固定幅 */
-        height: auto; /* 高さを固定 */
-        
-        box-sizing: border-box; /* パディング込みで計算 */
-    }
-}
-
-
+    
+            #result {  
+            margin-right: 75%; /* #medalSelectorとの間隔 */
+            width: 20%;
+            }
+        }
         
     
         /* タグフィルターを固定しない */
