@@ -659,7 +659,8 @@ footer nav ul li a:hover {
             <label>メダル1: <div id="medal1" class="drop-zone" ondrop="drop(event, 'medal1')" ondragover="allowDrop(event)"></div></label>
             <label>メダル2: <div id="medal2" class="drop-zone" ondrop="drop(event, 'medal2')" ondragover="allowDrop(event)"></div></label>
             <label>メダル3: <div id="medal3" class="drop-zone" ondrop="drop(event, 'medal3')" ondragover="allowDrop(event)"></div></label>
-        </form>
+            <button onclick="undoLastAction()">reset</button>
+</form>
     </div>
     
     <div id="tagFilter">
@@ -1407,6 +1408,13 @@ footer nav ul li a:hover {
     const medal = JSON.parse(event.dataTransfer.getData("text"));
     const slotDiv = document.getElementById(medalSlot);
 
+        // 現在の状態を履歴に保存
+    historyStack.push({
+        slotId: medalSlot,
+        previousState: slotDiv.innerHTML,
+        previousData: slotDiv.dataset.medalName || null,
+    });
+
     // 画像とabilityを表示
     slotDiv.innerHTML = `
     <img src="https://github.com/9dolog/baunty_medal/raw/main/${medal.romaji}.PNG" class="medalImageOnly" alt="${medal.name}">
@@ -1604,6 +1612,34 @@ footer nav ul li a:hover {
         createTagCheckboxes();
         filterMedals();
     };
+
+    const historyStack = []; // 操作履歴を記録するスタック
+
+    function undoLastAction() {
+    if (historyStack.length === 0) {
+        alert("戻す操作はありません。");
+        return;
+    }
+
+    // 最後の操作を取り出す
+    const lastAction = historyStack.pop();
+
+    // 元の状態に戻す
+    const slotDiv = document.getElementById(lastAction.slotId);
+    slotDiv.innerHTML = lastAction.previousState;
+
+    if (lastAction.previousData) {
+        slotDiv.dataset.medalName = lastAction.previousData;
+    } else {
+        delete slotDiv.dataset.medalName;
+    }
+
+    updateResult();
+}
+
+    
+
+
 </script>
 </body>
 </html>
