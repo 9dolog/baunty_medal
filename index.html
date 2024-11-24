@@ -9,11 +9,9 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
-
-    
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6817396835174555"
         crossorigin="anonymous"></script>
-<div style="width:100%; max-width:100%; margin:auto;">
+    <div style="width:100%; max-width:100%; margin:auto;">
     <!-- Google Ads 設定 -->
     <ins class="adsbygoogle"
          style="display:block"
@@ -21,16 +19,12 @@
          data-ad-slot="3281944548"
          data-ad-format="auto"
          data-full-width-responsive="true"></ins>
-</div>
+    </div>
 
-<script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 
-    
-
-    
-    
     <meta name="description" content="メダルセット作成　メダル一覧　シュミレーター　ワンピース　バウンティラッシュ onepiece bauntyrush">
     <meta name="keywords" content="バウンティラッシュ, メダル, セット, ゲーム, 効率,ランカー,上位,超フェス,セラフィム,ロジャー,ウタ,ルッチ,カイドウ,ヤマト,シャンクス">
     <meta name="author" content="シーズン109TOP100経験者">
@@ -39,132 +33,124 @@
     <meta property="og:image" content="https://github.com/9dolog/baunty_medal/raw/main/profile.PNG">
     <meta property="og:url" content="https://9dolog.github.io/baunty_medal/">
     
-    
-    
     <title>バウンティラッシュ　メダルセット作成ツール　シュミレーター</title>
     
     <link rel="stylesheet" href="style.css">
-    <title>メダルセット</title>
 
     <style>
         .adsbygoogle {
-        display: block;
-        width: 100%; /* 必要に応じて調整 */
-        height: auto; /* 必要に応じて調整 */
+            display: block;
+            width: 100%; /* 必要に応じて調整 */
+            height: auto; /* 必要に応じて調整 */
         }
+
         /* モバイル画面用のスタイル */
-@media (max-width: 768px) {
-    .adsbygoogle {
-        width: 100% !important; /* モバイル表示では広告を全幅で表示 */
-        height: 50px; /* モバイルでは広告の高さを調整 */
-    }
-}
+        @media (max-width: 768px) {
+        .adsbygoogle {
+                width: 100% !important; /* モバイル表示では広告を全幅で表示 */
+                height: 50px; /* モバイルでは広告の高さを調整 */
+            }
+        }
 
+        /* フォーム全体のデザイン */
+        form {
+            background-color: #ffffff; /* 背景白 */
+            border: 1px solid #dddddd; /* 薄いグレーの境界線 */
+            border-radius: 5px; /* 角を丸くする */
+            padding: 20px; /* 内側の余白 */
+            width: 100%; /* 横幅100%に設定 */
+            box-sizing: border-box; /* 内側の余白を幅に含む */
+            text-align: center; /* フォーム内の文字を中央揃え */
+            background-color: rgba(249, 249, 249, 0.9);
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
 
- /* フォーム全体のデザイン */
-form {
-    background-color: #ffffff; /* 背景白 */
-    border: 1px solid #dddddd; /* 薄いグレーの境界線 */
-    border-radius: 5px; /* 角を丸くする */
-    padding: 20px; /* 内側の余白 */
-    width: 100%; /* 横幅100%に設定 */
-    box-sizing: border-box; /* 内側の余白を幅に含む */
-    text-align: center; /* フォーム内の文字を中央揃え */
-    background-color: rgba(249, 249, 249, 0.9);
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
+        /* フォーム内のラベル */
+        form label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
 
-/* フォーム内のラベル */
-form label {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 14px;
-}
+        /* 入力フィールドとテキストエリア */
+        form input[type="email"],
+        form textarea {
+            width: 100%; /* 横幅100% */
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #dddddd;
+            border-radius: 3px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
 
-/* 入力フィールドとテキストエリア */
-form input[type="email"],
-form textarea {
-    width: 100%; /* 横幅100% */
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #dddddd;
-    border-radius: 3px;
-    font-size: 14px;
-    box-sizing: border-box;
-}
+        /* テキストエリアの高さ調整 */
+        form textarea {
+            height: 60px;
+            resize: none;
+        }
 
-/* テキストエリアの高さ調整 */
-form textarea {
-    height: 60px;
-    resize: none;
-}
+        /* チェックボックスのコンテナ */
+        form .checkbox-container {
+            margin: 10px 0;
+        }
 
-/* チェックボックスのコンテナ */
-form .checkbox-container {
-    margin: 10px 0;
-}
+        /* ボタンのスタイル */
+        form button {
+            display: inline-block;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 3px;
+            padding: 10px 15px;
+            font-size: 14px;
+            cursor: pointer;
+            width: 100%; /* ボタンも横幅100% */
+            box-sizing: border-box;
+        }
 
-/* ボタンのスタイル */
-form button {
-    display: inline-block;
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    border-radius: 3px;
-    padding: 10px 15px;
-    font-size: 14px;
-    cursor: pointer;
-    width: 100%; /* ボタンも横幅100% */
-    box-sizing: border-box;
-}
+        form button:hover {
+            background-color: #0056b3;
+        }
 
-form button:hover {
-    background-color: #0056b3;
-}
+        /* フッターのデザイン */
+        footer {
+            background-color: rgba(249, 249, 249, 0.9);
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+            text-align: center;
+            font-size: 12px;
+            color: #666666;
+            width: 100%;
+        }
 
-/* フッターのデザイン */
-footer {
-    background-color: rgba(249, 249, 249, 0.9);
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 10px 0;
-    text-align: center;
-    font-size: 12px;
-    color: #666666;
-    width: 100%;
-}
+        /* フッターのナビゲーション */
+        footer nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
 
-/* フッターのナビゲーション */
-footer nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0;
-}
+        footer nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
 
-footer nav ul li {
-    display: inline;
-    margin-right: 15px;
-}
+        footer nav ul li a {
+            text-decoration: none;
+            color: #007bff;
+        }
 
-footer nav ul li a {
-    text-decoration: none;
-    color: #007bff;
-}
+        footer nav ul li a:hover {
+            text-decoration: underline;
+        }
 
-footer nav ul li a:hover {
-    text-decoration: underline;
-}
-
-
-.checkbox-container {
-    display: flex; /* フレックスボックスを有効化 */
-    justify-content: center; /* 横方向のセンタリング */
-    align-items: center; /* 必要に応じて縦方向も中央揃え */
-    margin: 10px 0; /* 上下の余白を追加 */
-}
-
-
-
-
+        .checkbox-container {
+            display: flex; /* フレックスボックスを有効化 */
+            justify-content: center; /* 横方向のセンタリング */
+            align-items: center; /* 必要に応じて縦方向も中央揃え */
+            margin: 10px 0; /* 上下の余白を追加 */
+        }
 
         body {
             font-family: Arial, sans-serif;
@@ -191,14 +177,14 @@ footer nav ul li a:hover {
         }
     
         @media (max-width: 768px) {
-        #introduction {
-            width: 100%;
-            background-color: rgba(249, 249, 249, 0.9);
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid #ddd;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-            font-size: 10px;
+            #introduction {
+                width: 100%;
+                background-color: rgba(249, 249, 249, 0.9);
+                padding: 20px;
+                text-align: center;
+                border-bottom: 1px solid #ddd;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+                font-size: 10px;
             }
         }
     
@@ -215,47 +201,46 @@ footer nav ul li a:hover {
     
         /* Windows版のスタイル */
         @media (min-width: 769px) {
-        #medalSelector {
-            width: 400px; /* Windows版の幅 */
-            position: fixed;
-            bottom: 20px; /* 画面下に固定 */
-            right: 15px; /* 画面右端に配置 */
-            height: 50%;
-            z-index: 8000;
+            #medalSelector {
+                width: 400px; /* Windows版の幅 */
+                position: fixed;
+                bottom: 20px; /* 画面下に固定 */
+                right: 15px; /* 画面右端に配置 */
+                height: 50%;
+                z-index: 8000;
             }
     
-        #result {
-            width: 150px; /* Windows版の幅 */
-            position: fixed;
-            bottom: 20px; /* 画面下に固定 */
-            margin-right: 450px; /* #medalSelectorの幅と間隔 */
-            right: 15px; /* 画面右端に配置 */
-            font-size: 10px;
+            #result {
+                width: 150px; /* Windows版の幅 */
+                position: fixed;
+                bottom: 20px; /* 画面下に固定 */
+                margin-right: 450px; /* #medalSelectorの幅と間隔 */
+                right: 15px; /* 画面右端に配置 */
+                font-size: 10px;
             }
         }
     
         /* スマホ版のスタイル */
         @media (max-width: 768px) {
-        #medalSelector, #result {
-            display: inline-block;
-            vertical-align: bottom; /* 下に揃える */
-            width: 33%; /* 横並びで2つを表示 */
-            padding: 15px;
-            background-color: rgba(249, 249, 249, 0.8);
-            box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
-            z-index: 2000;
-            font-size: 5px;
-            overflow-y: auto;
-            border-radius: 8px;
-            position: fixed;
-            bottom: 20px; /* 画面下に固定 */
-            right: 0; /* 画面右端に配置 */
+            #medalSelector, #result {
+                display: inline-block;
+                vertical-align: bottom; /* 下に揃える */
+                width: 33%; /* 横並びで2つを表示 */
+                padding: 15px;
+                background-color: rgba(249, 249, 249, 0.8);
+                box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+                z-index: 2000;
+                font-size: 5px;
+                overflow-y: auto;
+                border-radius: 8px;
+                position: fixed;
+                bottom: 20px; /* 画面下に固定 */
+                right: 0; /* 画面右端に配置 */
             }
 
-    
             #result {  
-            margin-right: 75%; /* #medalSelectorとの間隔 */
-            width: 20%;
+                margin-right: 75%; /* #medalSelectorとの間隔 */
+                width: 20%;
             }
         }
         
@@ -272,27 +257,27 @@ footer nav ul li a:hover {
         }
     
         @media (max-width: 768px) {
-        #tagFilter {
-            position: static; /* 固定解除 */
-            width: 95%;
-            height: calc(100vh - 250px);
-            overflow-y: auto;
-            background-color: rgba(249, 249, 249, 0.9);
-            box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            padding: 10px;
-            z-index: 1500;
-            height: 27%;
+            #tagFilter {
+                position: static; /* 固定解除 */
+                width: 95%;
+                height: calc(100vh - 250px);
+                overflow-y: auto;
+                background-color: rgba(249, 249, 249, 0.9);
+                box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 10px;
+                z-index: 1500;
+                height: 27%;
             }
     
-        #tagCheckboxContainer div {
-            display: flex;
-            align-items: center;
-            padding: 5px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-            cursor: pointer;
+            #tagCheckboxContainer div {
+                display: flex;
+                align-items: center;
+                padding: 5px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                background-color: #f9f9f9;
+                cursor: pointer;
             }
         }
     
@@ -323,25 +308,25 @@ footer nav ul li a:hover {
     
         /* スマホ版のスタイル */
         @media (max-width: 768px) {
-        #medalList {
-            background-color: rgba(249, 249, 249, 0.8);
-            padding: 10px;
-            word-wrap: break-word;
-            border-radius: 5px;
+            #medalList {
+                background-color: rgba(249, 249, 249, 0.8);
+                padding: 10px;
+                word-wrap: break-word;
+                border-radius: 5px;
             }
     
-        .medal {
-            margin-bottom: 10px;
-            padding: 2px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            cursor: grab;
-            font-size: 8px;
-            word-wrap: break-word;
-            display: flex;
-            align-items: center;
-            width: 130px;
-            margin-left: 27%;
+            .medal {
+                margin-bottom: 10px;
+                padding: 2px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                cursor: grab;
+                font-size: 8px;
+                word-wrap: break-word;
+                display: flex;
+                align-items: center;
+                width: 130px;
+                margin-left: 27%;
             }
         }
     
@@ -367,7 +352,6 @@ footer nav ul li a:hover {
             font-size: 10px;
         }
     
-
         .drop-zone::before {
             content: "ここにドラッグ＆ドロップ";
             color: #888;
@@ -378,116 +362,115 @@ footer nav ul li a:hover {
             transform: translate(-50%, -50%);
             pointer-events: none;
         }
-        
-        
+            
         .medalImageOnly {
             max-width: 50px;
             max-height: 50px;
         }
     
         /* タグフィルターのスタイル */
-#tagFilter {
-    position: static;
-    background-color: rgba(249, 249, 249, 0.9);
-    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 10px;
-    z-index: 1000;
-    height: 70%;
-    width: 100%;
-}
+        #tagFilter {
+            position: static;
+            background-color: rgba(249, 249, 249, 0.9);
+            box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 10px;
+            z-index: 1000;
+            height: 70%;
+            width: 100%;
+        }
 
-/* #tagCheckboxContainer の横並びスタイル */
-#tagCheckboxContainer {
-    display: flex;
-    flex-wrap: wrap; /* 横書きで改行される */
-    gap: 10px;
-    padding: 10px;
-    overflow-x: auto; /* 横に溢れる場合はスクロール */
-}
+        /* #tagCheckboxContainer の横並びスタイル */
+        #tagCheckboxContainer {
+            display: flex;
+            flex-wrap: wrap; /* 横書きで改行される */
+            gap: 10px;
+            padding: 10px;
+            overflow-x: auto; /* 横に溢れる場合はスクロール */
+        }
 
-/* タグアイテムのスタイル */
-#tagCheckboxContainer div {
-    display: flex;
-    align-items: center; /* 縦方向中央揃え */
-    gap: 5px; /* チェックボックスと文字の間のスペース */
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    cursor: pointer;
-    font-size: 10px; /* 文字サイズを小さく */
-    flex-wrap: wrap; /* 横書きで改行される */
-}
+        /* タグアイテムのスタイル */
+        #tagCheckboxContainer div {
+            display: flex;
+            align-items: center; /* 縦方向中央揃え */
+            gap: 5px; /* チェックボックスと文字の間のスペース */
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            font-size: 10px; /* 文字サイズを小さく */
+            flex-wrap: wrap; /* 横書きで改行される */
+        }
 
-/* チェックボックスのスタイル */
-#tagCheckboxContainer div input[type="checkbox"] {
-    margin: 0; /* デフォルト余白を削除 */
-    width: 16px; /* チェックボックスのサイズ調整 */
-    height: 16px;
-}
+        /* チェックボックスのスタイル */
+        #tagCheckboxContainer div input[type="checkbox"] {
+            margin: 0; /* デフォルト余白を削除 */
+            width: 16px; /* チェックボックスのサイズ調整 */
+            height: 16px;
+        }
 
-/* 検索入力ボックス */
-#searchInput {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background-color: white;
-    padding: 5px;
-    margin-bottom: 10px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: calc(100% - 10px);
-}
+        /* 検索入力ボックス */
+        #searchInput {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background-color: white;
+            padding: 5px;
+            margin-bottom: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: calc(100% - 10px);
+        }
 
-/* タグ効果コンテナ */
-#tagEffectsContainer {
-    display: flex;           /* 横並びに配置 */
-    align-items: center;     /* Y軸（垂直方向）を中央に揃える */
-    gap: 10px;               /* タイトルとリストの間に余白を設定 */
-}
+        /* タグ効果コンテナ */
+        #tagEffectsContainer {
+            display: flex;           /* 横並びに配置 */
+            align-items: center;     /* Y軸（垂直方向）を中央に揃える */
+            gap: 10px;               /* タイトルとリストの間に余白を設定 */
+        }
 
-/* タグ効果のタイトル */
-#tagEffectsTitle {
-    margin: 0;               /* 余計な余白を削除 */
-    font-size: 7px;          /* タイトルのフォントサイズ */
-}
+        /* タグ効果のタイトル */
+        #tagEffectsTitle {
+            margin: 0;               /* 余計な余白を削除 */
+            font-size: 7px;          /* タイトルのフォントサイズ */
+        }
 
-/* タグリスト */
-#tagEffects {
-    display: flex;           /* タグを横並びにする場合 */
-    flex-wrap: wrap;         /* 横に収まりきらない場合は折り返す */
-    gap: 10px;               /* タグ間のスペース */
-    list-style: none;        /* リストのマーカーを非表示 */
-    margin: 0;
-    padding: 0;
-}
+        /* タグリスト */
+        #tagEffects {
+            display: flex;           /* タグを横並びにする場合 */
+            flex-wrap: wrap;         /* 横に収まりきらない場合は折り返す */
+            gap: 10px;               /* タグ間のスペース */
+            list-style: none;        /* リストのマーカーを非表示 */
+            margin: 0;
+            padding: 0;
+        }
 
-/* モバイル向け調整 */
-@media (max-width: 768px) {
-    #tagCheckboxContainer div {
-        font-size: 8px;      /* 文字を小さく */
-        padding: 3px;        /* 内側余白を調整 */
-    }
+        /* モバイル向け調整 */
+        @media (max-width: 768px) {
+            #tagCheckboxContainer div {
+                font-size: 8px;      /* 文字を小さく */
+                padding: 3px;        /* 内側余白を調整 */
+            }
 
-    #tagCheckboxContainer div input[type="checkbox"] {
-        width: 14px;
-        height: 14px;        /* チェックボックスのサイズも縮小 */
-    }
+            #tagCheckboxContainer div input[type="checkbox"] {
+                width: 14px;
+                height: 14px;        /* チェックボックスのサイズも縮小 */
+            }
 
-    #tagEffects {
-        font-size: 8px;      /* タグ全体の文字サイズ縮小 */
-    }
-}
+            #tagEffects {
+                font-size: 8px;      /* タグ全体の文字サイズ縮小 */
+            }
+        }
 
-/* タグリストアイテム */
-#tagEffects li {
-    padding: 5px 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-}
+        /* タグリストアイテム */
+        #tagEffects li {
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
 
         body {
             margin: 0;
@@ -511,9 +494,10 @@ footer nav ul li a:hover {
     
     <!-- 自己紹介エリア -->
     <div id="introduction">
-    <h1>【初心者・中級者向け】バウンティラッシュ メダル編成ツール</h1>
+    <h1>【初心者・中級者向け】<br>バウンティラッシュ メダル編成ツール</h1>
+    <h>更新日時：2024/11/25</h>
     <!-- タグ一覧へのリンク -->
-<p><a href="#tagCheckboxContainer">今すぐメダルを編成する</a></p>
+    <p><a href="#tagCheckboxContainer">今すぐメダルを編成する</a></p>
 
     
     <p>このサイトの管理人は109シーズンランカーです。立ち回りも大事ですが、メダル編成も大事です。使うキャラに合わせたタグを意識してメダルを選びましょう。正直トップ層には実力では敵いませんが、メダルをしっかり考えるだけでランカーにはなれます。メダルを考えたのち、立ち回りを勉強していきましょう。</p>
