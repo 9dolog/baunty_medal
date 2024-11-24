@@ -209,7 +209,7 @@ footer nav ul li a:hover {
     box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     font-size: 8%;
-    overflow-y: auto; /* コンテンツが多い場合にスクロールバーを表示 */
+    
     border-radius: 10px;
 }
 
@@ -232,9 +232,9 @@ footer nav ul li a:hover {
         bottom: 20px; /* 画面下に固定 */
         margin-right: 450px; /* #medalSelectorの幅と間隔 */
         right: 15px; /* 画面右端に配置 */
-        height: 50%; /* 高さを固定 */
+        height: auto; /* 高さを固定 */
         font-size: 10px;
-        overflow-y: auto; /* スクロールを可能にする */
+        
         box-sizing: border-box; /* パディング込みで計算 */
     }
 }
@@ -250,7 +250,7 @@ footer nav ul li a:hover {
         box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
         z-index: 2000;
         font-size: 5px;
-        overflow-y: auto; /* スクロールを可能にする */
+        
         border-radius: 8px;
         position: fixed;
         bottom: 20px; /* 画面下に固定 */
@@ -259,11 +259,15 @@ footer nav ul li a:hover {
         box-sizing: border-box; /* パディング込みで計算 */
     }
 
+    #medalSelector{
+        height: auto;
+    }
+
     #result {  
         margin-right: 75%; /* #medalSelectorとの間隔 */
         width: 20%; /* 固定幅 */
-        height: 40%; /* 高さを固定 */
-        overflow-y: auto; /* スクロールを可能にする */
+        height: auto; /* 高さを固定 */
+        
         box-sizing: border-box; /* パディング込みで計算 */
     }
 }
