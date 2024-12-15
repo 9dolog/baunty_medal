@@ -1,10 +1,10 @@
 /* 現在の背景画像設定 */
 body {
-    background-image: url('スクリーンショット\ 2024-09-24\ 223848.png');
+    background-image: url('IMG_5159.PNG');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-position: center;
+    background-position: center;    
 }
 
 /* メダルのスタイル */
