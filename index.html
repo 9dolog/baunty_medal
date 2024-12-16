@@ -43,13 +43,7 @@
       </style>
       
 </head>
-<body>
-  <div class="header">
-    <div class="header-item"><a href="#medalList">メダル編成ツール</a></div>
-    <div class="header-item"><a href="#introduction">オススメセット</a></div>
- 
-  </div>
-</body>
+
 
     <style>
         /* 立体的な影を付けるスタイル */
@@ -126,7 +120,7 @@
 
         /* フォーム全体のデザイン */
         form {
-            background-color: #ffffff; /* 背景白 */
+            background-color: rgba(231, 209, 152, 0.9); /* 背景色 */
             border: 1px solid #dddddd; /* 薄いグレーの境界線 */
             border-radius: 5px; /* 角を丸くする */
             padding: 20px; /* 内側の余白 */
@@ -188,7 +182,7 @@
 
         /* フッターのデザイン */
         footer {
-            background-color: rgba(249, 249, 249, 0.9);
+            background-color: rgba(231, 209, 152, 0.9); /* 背景色 */
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
             padding: 10px 0;
             text-align: center;
@@ -243,7 +237,7 @@
 
             margin: 0 auto; /* 自己紹介部分を中央に配置 */
             padding: 20px; /* 内側の余白 */
-            background-color: rgba(249, 249, 249, 0.9); /* 背景色 */
+            background-color: rgba(231, 209, 152, 0.9); /* 背景色 */
             text-align: center; /* テキスト中央寄せ */
             border-bottom: 1px solid #ddd; /* 下線 */
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* 影 */
@@ -318,7 +312,7 @@
     
         /* メダル一覧を固定しない */
         #medalList {
-            background-color: rgba(249, 249, 249, 0.9);
+            background-color: rgba(231, 209, 152, 0.9); /* 背景色 */
             box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
 
             z-index: 1000;
@@ -343,7 +337,7 @@
         /* スマホ版のスタイル */
         @media (max-width: 768px) {
             #medalList {
-                background-color: rgba(249, 249, 249, 0.8);
+                background-color: rgba(231, 209, 152, 0.9); /* 背景色 */
                 padding: 35px;
                 word-wrap: break-word;
 
@@ -405,7 +399,7 @@
         /* タグフィルターのスタイル */
         #tagFilter {
             position: static;
-            background-color: rgba(249, 249, 249, 0.9);
+            background-color: rgba(231, 209, 152, 0.9); /* 背景色 */
             box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
           
          
@@ -577,6 +571,14 @@
 </head>
 
 <body>
+    <div class="header">
+      <div class="header-item"><a href="#medalList">メダル編成ツール</a></div>
+      <div class="header-item"><a href="#introduction">オススメセット</a></div>
+   
+    </div>
+  </body>
+
+<body>
     
     <!-- 自己紹介エリア -->
     <div id="introduction">
@@ -691,7 +693,7 @@
     action="https://formspree.io/f/xzzbvwvj"
     method="POST"
     class="half-width-form"
-    >
+    style="background-color: rgba(231, 209, 152, 0.9); padding: 20px; border-radius: 10px;">
     <label>
         <B>お問い合わせフォーム</B>
     </label>
