@@ -254,6 +254,9 @@
             }
         }
 
+        #medalSelectorContainer {
+    position: relative;
+}
     
         /* #medalSelector と #result を右下に固定 */
         #medalSelector, #result {
@@ -265,8 +268,37 @@
             font-size: 8%;
             overflow-y: auto;
             border-radius: 10px;
+            transition: transform 0.3s ease-in-out; /* スムーズなアニメーション */
+    transform: translateY(100%); /* 初期状態では画面外に隠す */
         }
     
+            /* 表示状態 */
+#medalSelector.visible {
+    transform: translateY(0); /* 画面内に移動 */
+}
+/* 表示状態 */
+#result.visible {
+    transform: translateY(0); /* 画面内に表示 */
+}
+
+#toggleSelectorButton {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px 15px;
+    font-size: 14px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 50000000;
+}
+
+#toggleSelectorButton:hover {
+    background-color: #0056b3;
+}
         /* Windows版のスタイル */
         @media (min-width: 769px) {
             #medalSelector {
@@ -293,13 +325,14 @@
             #medalSelector, #result {
                 display: inline-block;
                 vertical-align: bottom; /* 下に揃える */
-                width: 30%; /* 横並びで2つを表示 */
+                width: 40%; /* 横並びで2つを表示 */
                 padding: 15px;
                 
                 box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
                 z-index: 2000;
                 font-size: 5px;
                 overflow-y: auto;
+                max-height: 70%; /* エリアの最大高さを指定 */
                 border-radius: 8px;
                 position: fixed;
                 bottom: 20px; /* 画面下に固定 */
@@ -359,7 +392,7 @@
                 display: flex;
                 align-items: center;
                 width: 100px;
-                margin-left: 45%;
+                margin-left: 40%;
             }
         }
     
@@ -777,6 +810,16 @@
     <div id="result">
         <h3>タグ効果</h3>
         <ul id="tagEffects"></ul>
+    </div>
+    
+    <div id="medalSelectorContainer">
+        <div id="medalSelector">
+            <!-- メダルセレクターの内容 -->
+        </div>
+        <div id="result">
+            <!-- タグ効果や選択されたメダルの結果 -->
+        </div>
+        <button id="toggleSelectorButton">メダルセットを作成</button>
     </div>
     
     
@@ -1791,7 +1834,62 @@
             observer.observe(medalList);
         }
     });
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+        const medalList = document.getElementById("medalList");
+        const medalSelectorContainer = document.getElementById("medalSelectorContainer"); // コンテナ全体
+        const medalSelector = document.getElementById("medalSelector"); // メダルセレクター部分
+        const result = document.getElementById("result"); // 結果部分
+
+        // 初期状態では非表示
+        medalSelectorContainer.style.display = "none";
+
+        const observerOptions = {
+            root: null, // ビューポート基準
+            rootMargin: "0px", // マージンなし
+            threshold: 0, // 要素が少しでも見えれば反応
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // メダル一覧が見えたら表示
+                    medalSelectorContainer.style.display = "block";
+                } else {
+                    // メダル一覧が見えなくなったら非表示
+                    medalSelectorContainer.style.display = "none";
+                }
+            });
+        }, observerOptions);
+
+        // メダル一覧を監視
+        if (medalList) {
+            observer.observe(medalList);
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const medalSelector = document.getElementById("medalSelector");
+    const result = document.getElementById("result");
+    const toggleButton = document.getElementById("toggleSelectorButton");
+
+    // トグルボタンのクリックイベント
+    toggleButton.addEventListener("click", () => {
+        const isVisible = medalSelector.classList.toggle("visible");
+        result.classList.toggle("visible", isVisible); // セレクターと同期して表示/非表示
+        toggleButton.textContent = isVisible 
+            ? "メダルセットを隠す" 
+            : "メダルセットを表示";
+    });
+});
+
+
+
+
 </script>
+
+
 
 </body>
 </html>
