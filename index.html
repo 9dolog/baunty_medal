@@ -369,11 +369,17 @@
             margin-right: 10px;
             border-radius: 5px;
         }
-    
+
         .duplicated-tag {
-            font-weight: bold;
-            color: red;
-        }
+    color: red;
+    font-weight: bold;
+}
+
+.unique-tag {
+    color: black;
+    font-weight: bold;
+}
+
     
         .drop-zone {
             border: 2px dashed #ddd;
@@ -1708,10 +1714,12 @@
         .map(([tag, set]) => {
             const count = set.size;
             const effect = tagEffects[tag] ? tagEffects[tag][count] : '';
-            return `<li class="${count > 1 ? 'duplicated-tag' : ''}">${tag}: ${effect || "効果なし"}</li>`;
+            const textColorClass = count > 1 ? 'duplicated-tag' : 'unique-tag';
+            return `<li class="${textColorClass}">${tag}: ${effect || "効果なし"}</li>`;
         })
         .join('');
 }
+
 
 
     window.onload = () => {
