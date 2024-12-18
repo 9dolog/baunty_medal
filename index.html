@@ -346,7 +346,6 @@
         }
         
     
-        
     
         /* メダル一覧を固定しない */
         #medalList {
@@ -605,7 +604,7 @@
             border: none; /* ボーダーを削除 */
             border-radius: 3px; /* 角を小さく丸く */
             cursor: pointer; /* カーソルをポインタに */
-            font-size: 5px; /* フォントサイズを小さく */
+            font-size: 14px; /* フォントサイズを小さく */
         }
 
         .half-width-form button:hover {
@@ -1568,20 +1567,21 @@
 
     // 画像とabilityを表示
     slotDiv.innerHTML = `
-    <img src="https://github.com/9dolog/baunty_medal/raw/main/${medal.romaji}.PNG" class="medalImageOnly" alt="${medal.name}" >
-    <p class="medalAbility">${medal.ability}</p>
-    <style>
-  .medalAbility {
-    font-size: 5px; /* 画面幅に応じてフォントサイズを調整 */
-    /* Windows版のスタイル */
-        @media (min-width: 769px) {
-        font-size: 10px;
-    }
-    word-wrap: break-word; /* 長い単語を改行 */
-    white-space: normal; /* テキストを折り返し可能に */
-    text-align: center; /* 中央揃え（必要なら） */
-  }
-</style>
+<img src="https://github.com/9dolog/baunty_medal/raw/main/${medal.romaji}.PNG" class="medalImageOnly" alt="${medal.name}" style="display: block; width: 100%; height: auto; margin: 0 auto;">
+<p class="medalAbility" style="
+    font-size: 10px; 
+    margin: 0; 
+    padding: 0; 
+    text-align: center; 
+    color: black; 
+    word-wrap: break-word; 
+    white-space: normal; 
+    line-height: 1.4; 
+    background-color: white; 
+    box-sizing: border-box;
+">
+    ${medal.ability}
+</p>
 
 
 `;
