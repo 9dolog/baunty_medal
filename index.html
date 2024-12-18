@@ -10,6 +10,8 @@
           margin: 0;
           font-family: Arial, sans-serif;
         }
+
+        
         .header {
           display: flex;
           justify-content: space-around;
@@ -48,7 +50,7 @@
     <style>
         /* 立体的な影を付けるスタイル */
         h1, h2, h3, h4 {
-            color: #333;
+            color: white;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 影の設定 */
             font-family: 'Arial', sans-serif; /* 見やすいフォント */
         }
@@ -120,7 +122,7 @@
 
         /* フォーム全体のデザイン */
         form {
-            background-color: rgba(231, 209, 152, 0.9); /* 背景色 */
+            
             border: 1px solid #dddddd; /* 薄いグレーの境界線 */
             border-radius: 5px; /* 角を丸くする */
             padding: 20px; /* 内側の余白 */
@@ -128,7 +130,7 @@
             max-width: 100%; /* 修正: max-width を追加 */
             box-sizing: border-box; /* 内側の余白を幅に含む */
             text-align: center; /* フォーム内の文字を中央揃え */
-            background-color: rgba(249, 249, 249, 0.9);
+            background-color: rgba(130, 130, 130, 0.824); /* 背景色を半透明の黒に設定 */
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
         }
 
@@ -182,12 +184,12 @@
 
         /* フッターのデザイン */
         footer {
-            background-color: rgba(231, 209, 152, 0.9); /* 背景色 */
+            background-color: rgba(130, 130, 130, 0.824); /* 背景色を半透明の黒に設定 */
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
             padding: 10px 0;
             text-align: center;
             font-size: 8px;
-            color: #666666;
+            color: white;
             width: 100%;
         }
 
@@ -226,21 +228,23 @@
             align-items: flex-start; /* 修正: flex-start に変更 */
             margin: 0;
             padding: 0;
+            
         }
-    
+        
         .introduction {
             height: 200px; /* 任意の高さを設定 */
             overflow-y: auto; /* スクロール可能にする */
         }
+        
     
         #introduction {
-
-            margin: 0 auto; /* 自己紹介部分を中央に配置 */
-            padding: 20px; /* 内側の余白 */
-            background-color: rgba(231, 209, 152, 0.9); /* 背景色 */
-            text-align: center; /* テキスト中央寄せ */
-            border-bottom: 1px solid #ddd; /* 下線 */
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* 影 */
+            background-color: rgba(130, 130, 130, 0.824); /* 背景色を半透明の黒に設定 */
+        color: white; /* テキストを白色に設定 */
+        padding: 10px; /* 背景と文字の間に余白を追加 */
+        border-radius: 5px; /* 背景の角を丸くする */
+        display: inline-block; /* 背景が文字幅にフィットするように設定 */
+        text-align:center;
+            
         }
 
         @media (max-width: 768px) {
@@ -254,7 +258,8 @@
         /* #medalSelector と #result を右下に固定 */
         #medalSelector, #result {
             padding: 20px;
-            background-color: rgba(249, 249, 249, 0.9);
+            background-color: rgba(130, 130, 130, 0.824); /* 背景色を半透明の黒に設定 */
+            color: white;
             box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
             z-index: 1000;
             font-size: 8%;
@@ -290,7 +295,7 @@
                 vertical-align: bottom; /* 下に揃える */
                 width: 30%; /* 横並びで2つを表示 */
                 padding: 15px;
-                background-color: rgba(249, 249, 249, 0.8);
+                
                 box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
                 z-index: 2000;
                 font-size: 5px;
@@ -312,7 +317,7 @@
     
         /* メダル一覧を固定しない */
         #medalList {
-            background-color: rgba(231, 209, 152, 0.9); /* 背景色 */
+            background-color: rgba(130, 130, 130, 0.824); /* 背景色を半透明の黒に設定 */
             box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
 
             z-index: 1000;
@@ -337,7 +342,7 @@
         /* スマホ版のスタイル */
         @media (max-width: 768px) {
             #medalList {
-                background-color: rgba(231, 209, 152, 0.9); /* 背景色 */
+                background-color: rgba(130, 130, 130, 0.824); /* 背景色を半透明の黒に設定 */
                 padding: 35px;
                 word-wrap: break-word;
 
@@ -376,13 +381,14 @@
             min-height: 40px;
             margin-bottom: 20px;
             text-align: center;
+            color:white;
             position: relative;
             font-size: 10px;
         }
     
         .drop-zone::before {
             content: "ここにドラッグ＆ドロップ";
-            color: #888;
+            color:white;
             font-size: 5px;
             position: absolute;
             top: 50%;
@@ -399,7 +405,7 @@
         /* タグフィルターのスタイル */
         #tagFilter {
             position: static;
-            background-color: rgba(231, 209, 152, 0.9); /* 背景色 */
+            background-color: rgba(130, 130, 130, 0.824); /* 背景色を半透明の黒に設定 */
             box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
           
          
@@ -528,7 +534,7 @@
         .half-width-form label {
             display: block; /* 各ラベルをブロック表示にして整列 */
             margin-bottom: 5px; /* ラベルの下部に余白を少なめに */
-            font-size: 5px; /* フォントサイズを小さくして省スペース化 */
+            font-size: 15px; /* フォントサイズを小さくして省スペース化 */
         }
 
         .half-width-form input[type="email"],
@@ -572,8 +578,9 @@
 
 <body>
     <div class="header">
-      <div class="header-item"><a href="#medalList">メダル編成ツール</a></div>
-      <div class="header-item"><a href="#introduction">オススメセット</a></div>
+      <div class="header-item"><a href="#tagFilter">メダル編成ツール</a></div>
+      <div class="header-item"><a href="#introduction">汎用メダルセット</a></div>
+      
    
     </div>
   </body>
@@ -581,110 +588,123 @@
 <body>
     
     <!-- 自己紹介エリア -->
-    <div id="introduction">
-    <h1>【初心者向け】<br>バウンティラッシュ<br>メダル編成ツール</h1>
-    <h2>更新日時：2024/12/15</h2>
-    <!-- タグ一覧へのリンク -->
-    <p><a href="#tagCheckboxContainer">今すぐメダルを編成する</a></p>
+<div id="introduction">
 
-    <p>このサイトの管理人は109シーズンランカーです。立ち回りも大事ですが、メダル編成も大事です。使うキャラに合わせたタグを意識してメダルを選びましょう。正直トップ層には実力では敵いませんが、メダルをしっかり考えるだけでランカーにはなれます。メダルを考えたのち、立ち回りを勉強していきましょう。</p>
-    <div id="profileImagesContainer"></div>
-    <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/profile.PNG" alt="プロフィール写真">
-    <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/profile2.PNG" alt="プロフィール写真2">
     <style>
-        /* 画像を並べるコンテナ */
+        p {
+            background-color: #454545;
+            color: white; /* テキストの色を白に */
+            padding: 20px; /* 内側の余白を設定 */
+            border-radius: 10px; /* 角を丸くする */
+            margin: 20px auto; /* 上下にスペースを追加して中央揃え */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* 影を追加して立体感を演出 */
+        }
+        
+
+        .medal-section {
+            background-color: #7c7c7c; /* セクションの背景色を統一 */
+            border: 1px solid #b3d8ff; /* 境界線の色を変更 */
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 70%;
+        }
+
+        .medal-section h1 {
+            color: #37ef12; /* 見出しの色を統一 */
+            text-align: center;
+            color: white;
+            
+        }
+
+        .medal-section img {
+            display: block;
+            margin: 10px auto;
+            width: 50%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .medal-section p {
+            text-align: left;
+            color: #005b96; /* テキストの色を統一 */
+            color: white;
+        }
+
         #profileImagesContainer {
-        display: flex;              /* Flexboxで横並び */
-        justify-content: center;    /* コンテナ内で中央揃え */
-        gap: 20px;                  /* 画像間のスペース */
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* 画像間のスペースを設定 */
         }
-        /* プロフィール画像のスタイル */
-        #profileImage {
-            width: 150px;          /* 画像の幅を指定 */
-            height: auto;          /* 高さを自動調整（アスペクト比を維持） */
-       
+
+        #profileImagesContainer img {
+            width: 150px; /* 画像を小さくする */
+            height: auto; /* アスペクト比を維持 */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
-    
+
         @media (max-width: 768px) {
-            #profileImage {
-                width: 100px;      /* スマホ画面用のサイズ調整 */
+            .medal-section img {
+                width: 200px;
+            }
+
+            #profileImagesContainer {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #profileImagesContainer img {
+                width: 100px;
             }
         }
     </style>
+
+    <h1>【初心者向け】<br>バウンティラッシュ<br>メダル編成ツール</h1>
+    <h2>更新日時：2024/12/18</h2>
+
+
+
+    <p>このサイトの管理人は109シーズンランカーです。<br>立ち回りも大事ですが、メダル編成も大事です。使うキャラに合わせたタグを意識してメダルを選びましょう。<br>正直トップ層には実力では敵いませんが、メダルをしっかり考えるだけでランカーにはなれます。<br>メダルを考えたのち、立ち回りを勉強していきましょう。</p>
+
+    <div id="profileImagesContainer">
+        <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/profile.PNG" alt="プロフィール写真">
+        <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/profile2.PNG" alt="プロフィール写真2">
+    </div>
+
+    <div class="medal-section" id="attacker">
+        <h1>【アタッカー用】</h1>
+        <img src="https://github.com/9dolog/baunty_medal/raw/main/medalexample1.PNG" alt="メダルセット例1">
+        <p>１．大猿王銃メダル：自分がいるお宝エリアに味方がいないとき与ダメ増加<br>２．火拳銃メダル：敵旗にいるとき与ダメ増加<br>３．業火拳銃メダル：得意属性に与ダメ増加</p>
+        <p>特に瞬間移動スキル（例：緑シャンクス）を持っているアタッカーにお勧めです。一瞬で敵のいるお宝エリアに飛べるので、ガンガンダメージを与えられます。</p>
+    </div>
+
+    <div class="medal-section" id="getter1">
+        <h1>【ゲッター用1】</h1>
+        <img src="https://github.com/9dolog/baunty_medal/raw/main/medalexample2.PNG" alt="メダルセット例2">
+        <p>１．大猿王銃メダル：自分がいるお宝エリアに味方がいないとき与ダメ増加<br>２．火拳銃メダル：敵旗にいるとき与ダメ増加<br>３．ルーシー（ルフィ）メダル：お宝奪取時体力回復</p>
+        <p>こちらは対面性能の高いゲッターにお勧めのメダルです。いわゆる戦うゲッターメダルです。</p>
+    </div>
+
+    <div class="medal-section" id="getter2">
+        <h1>【ゲッター用2】</h1>
+        <img src="https://github.com/9dolog/baunty_medal/raw/main/medalexample3.PNG" alt="メダルセット例3">
+        <p>１．メスメダル：体力70％以上のとき、奪取速度増加<br>２．大波白糸メダル：敵旗ゲージが50％以上のとき、奪取速度増加<br>３．キッド＆ローメダル：体力70％以上のとき、奪取速度増加</p>
+        <p>こちらは対面性能は高くないゲッターにお勧めです。マップをよく見て敵が来ない旗を握りましょう。</p>
+    </div>
+
+    <div class="medal-section" id="defender">
+        <h1>【ディフェンダー用】</h1>
+        <img src="https://github.com/9dolog/baunty_medal/raw/main/medalexample4.PNG" alt="メダルセット例4">
+        <p>１．カイドウメダル：敵から攻撃されるとスキル1短縮<br>２．熱息メダル：自チームのお宝エリアにいるとき、与ダメ増加<br>３．カイドウ（人獣型）メダル：敵をK.O.したときスキル1短縮</p>
+        <p>このメダルセットはかなり人気のメダルセットです。スキル1が強力なキャラ（S-スネーク）が使うと無限に旗を守れることもあります。カイドウ（人獣型）メダルは火災メダルでも代用可能です。</p>
+    </div>
+
+</div>
+
     
-    <p>以下はオススメメダルセットです。</p>
-    <h1>【アタッカー用】</h1>
-    <img id="medalexample1" src="https://github.com/9dolog/baunty_medal/raw/main/medalexample1.PNG" alt="メダルセット例1"><br>
-    <style>
-        
-        #medalexample1 {
-            width: 50%;          /* 画像の幅を指定 */
-            height: auto;          /* 高さを自動調整（アスペクト比を維持） */
-          
-        }
-    
-        @media (max-width: 768px) {
-            #medalexample1 {
-                width: 200px;      /* スマホ画面用のサイズ調整 */
-            }
-        }
-    </style>
-    <p style="display: inline-block; text-align: left;">１．大猿王銃メダル：自分がいるお宝エリアに味方がいないとき与ダメ増加<br>２．火拳銃メダル：敵旗にいるとき与ダメ増加<br>３．業火拳銃メダル：得意属性に与ダメ増加</p>
-    <p>特に瞬間移動スキル（例：緑シャンクス）を持っているアタッカーにお勧めです。一瞬で敵のいるお宝エリアに飛べるので、ガンガンダメージを与えられます。</p>
-    <h1>【ゲッター用1】</h1>
-    <img id="medalexample2" src="https://github.com/9dolog/baunty_medal/raw/main/medalexample2.PNG" alt="メダルセット例2"><br>
-    <style>
-        
-        #medalexample2 {
-            width: 50%;          /* 画像の幅を指定 */
-            height: auto;          /* 高さを自動調整（アスペクト比を維持） */
-          
-        }
-    
-        @media (max-width: 768px) {
-            #medalexample2 {
-                width: 200px;      /* スマホ画面用のサイズ調整 */
-            }
-        }
-    </style>
-    <p style="display: inline-block; text-align: left;">１．大猿王銃メダル：自分がいるお宝エリアに味方がいないとき与ダメ増加<br>２．火拳銃メダル：敵旗にいるとき与ダメ増加<br>３．ルーシー（ルフィ）メダル：お宝奪取時体力回復</p>
-    <p>こちらは対面性能の高いゲッターにお勧めのメダルです。いわゆる戦うゲッターメダルです。</p>
-    <h1>【ゲッター用2】</h1>
-    <img id="medalexample3" src="https://github.com/9dolog/baunty_medal/raw/main/medalexample3.PNG" alt="メダルセット例3"><br>
-    <style>
-        
-        #medalexample3 {
-            width: 50%;          /* 画像の幅を指定 */
-            height: auto;          /* 高さを自動調整（アスペクト比を維持） */
-          
-        }
-    
-        @media (max-width: 768px) {
-            #medalexample3 {
-                width: 200px;      /* スマホ画面用のサイズ調整 */
-            }
-        }
-    </style>
-    <p style="display: inline-block; text-align: left;">１．メスメダル：体力70％以上のとき、奪取速度増加<br>２．大波白糸メダル：敵旗ゲージが50％以上のとき、奪取速度増加<br>３．キッド＆ローメダル：体力70％以上のとき、奪取速度増加</p>
-    <p>こちらは対面性能は高くないゲッターにお勧めです。マップをよく見て敵が来ない旗を握りましょう。</p>
-    <h1>【ディフェンダー用】</h1>
-    <img id="medalexample4" src="https://github.com/9dolog/baunty_medal/raw/main/medalexample4.PNG" alt="メダルセット例4"><br>
-    <p style="display: inline-block; text-align: left;">１．カイドウメダル：敵から攻撃されるとスキル1短縮<br>２．熱息メダル：自チームのお宝エリアにいるとき、与ダメ増加<br>３．カイドウ（人獣型）メダル：敵をK.O.したときスキル1短縮</p>
-    <p>このメダルセットはかなり人気のメダルセットです。スキル1が強力なキャラ（S-スネーク）が使うと無限に旗を守れることもあります。カイドウ（人獣型）メダルは火災メダルでも代用可能です。</p>
-    <style>
-        
-        #medalexample4 {
-            width: 50%;          /* 画像の幅を指定 */
-            height: auto;          /* 高さを自動調整（アスペクト比を維持） */
-          
-        }
-    
-        @media (max-width: 768px) {
-            #medalexample4 {
-                width: 200px;      /* スマホ画面用のサイズ調整 */
-            }
-        }
-    </style>
     
     
     </div>
@@ -693,7 +713,7 @@
     action="https://formspree.io/f/xzzbvwvj"
     method="POST"
     class="half-width-form"
-    style="background-color: rgba(231, 209, 152, 0.9); padding: 20px; border-radius: 10px;">
+    style="background-color: rgba(130, 130, 130, 0.824); /* 背景色を半透明の黒に設定 */ /* 背景色を半透明の黒に設定 */; padding: 20px; border-radius: 10px; color:white;">
     <label>
         <B>お問い合わせフォーム</B>
     </label>
@@ -713,7 +733,7 @@
     <button type="submit">送信</button>
     </form>
     <footer>
-        <p>&copy; 2024 Baunty Medal Tool. All Rights Reserved.</p>
+        <h>&copy; 2024 Baunty Medal Tool. All Rights Reserved.</h>
         <nav>
             <ul style="list-style: none; padding: 0; margin: 0;">
                 <li><a href="index.html">ホーム</a></li>
@@ -736,8 +756,9 @@
     </div>
     
     <div id="tagFilter">
-        <h3>タグ</h3>
+        <h3>タグ（and検索可能）</h3>
         <div id="tagCheckboxContainer"></div>
+        
     </div>
     
     <div id="medalList">
@@ -1327,8 +1348,10 @@
             {name: 'エッグヘッドサンジメダル',romaji: 'eggusanji', ability: '体力が70％以上のとき、受けるダメージが5％減少する', tags: ['エッグヘッド', '麦わらの一味','コック']},
             {name: 'ロビン（未来服）メダル',romaji: 'robinnmirai', ability: '自チームの味方がK.O.されたとき、スキル1のクールタイムを6％短縮する', tags: ['エッグヘッド', '麦わらの一味','超人系能力者','考古学者']},
             {name: 'ナミ（未来服）メダル',romaji: 'namimirai', ability: '自チームのお宝エリアにいるとき、与えるダメージが3％増加する', tags: ['エッグヘッド', '麦わらの一味','航海士']},
-            {name:'孔雀（ハチノス）メダル',romaji:'kujakuhatinosu',ability:'敵をふっとばしたとき、スキル2のクールタイムを5%短縮する',tags:['エッグヘッド','海軍','SWORD']},
-            {name:'たしぎ（ハチノス）メダル',romaji:'tasigihatinosu',ability:'体力が70％以上のとき、スキル1のクールタイム短縮速度が10％増加する',tags:['エッグヘッド','海軍','海軍大佐']},
+            {name: '孔雀（ハチノス）メダル',romaji:'kujakuhatinosu',ability:'敵をふっとばしたとき、スキル2のクールタイムを5%短縮する',tags:['エッグヘッド','海軍','SWORD']},
+            {name: 'たしぎ（ハチノス）メダル',romaji:'tasigihatinosu',ability:'体力が70％以上のとき、スキル1のクールタイム短縮速度が10％増加する',tags:['エッグヘッド','海軍','海軍大佐']},
+            {name: 'エッグヘッドボニーメダル',romaji:'egguboni-',ability:'お宝奪取中の敵に攻撃したとき、スキル1のクールタイムを2％短縮する',tags:['エッグヘッド','ボニー海賊団','超人系能力者','船長','最悪の世代']},
+            {name: 'ヘルメッポ少佐メダル',romaji:'herumepposyousa',ability:'敵チームのお宝エリアにいるとき、受けるダメージが5％減少する',tags:['エッグヘッド','海軍','SWORD']},
             
             // 他のメダルもここに追加...
         ];
