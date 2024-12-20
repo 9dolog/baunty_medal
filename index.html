@@ -742,32 +742,36 @@
         }
 
         #profileImagesContainer {
-            display: flex;
-            justify-content: center;
-            gap: 20px; /* 画像間のスペースを設定 */
-        }
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* 画像間のスペースを設定 */
+}
 
-        #profileImagesContainer img {
-            width: 150px; /* 画像を小さくする */
-            height: auto; /* アスペクト比を維持 */
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
+#profileImagesContainer img {
+    height: 150px; /* 高さを固定 */
+    width: auto; /* 幅は自動調整 */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    object-fit: cover; /* アスペクト比を維持しつつコンテナに収める */
+}
 
-        @media (max-width: 768px) {
-            .medal-section img {
-                width: 200px;
-            }
+@media (max-width: 768px) {
+    .medal-section img {
+        height: 200px;
+        width: auto;
+    }
 
-            #profileImagesContainer {
-                flex-direction: column;
-                align-items: center;
-            }
+    #profileImagesContainer {
+        flex-direction: column;
+        align-items: center;
+    }
 
-            #profileImagesContainer img {
-                width: 100px;
-            }
-        }
+    #profileImagesContainer img {
+        height: 100px; /* モバイル用に高さを調整 */
+        width: auto;
+    }
+}
+
     </style>
 
     <h1>【初心者向け】<br>バウンティラッシュ<br>メダル編成ツール</h1>
@@ -775,11 +779,13 @@
 
 
 
-    <p>このサイトの管理人は109シーズンランカーです。<br>立ち回りも大事ですが、メダル編成も大事です。使うキャラに合わせたタグを意識してメダルを選びましょう。<br>正直トップ層には実力では敵いませんが、メダルをしっかり考えるだけでランカーにはなれます。<br>メダルを考えたのち、立ち回りを勉強していきましょう。</p>
+    <p>このサイトの管理人は109シーズンランカー・第４回チャンピオンシップゴールドトーナメントベスト８です。<br>立ち回りも大事ですが、メダル編成も大事です。使うキャラに合わせたタグを意識してメダルを選びましょう。<br>正直トップ層には実力では敵いませんが、メダルをしっかり考えるだけでランカーにはなれます。<br>メダルを考えたのち、立ち回りを勉強していきましょう。</p>
 
     <div id="profileImagesContainer">
         <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/profile.PNG" alt="プロフィール写真">
         <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/profile2.PNG" alt="プロフィール写真2">
+        <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/profile3.PNG" alt="プロフィール写真3">
+        <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/profile4.PNG" alt="プロフィール写真4">
     </div>
 
     <div class="medal-section" id="attacker">
