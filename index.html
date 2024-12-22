@@ -202,7 +202,7 @@
 
         footer nav ul li {
             display: inline;
-            margin-right: 15px;
+           
         }
 
         footer nav ul li a {
@@ -352,56 +352,19 @@
         #medalList {
             background-color: rgba(130, 130, 130, 0.824); /* 背景色を半透明の黒に設定 */
             box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
-
+            
             z-index: 1000;
-            height: 70%;
+            width: 100%;
 
         }
     
-        /* その他のスタイルはそのまま */
-        .medal {
-            margin-bottom: 10px;
-            padding: 2px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            cursor: grab;
-            font-size: 10px;
-            word-wrap: break-word;
-            display: flex;
-            align-items: center;
-            width: 550px;
-        }
-    
-        /* スマホ版のスタイル */
-        @media (max-width: 768px) {
-            #medalList {
-                background-color: rgba(130, 130, 130, 0.824); /* 背景色を半透明の黒に設定 */
-                padding: 35px;
-                word-wrap: break-word;
+        #medalContainer {
+  margin: 0 auto; /* 要素を中央寄せ */
+  text-align: center; /* 必要に応じてテキストも中央寄せ */
+  width: 100%; /* 横幅を調整 */
+}
 
-            }
-    
-            .medal {
-                margin-bottom: 10px;
-                padding: 2px;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-                cursor: grab;
-                font-size: 8px;
-                word-wrap: break-word;
-                display: flex;
-                align-items: center;
-                width: 100px;
-                margin-left: 40%;
-            }
-        }
-    
-        .medal img {
-            width: 100px;
-            height: 100px;
-            margin-right: 10px;
-            border-radius: 5px;
-        }
+   
 
         .duplicated-tag {
     color: red;
