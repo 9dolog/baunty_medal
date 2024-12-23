@@ -120,6 +120,11 @@
             }
         }
 
+        form, .half-width-form {
+        border-radius: 0 !important;
+        }
+
+
         /* フォーム全体のデザイン */
         form {
             
@@ -155,7 +160,7 @@
 
         /* テキストエリアの高さ調整 */
         form textarea {
-            height: 60px;
+            height: px;
             resize: none;
         }
 
@@ -241,7 +246,7 @@
             background-color: rgba(130, 130, 130, 0.824); /* 背景色を半透明の黒に設定 */
         color: white; /* テキストを白色に設定 */
         padding: 10px; /* 背景と文字の間に余白を追加 */
-        border-radius: 5px; /* 背景の角を丸くする */
+        
         display: inline-block; /* 背景が文字幅にフィットするように設定 */
         text-align:center;
         
@@ -255,8 +260,8 @@
         }
 
         #medalSelectorContainer {
-    position: relative;
-}
+            position: relative;
+        }
     
         /* #medalSelector と #result を右下に固定 */
         #medalSelector, #result {
@@ -269,36 +274,38 @@
             overflow-y: auto;
             border-radius: 10px;
             transition: transform 0.3s ease-in-out; /* スムーズなアニメーション */
-    transform: translateY(100%); /* 初期状態では画面外に隠す */
+            transform: translateY(100%); /* 初期状態では画面外に隠す */
         }
     
-            /* 表示状態 */
-#medalSelector.visible {
-    transform: translateY(0); /* 画面内に移動 */
-}
-/* 表示状態 */
-#result.visible {
-    transform: translateY(0); /* 画面内に表示 */
-}
+        /* 表示状態 */
+        #medalSelector.visible {
+            transform: translateY(0); /* 画面内に移動 */
+        }
 
-#toggleSelectorButton {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    padding: 10px 15px;
-    font-size: 14px;
-    background-color: #0056b3;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 50000000;
-}
+        /* 表示状態 */
+        #result.visible {
+            transform: translateY(0); /* 画面内に表示 */
+        }
 
-#toggleSelectorButton:hover {
-    background-color: #0056b3;
-}
+        #toggleSelectorButton {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            padding: 10px 15px;
+            font-size: 14px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 50000000;
+        }
+
+        #toggleSelectorButton:hover {
+            background-color: #0056b3;
+        }
+
         /* Windows版のスタイル */
         @media (min-width: 769px) {
             #medalSelector {
@@ -314,7 +321,7 @@
                 width: 150px; /* Windows版の幅 */
                 position: fixed;
                 bottom: 20px; /* 画面下に固定 */
-                margin-right: 450px; /* #medalSelectorの幅と間隔 */
+                margin-right: 1000px; /* #medalSelectorの幅と間隔 */
                 right: 15px; /* 画面右端に配置 */
                 font-size: 10px;
             }
@@ -359,22 +366,22 @@
         }
     
         #medalContainer {
-  margin: 0 auto; /* 要素を中央寄せ */
-  text-align: center; /* 必要に応じてテキストも中央寄せ */
-  width: 100%; /* 横幅を調整 */
-}
+            margin: 0 auto; /* 要素を中央寄せ */
+            text-align: center; /* 必要に応じてテキストも中央寄せ */
+            width: 100%; /* 横幅を調整 */
+        }
 
    
 
         .duplicated-tag {
-    color: red;
-    font-weight: bold;
-}
+            color: red;
+            font-weight: bold;
+        }
 
-.unique-tag {
-    color: black;
-    font-weight: bold;
-}
+        .unique-tag {
+            color: black;
+            font-weight: bold;
+        }
 
     
         .drop-zone {
@@ -446,6 +453,7 @@
             padding: 5px;
             border: 1px solid #ddd;
             border-radius: 5px;
+            margin:10px;
         }
 
         /* タグアイテムのスタイル */
@@ -705,41 +713,39 @@
         }
 
         #profileImagesContainer {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* 画像間のスペースを設定 */
-}
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* 画像間のスペースを設定 */
+        }
 
-#profileImagesContainer img {
-    height: 150px; /* 高さを固定 */
-    width: auto; /* 幅は自動調整 */
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    object-fit: cover; /* アスペクト比を維持しつつコンテナに収める */
-}
+        #profileImagesContainer img {
+            height: 150px; /* 高さを固定 */
+            width: auto; /* 幅は自動調整 */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            object-fit: cover; /* アスペクト比を維持しつつコンテナに収める */
+        }
 
-@media (max-width: 768px) {
-    .medal-section img {
-        width: 200px;
-    }
+        @media (max-width: 768px) {
+            .medal-section img {
+                width: 200px;
+            }
 
-    #profileImagesContainer {
-        flex-direction: column;
-        align-items: center;
-    }
+            #profileImagesContainer {
+                flex-direction: column;
+                align-items: center;
+            }
 
-    #profileImagesContainer img {
-        height: 100px; /* モバイル用に高さを調整 */
-        width: auto;
-    }
-}
+            #profileImagesContainer img {
+                height: 100px; /* モバイル用に高さを調整 */
+                width: auto;
+            }
+        }
 
     </style>
 
     <h1>【初心者向け】<br>バウンティラッシュ<br>メダル編成ツール</h1>
-    <h2>更新日時：2024/12/19</h2>
-
-
+    <h2>更新日時：2024/12/23</h2>
 
     <p>このサイトの管理人は109シーズンランカー・第４回チャンピオンシップゴールドトーナメントベスト８入賞者です。<br>立ち回りも大事ですが、メダル編成も大事です。使うキャラに合わせたタグを意識してメダルを選びましょう。<br>正直トップ層には実力では敵いませんが、メダルをしっかり考えるだけでランカーにはなれます。<br>メダルを考えたのち、立ち回りを勉強していきましょう。</p>
 
@@ -779,9 +785,6 @@
     </div>
 
 </div>
-
-    
-    
     
     </div>
     <!-- modify this form HTML and place wherever you want your form -->
@@ -791,14 +794,14 @@
     class="half-width-form"
     style="background-color: rgba(130, 130, 130, 0.824); /* 背景色を半透明の黒に設定 */ /* 背景色を半透明の黒に設定 */; padding: 20px; border-radius: 10px; color:white;">
     <label>
-        <B>お問い合わせフォーム</B>
+    <B>お問い合わせフォーム</B>
     </label>
     <label>
-    ニックネーム
+    メールアドレス
     <input type="email" name="email">
     </label>
     <label>
-    問い合わせ内容
+    お問い合わせ内容
     <textarea name="message"></textarea>
     <div class="checkbox-container"></div>
     <label>
@@ -818,8 +821,6 @@
             
         </nav>
     </footer>
-
-    
     
     <div id="medalSelector">
         <h1>メダルを長押ししてエリア内に移動</h1>
@@ -842,9 +843,6 @@
         <div id="randomCheckboxContainer"></div>
     </div>
     
-   
-    
-    
     <div id="medalList">
         <h2>メダル一覧</h2>
         <input type="text" id="searchInput" placeholder="メダル名、能力、タグで検索" oninput="filterMedals()">
@@ -866,8 +864,6 @@
         </div>
         <button id="toggleSelectorButton">メダルセットを作成</button>
     </div>
-    
-    
 
     <script>
         const medals = [
@@ -1448,6 +1444,9 @@
             {name: 'エッグヘッドボニーメダル',random: ['攻撃', '防御','クリティカル'],romaji:'egguboni-',ability:'お宝奪取中の敵に攻撃したとき、スキル1のクールタイムを2％短縮する',tags:['エッグヘッド','ボニー海賊団','超人系能力者','船長','最悪の世代']},
             {name: 'ヘルメッポ少佐メダル',random: ['体力', '攻撃', '防御'],romaji:'herumepposyousa',ability:'敵チームのお宝エリアにいるとき、受けるダメージが5%減少する',tags:['エッグヘッド','海軍','SWORD']},
             {name: 'イゾウ（青年期）メダル',random: ['攻撃', '防御','クリティカル'],romaji: 'izou(seinenki)', ability: '体力が70%以上のとき、スキル2のクールタイム短縮速度が10%増加する', tags: ['白ひげ海賊団','光月家/光月家　家臣']},
+            {name: '拳骨衝突メダル',random: ['体力', '防御','クリティカル'],romaji: 'genkotu', ability: '体力が70%以上のとき、与えるダメージが5%増加する', tags: ['エッグヘッド','海軍','中将']},
+            {name: 'プリンス・グルス（ハチノス）メダル',random: ['体力', '防御','クリティカル'],romaji: 'purinsugurusu', ability: '敵をK.O.したとき、スキル1のクールタイムを8%短縮する', tags: ['エッグヘッド','海軍','SWORD']},
+            {name: 'ひばり（ハチノス）メダル',random: ['体力', '防御','クリティカル'],romaji: 'hibari', ability: 'スキル2を使ったとき、スキル1のクールタイムを3%短縮する', tags: ['エッグヘッド','海軍','SWORD']},
             // 他のメダルもここに追加...
         ];
 
@@ -1576,8 +1575,8 @@
         };
 
         window.onload = function() {
-    (adsbygoogle = window.adsbygoogle || []).push({});
-};
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        };
 
 
         const tagCategories = {
@@ -1595,42 +1594,42 @@
 
         const selectedTags = {}; // 選択されたタグ
 
-    function allowDrop(event) {
-        event.preventDefault();
-    }
+        function allowDrop(event) {
+            event.preventDefault();
+        }
 
-    function drop(event, medalSlot) {
-    event.preventDefault();
-    const medal = JSON.parse(event.dataTransfer.getData("text"));
-    const slotDiv = document.getElementById(medalSlot);
+        function drop(event, medalSlot) {
+        event.preventDefault();
+        const medal = JSON.parse(event.dataTransfer.getData("text"));
+        const slotDiv = document.getElementById(medalSlot);
 
         // 現在の状態を履歴に保存
-    historyStack.push({
+        historyStack.push({
         slotId: medalSlot,
         previousState: slotDiv.innerHTML,
         previousData: slotDiv.dataset.medalName || null,
-    });
+        });
 
-    // 画像とabilityを表示
-    slotDiv.innerHTML = `
-<img src="https://github.com/9dolog/baunty_medal/raw/main/${medal.romaji}.PNG" class="medalImageOnly" alt="${medal.name}" style="display: block; width: 100%; height: auto; margin: 0 auto;">
-<p class="medalAbility" style="
-    font-size: 10px; 
-    margin: 0; 
-    padding: 0; 
-    text-align: center; 
-    color: black; 
-    word-wrap: break-word; 
-    white-space: normal; 
-    line-height: 1.4; 
-    background-color: white; 
-    box-sizing: border-box;
-">
-    ${medal.ability}
-</p>
+        // 画像とabilityを表示
+        slotDiv.innerHTML = `
+        <img src="https://github.com/9dolog/baunty_medal/raw/main/${medal.romaji}.PNG" class="medalImageOnly" alt="${medal.name}" style="display: block; width: 100%; height: auto; margin: 0 auto;">
+        <p class="medalAbility" style="
+        font-size: 10px; 
+        margin: 0; 
+        padding: 0; 
+        text-align: center; 
+        color: black; 
+        word-wrap: break-word; 
+        white-space: normal; 
+        line-height: 1.4; 
+        background-color: white; 
+        box-sizing: border-box;
+        ">
+        ${medal.ability}
+        </p>
 
 
-`;
+        `;
 
 
     // ドロップ後にテキストを非表示にする
