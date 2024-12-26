@@ -1592,6 +1592,8 @@
 
         };
 
+        
+
         const selectedTags = {}; // 選択されたタグ
 
         function allowDrop(event) {
@@ -1979,6 +1981,46 @@ document.querySelectorAll('#tagCheckboxContainer input, #randomCheckboxContainer
     });
 });
 
+function displayTagEffects(medals) {
+    const tagEffectsContainer = document.getElementById('tagEffects');
+    tagEffectsContainer.innerHTML = ''; // コンテナを初期化
+
+    // タグごとに分類する
+    const tagEffects = {};
+    tagCategories.forEach(category => {
+        tagEffects[category] = [];
+    });
+
+    medals.forEach(medal => {
+        medal.tags.forEach(tag => {
+            if (tagCategories.includes(tag)) {
+                tagEffects[tag].push(medal.name);
+            }
+        });
+    });
+
+    // カテゴリーの順序でタグを表示
+    tagCategories.forEach(category => {
+        if (tagEffects[category].length > 0) {
+            const categoryTitle = document.createElement('h4');
+            categoryTitle.textContent = category;
+            tagEffectsContainer.appendChild(categoryTitle);
+
+            const list = document.createElement('ul');
+            tagEffects[category].forEach(effect => {
+                const listItem = document.createElement('li');
+                listItem.textContent = effect;
+                list.appendChild(listItem);
+            });
+
+            tagEffectsContainer.appendChild(list);
+        }
+    });
+}
+
+// 初期表示またはメダルの選択に応じて呼び出す
+const selectedMedals = [/* 選択されたメダル情報をここに追加 */];
+displayTagEffects(selectedMedals);
 
 
 
