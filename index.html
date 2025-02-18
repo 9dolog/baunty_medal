@@ -381,11 +381,22 @@ body, html {
         #medalList {
             background-color: rgba(130, 130, 130, 0.824); /* 背景色を半透明の黒に設定 */
             box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+            font-size: 20px;
+            z-index: 1000;
+            width: 50%;
+
+        }
+
+        @media (max-width: 768px) {
+        #medalList {
+            background-color: rgba(130, 130, 130, 0.824); /* 背景色を半透明の黒に設定 */
+            box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
             font-size: 10px;
             z-index: 1000;
             width: 50%;
 
         }
+    }
     
         #medalContainer {
             margin: 0 auto; /* 要素を中央寄せ */
