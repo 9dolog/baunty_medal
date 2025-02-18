@@ -58,6 +58,11 @@
 </script>
 
     <style>
+
+body, html {
+    overflow-x: hidden;
+}
+
         /* 立体的な影を付けるスタイル */
         h1, h2, h3, h4 {
             color: white;
@@ -335,10 +340,10 @@
             }
     
             #result {
-                width: 150px; /* Windows版の幅 */
+                width: 130px; /* Windows版の幅 */
                 position: fixed;
                 bottom: 20px; /* 画面下に固定 */
-                margin-right: 1000px; /* #medalSelectorの幅と間隔 */
+                margin-right: 440px; /* #medalSelectorの幅と間隔 */
                 right: 15px; /* 画面右端に配置 */
                 font-size: 10px;
             }
@@ -364,7 +369,7 @@
             }
 
             #result {  
-                margin-right: 75%; /* #medalSelectorとの間隔 */
+                margin-right: 50%; /* #medalSelectorとの間隔 */
                 width: 20%;
             }
         }
@@ -376,9 +381,9 @@
         #medalList {
             background-color: rgba(130, 130, 130, 0.824); /* 背景色を半透明の黒に設定 */
             box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
-            
+            font-size: 10px;
             z-index: 1000;
-            width: 100%;
+            width: 50%;
 
         }
     
@@ -426,6 +431,7 @@
         .medalImageOnly {
             max-width: 50px;
             max-height: 50px;
+            
         }
     
         /* タグフィルターのスタイル */
@@ -1823,13 +1829,23 @@ document.querySelectorAll('#tagCheckboxContainer input, #randomCheckboxContainer
 
         // メダルの内容を表示
         medalDiv.innerHTML = `
-            <img src="https://github.com/9dolog/baunty_medal/raw/main/${medal.romaji}.PNG" class="medalImageOnly" alt="${medal.name}">
-            <strong>${medal.name}</strong><br>
-            <em>${medal.ability}</em><br>
-            タグ: ${medal.tags ? medal.tags.join(', ') : 'なし'}<br>
-            抽選: ${medal.random ? medal.random.join(', ') : 'なし'}
-        `;
-        container.appendChild(medalDiv);
+    <div style="display: flex; align-items: center;">
+        <img src="https://github.com/9dolog/baunty_medal/raw/main/${medal.romaji}.PNG"
+            class="medalImageOnly"
+            alt="${medal.name}"
+            style="width: 50px; height: auto; margin-right: 10px;">
+        <strong>${medal.name}</strong>
+    </div>
+    <div>
+        <em>${medal.ability}</em><br>
+        <hr style="border: none; border-top: 1px dotted #ccc; margin: 5px 0;">
+        タグ: ${medal.tags ? medal.tags.join(', ') : 'なし'}<br>
+        <hr style="border: none; border-top: 1px dotted #ccc; margin: 5px 0;">
+        抽選: ${medal.random ? medal.random.join(', ') : 'なし'}
+    </div>
+`;
+container.appendChild(medalDiv);
+
     });
 }
 
