@@ -72,7 +72,7 @@ body, html {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    background-color: rgba(124, 124, 124, 0.8); /* 0.8は80%の不透明度 */;
+    background-color: rgba(80, 80, 80, 0.8); /* 0.8は80%の不透明度 */;
     border-radius: 10px;
     padding: 20px;
     margin: 20px auto;
@@ -785,8 +785,8 @@ body, html {
             border-radius: 10px; /* 角を丸くする */
             margin: 20px auto; /* 上下にスペースを追加して中央揃え */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* 影を追加して立体感を演出 */
-            
-            align-items: center;
+            flex-direction: column;
+                align-items: center;
         }
 
         #profileImagesContainer img {
@@ -796,6 +796,19 @@ body, html {
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
             object-fit: cover; /* アスペクト比を維持しつつコンテナに収める */
         }
+
+        .images-wrapper {
+    display: flex;          /* 画像を横並びにする */
+    gap: 10px;              /* 画像間の隙間を調整 */
+}
+
+.images-wrapper img {
+    height: 150px;          /* 高さを固定 */
+    width: auto;            /* 幅を自動調整 */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    object-fit: cover;      /* アスペクト比を維持しつつコンテナに収める */
+}
 
         @media (max-width: 768px) {
             .medal-section img {
@@ -808,9 +821,14 @@ body, html {
             }
 
             #profileImagesContainer img {
-                height: 100px; /* モバイル用に高さを調整 */
-                width: auto;
+                height: auto; /* モバイル用に高さを調整 */
+                max-width: 100%;
             }
+
+            .images-wrapper {
+    flex-direction: column;
+    gap: 10px;              /* 画像間の隙間を調整 */
+}
         }
 
         
@@ -861,7 +879,7 @@ body, html {
     display: flex;
     justify-content: center;
     gap: 20px; /* 画像間のスペースを設定 */
-    background-color: #7c7c7c; /* セクションの背景色を統一 */
+    background-color: rgba(124, 124, 124, 0.8); /* 0.8は80%の不透明度 */;
     border-radius: 10px;
     padding: 20px;
     margin: 20px auto;
@@ -880,10 +898,10 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://github.com/9dolog/baunty_medal/raw/main/haikei.PNG'); /* ⭐ ここに画像URLを設定 */
+    
     background-size: cover;
     background-position: center;
-    opacity: 0.2; /* ⭐ 画像の薄さ調整（0.0～1.0） */
+   
     z-index: 0;   /* ⭐ 背景を一番下に配置 */
     border-radius: 10px; /* ⭐ 親要素と同じ角丸を適用 */
 }
@@ -898,7 +916,7 @@ body, html {
     display: flex;
     justify-content: center;
     gap: 20px; /* 画像間のスペースを設定 */
-    background-color: #7c7c7c; /* セクションの背景色を統一 */
+    background-color: rgba(124, 124, 124, 0.8); /* 0.8は80%の不透明度 */;
     border-radius: 10px;
     padding: 20px;
     margin: 20px auto;
@@ -917,10 +935,10 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://github.com/9dolog/baunty_medal/raw/main/haikei.PNG'); /* ⭐ ここに画像URLを設定 */
+    
     background-size: cover;
     background-position: center;
-    opacity: 0.2; /* ⭐ 画像の薄さ調整（0.0～1.0） */
+ 
     z-index: 0;   /* ⭐ 背景を一番下に配置 */
     border-radius: 10px; /* ⭐ 親要素と同じ角丸を適用 */
 }
@@ -960,13 +978,18 @@ body, html {
 
     <h1>バウンティラッシュ<br>メダル編成ツール<br>（長押ししてドラッグ＆ドロップ）<br>更新日時：2025/02/12</h1>
 
-    <p>このサイトの管理人は109シーズンランカー・第４回チャンピオンシップゴールドトーナメントベスト８入賞メンバーです。<br>立ち回りも大事ですが、メダル編成も大事です。使うキャラに合わせたタグを意識してメダルを選びましょう。<br>正直トップ層には実力では敵いませんが、メダルをしっかり考えるだけでランカーにはなれます。<br>メダルを考えたのち、立ち回りを勉強していきましょう。</p>
+    
 
     <div id="profileImagesContainer">
+        <h1>【自己紹介】</h1>
+        <p>このサイトの管理人は109シーズンランカー・第４回チャンピオンシップゴールドトーナメントベスト８入賞メンバーです。<br>立ち回りも大事ですが、メダル編成も大事です。使うキャラに合わせたタグを意識してメダルを選びましょう。<br>正直トップ層には実力では敵いませんが、メダルをしっかり考えるだけでランカーにはなれます。<br>メダルを考えたのち、立ち回りを勉強していきましょう。</p>
+        <div class="images-wrapper">
+        
         <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/profile.PNG" alt="プロフィール写真">
         <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/profile2.PNG" alt="プロフィール写真2">
         <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/profile3.PNG" alt="プロフィール写真3">
         <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/profile4.PNG" alt="プロフィール写真4">
+        </div>
     </div>
 
     
