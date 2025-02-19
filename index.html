@@ -837,11 +837,14 @@ body, html {
 }
 
 .medal-item img {
-    max-width: 300px;
     height: auto;
+    margin-top: 0;
     margin-bottom: 15px;
-    
+    display: block;
+    vertical-align: top;
+    object-fit: cover;        /* ✅ アスペクト比を保ちながらトリミング */
 }
+
 
 .medal-item h4 {
    
