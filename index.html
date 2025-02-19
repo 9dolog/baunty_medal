@@ -64,25 +64,59 @@ body, html {
 }
 
         /* 立体的な影を付けるスタイル */
-        h1, h2, h3, h4 {
+        h1{
             color: white;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 影の設定 */
             font-family: 'Arial', sans-serif; /* 見やすいフォント */
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* 画像間のスペースを設定 */
+            background-color: #454545; /* セクションの背景色を統一 */
+           
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            
+            
+            color: white; /* テキストの色を白に */
+            padding: 20px; /* 内側の余白を設定 */
+            border-radius: 10px; /* 角を丸くする */
+            margin: 20px auto; /* 上下にスペースを追加して中央揃え */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* 影を追加して立体感を演出 */
+            flex-direction: column;
+            align-items: center;
         }
 
         /* 各見出しの大きさ */
         h1 {
-            font-size: 2.5em;
+            font-size: 200%;
         }
-        h2 {
-            font-size: 2em;
+
+        h2{
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 影の設定 */
+            font-family: 'Arial', sans-serif; /* 見やすいフォント */
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* 画像間のスペースを設定 */
+            
+           
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+           
+            
+            
+            color: white; /* テキストの色を白に */
+            padding: 20px; /* 内側の余白を設定 */
+        
+            margin: 20px auto; /* 上下にスペースを追加して中央揃え */
+      
+            flex-direction: column;
+            align-items: center;
         }
-        h3 {
-            font-size: 1.75em;
-        }
-        h4 {
-            font-size: 1.5em;
-        }
+        
     </style>
     
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -716,7 +750,7 @@ body, html {
 
         .medal-section {
             background-color: #7c7c7c; /* セクションの背景色を統一 */
-            border: 1px solid #b3d8ff; /* 境界線の色を変更 */
+            
             border-radius: 10px;
             padding: 20px;
             margin: 20px auto;
@@ -750,6 +784,21 @@ body, html {
             display: flex;
             justify-content: center;
             gap: 20px; /* 画像間のスペースを設定 */
+            background-color: #454545; /* セクションの背景色を統一 */
+            
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            
+            
+            color: white; /* テキストの色を白に */
+            padding: 20px; /* 内側の余白を設定 */
+            border-radius: 10px; /* 角を丸くする */
+            margin: 20px auto; /* 上下にスペースを追加して中央揃え */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* 影を追加して立体感を演出 */
+            
+            align-items: center;
         }
 
         #profileImagesContainer img {
@@ -781,7 +830,7 @@ body, html {
             justify-content: center;
             gap: 20px; /* 画像間のスペースを設定 */
             background-color: #7c7c7c; /* セクションの背景色を統一 */
-            border: 1px solid #b3d8ff; /* 境界線の色を変更 */
+            
             border-radius: 10px;
             padding: 20px;
             margin: 20px auto;
@@ -807,14 +856,79 @@ body, html {
 }
     }
 
-    h1{
-        font-size: 200%;
-    }
+   
+
+    .medal-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #454545;
+    
+}
+
+.medal-item img {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 15px;
+    
+}
+
+.medal-item h4 {
+    font-size: 16px;
+    line-height: 1.6;
+    color: white;
+    text-align: center;
+    margin-top: -50px; /* ネガティブマージンで密着度をさらにアップ */
+    background-color: transparent !important; /* pタグの背景色を強制的に透明化 */
+    box-shadow: none;
+}
+
+
+#recommendations{
+    display: flex;
+            justify-content: center;
+            gap: 20px; /* 画像間のスペースを設定 */
+            background-color: #7c7c7c; /* セクションの背景色を統一 */
+            
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            
+            
+            color: white; /* テキストの色を白に */
+            padding: 20px; /* 内側の余白を設定 */
+            border-radius: 10px; /* 角を丸くする */
+            margin: 20px auto; /* 上下にスペースを追加して中央揃え */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* 影を追加して立体感を演出 */
+            flex-direction: column;
+            align-items: center;
+}
+
+.medal-items{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #454545;
+    max-width: 100%;
+}
+
 
     </style>
 
-    <h1>バウンティラッシュ<br>メダル編成ツール<br>（長押ししてドラッグ＆ドロップ）</h1>
-    <h2>更新日時：2025/02/12</h2>
+    <h1>バウンティラッシュ<br>メダル編成ツール<br>（長押ししてドラッグ＆ドロップ）<br>更新日時：2025/02/12</h1>
 
     <p>このサイトの管理人は109シーズンランカー・第４回チャンピオンシップゴールドトーナメントベスト８入賞メンバーです。<br>立ち回りも大事ですが、メダル編成も大事です。使うキャラに合わせたタグを意識してメダルを選びましょう。<br>正直トップ層には実力では敵いませんが、メダルをしっかり考えるだけでランカーにはなれます。<br>メダルを考えたのち、立ち回りを勉強していきましょう。</p>
 
@@ -829,25 +943,65 @@ body, html {
 
     <div class="medal-section" id="latest">
         <h1>【最新メダル】</h1>
-        <img src="https://github.com/9dolog/baunty_medal/raw/main/enteisabo.PNG" alt="最新メダル" style="transform: scale(0.5);">
-        <p>【王手飛車メダル】<br>ついに登場炎帝サボ！必要最低限のタグは持っているが、”革命軍”と”義兄弟”は３タグ一致で発動させたいのでサボ３種で組むのが理想。</p>
-        <img src="https://github.com/9dolog/baunty_medal/raw/main/kakumeigunnnoonnnasensi.PNG" alt="最新メダル" style="transform: scale(0.5);">
-        <p>【革命軍の女戦士メダル】<br>バレンタインキャンペーンの新キャラとして登場！</p>
-        <img src="https://github.com/9dolog/baunty_medal/raw/main/tougunn.PNG" alt="最新メダル" style="transform: scale(0.5);">
-        <p>【”東軍”軍隊長メダル”】<br>スキル1短縮・スキル2短縮・回避クールタイム短縮・奪取速度増加と最低限のタグは持っているのでふっとばしキャラには噛み合うかもしれない。<br><br>また、抽選に「キャラタイプ革命軍のときスキル2のクールタイム短縮速度増加があるので次の超フェスはサボなのか？！と勘ぐってしまいます。</p>
-        <img src="https://github.com/9dolog/baunty_medal/raw/main/tougunnhuku.PNG" alt="最新メダル" style="transform: scale(0.5);">
-        <p>【”東軍”副軍隊長メダル】<br>このメダルの抽選にもキャラタイプ革命軍～と記載あるので、炎帝サボに期待？！</p>
+    
+        <div class="medal-item">
+            <img src="https://github.com/9dolog/baunty_medal/raw/main/enteisabo.PNG" alt="最新メダル" style="transform: scale(0.5);">
+            <h4>【王手飛車メダル】<br>ついに登場炎帝サボ！必要最低限のタグは持っているが、”革命軍”と”義兄弟”は３タグ一致で発動させたいのでサボ３種で組むのが理想。</h4>
+        </div>
+    
+        <div class="medal-item">
+            <img src="https://github.com/9dolog/baunty_medal/raw/main/kakumeigunnnoonnnasensi.PNG" alt="最新メダル" style="transform: scale(0.5);">
+            <h4>【革命軍の女戦士メダル】<br>バレンタインキャンペーンの新キャラとして登場！</h4>
+        </div>
+    
+        <div class="medal-item">
+            <img src="https://github.com/9dolog/baunty_medal/raw/main/tougunn.PNG" alt="最新メダル" style="transform: scale(0.5);">
+            <h4>【”東軍”軍隊長メダル”】<br>スキル1短縮・スキル2短縮・回避クールタイム短縮・奪取速度増加と最低限のタグは持っているのでふっとばしキャラには噛み合うかもしれない。<br><br>また、抽選に「キャラタイプ革命軍のときスキル2のクールタイム短縮速度増加があるので次の超フェスはサボなのか？！と勘ぐってしまいます。</h4>
+        </div>
+    
+        <div class="medal-item">
+            <img src="https://github.com/9dolog/baunty_medal/raw/main/tougunnhuku.PNG" alt="最新メダル" style="transform: scale(0.5);">
+            <h4>【”東軍”副軍隊長メダル】<br>このメダルの抽選にもキャラタイプ革命軍～と記載あるので、炎帝サボに期待？！</h4>
+        </div>
     </div>
+    
 
     <div id="charactermedalset">
-        <h3>【炎帝サボにオススメのメダルセット】</h3>
-        <img src="https://github.com/9dolog/baunty_medal/raw/main/medalexample2.PNG" alt="環境キャラメダルセット" style="transform: scale(0.5);">
-        <h4>【⇧⇧オススメ理由⇧⇧】<br><span style="color: rgb(235, 201, 28);">敵陣での与ダメUP、奪取時回復</span>に加え全タグ一致のゲッター専用メダルセット。<br>炎帝サボの特性で通常攻撃の性能が高い+奪取時回復を元々持っているので、<span style="color: rgb(235, 201, 28);">シナジー効果大。</span><br>ルーシーメダルはイベントメダルだが、復刻ラインナップされているので必ず手に入れよう。</h4>
-        <img src="https://github.com/9dolog/baunty_medal/raw/main/medalexample5.PNG" alt="環境キャラメダルセット" style="transform: scale(0.5);">
-        <h4>【⇧⇧オススメ理由⇧⇧】<br>全タグ一致に加え、炎帝サボは敵旗に１人で攻めることが多いため、<span style="color: rgb(235, 201, 28);">スキル１とスキル２を高回転で打てる。</span><br>特に炎帝状態が現状かなり強い強化状態のため、スキル２を中心に暴れまわろう！</h4>
-        <img src="https://github.com/9dolog/baunty_medal/raw/main/medalexample6.PNG" alt="環境キャラメダルセット" style="transform: scale(0.5);">
-        <h4>【⇧⇧オススメ理由⇧⇧】<br><span style="color: rgb(235, 201, 28);">燃焼状態を付与したときに回復かつ燃焼状態の敵から受けるダメージをカット</span>できる点が強力。<br>但し、現環境状態異常短縮のキャラが多いため優先度は少し下がる。</h4>
-    </div>
+        <div class="medal-section" id="recommendations">
+            <div class="medal-items">
+        <h1>【炎帝サボメダルセット】</h1>
+        <img src="https://github.com/9dolog/baunty_medal/raw/main/charactermedalset.PNG" 
+     alt="環境キャラメダルセット" 
+     style="transform: scale(1); border-radius: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); border: 3px solid #d3801a;">
+            </div>
+
+        
+            <div class="medal-items">
+                <img src="https://github.com/9dolog/baunty_medal/raw/main/medalexample2.PNG" alt="環境キャラメダルセット" style="transform: scale(1);">
+                <h4>【⇧⇧オススメ理由⇧⇧】<br>
+                    <span style="color: rgb(235, 201, 28);">敵陣での与ダメUP、奪取時回復</span>に加え全タグ一致のゲッター専用メダルセット。<br>
+                    炎帝サボの特性で通常攻撃の性能が高い+奪取時回復を元々持っているので、<span style="color: rgb(235, 201, 28);">シナジー効果大。</span><br>
+                    ルーシーメダルはイベントメダルだが、復刻ラインナップされているので必ず手に入れよう。
+                </h4>
+            </div>
+        
+            <div class="medal-items">
+                <img src="https://github.com/9dolog/baunty_medal/raw/main/medalexample5.PNG" alt="環境キャラメダルセット" style="transform: scale(1);">
+                <h4>【⇧⇧オススメ理由⇧⇧】<br>
+                    全タグ一致に加え、炎帝サボは敵旗に１人で攻めることが多いため、<span style="color: rgb(235, 201, 28);">スキル１とスキル２を高回転で打てる。</span><br>
+                    特に炎帝状態が現状かなり強い強化状態のため、スキル２を中心に暴れまわろう！
+                </h4>
+            </div>
+        
+            <div class="medal-items">
+                <img src="https://github.com/9dolog/baunty_medal/raw/main/medalexample6.PNG" alt="環境キャラメダルセット" style="transform: scale(1);">
+                <h4>【⇧⇧オススメ理由⇧⇧】<br>
+                    <span style="color: rgb(235, 201, 28);">燃焼状態を付与したときに回復かつ燃焼状態の敵から受けるダメージをカット</span>できる点が強力。<br>
+                    但し、現環境状態異常短縮のキャラが多いため優先度は少し下がる。
+                </h4>
+            </div>
+        </div>
+        
     
 
 </div>
@@ -899,13 +1053,13 @@ body, html {
     </div>
     
     <div id="tagFilter">
-        <h3>タグ（and検索可能）</h3>
+        <h2>タグ（and検索可能）</h2>
         <div id="tagCheckboxContainer"></div>
         
     </div>
 
     <div id="randomFilter">
-        <h3>抽選  </h3>
+        <h2>抽選  </h2>
         <div id="randomCheckboxContainer"></div>
     </div>
     
