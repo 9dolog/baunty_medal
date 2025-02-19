@@ -64,34 +64,26 @@ body, html {
 }
 
         /* 立体的な影を付けるスタイル */
-        h1{
-            color: white;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 影の設定 */
-            font-family: 'Arial', sans-serif; /* 見やすいフォント */
-            display: flex;
-            justify-content: center;
-            gap: 20px; /* 画像間のスペースを設定 */
-            background-color: #454545; /* セクションの背景色を統一 */
-           
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px auto;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            
-            
-            color: white; /* テキストの色を白に */
-            padding: 20px; /* 内側の余白を設定 */
-            border-radius: 10px; /* 角を丸くする */
-            margin: 20px auto; /* 上下にスペースを追加して中央揃え */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* 影を追加して立体感を演出 */
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* 各見出しの大きさ */
         h1 {
-            font-size: 200%;
-        }
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: #454545;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    flex-direction: column;
+    text-align: center; /* テキスト中央揃え */
+    width: fit-content; /* 必要に応じて調整 */
+}
+
+
+        
 
         h2{
             color: white;
@@ -282,14 +274,14 @@ body, html {
         }
 
         body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column; /* 縦並び */
-            align-items: flex-start; /* 修正: flex-start に変更 */
-            margin: 0;
-            padding: 0;
-            
-        }
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* flex-start から center に変更 */
+    margin: 0;
+    padding: 0;
+}
+
         
         .introduction {
             height: 200px; /* 任意の高さを設定 */
@@ -413,13 +405,14 @@ body, html {
     
         /* メダル一覧を固定しない */
         #medalList {
-            background-color: rgba(130, 130, 130, 0.824); /* 背景色を半透明の黒に設定 */
-            box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
-            font-size: 20px;
-            z-index: 1000;
-            width: 50%;
+    background-color: rgba(130, 130, 130, 0.824); /* 背景色を半透明の黒に設定 */
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    z-index: 1000;
+    width: 50%;
+    align-self: flex-start; /* これを追加して左寄せ */
+}
 
-        }
 
         @media (max-width: 768px) {
         #medalList {
@@ -758,12 +751,7 @@ body, html {
            
         }
 
-        .medal-section h1 {
-            color: #37ef12; /* 見出しの色を統一 */
-            text-align: center;
-            color: rgb(255, 255, 255);
-            
-        }
+      
 
         .medal-section img {
             display: block;
@@ -902,6 +890,14 @@ body, html {
     max-width: 100%;
 }
 
+.medal-items img{
+    width: 50%;
+}
+
+@media (max-width: 768px){
+    .medal-items img{
+        width: 100%;}
+}
 
     </style>
 
@@ -946,8 +942,9 @@ body, html {
     <div id="charactermedalset">
         <div class="medal-section" id="recommendations">
             <h1>【炎帝サボメダルセット】</h1>
-            <div class="medal-items">
+            
         
+        <div class="medal-items">
         <img src="https://github.com/9dolog/baunty_medal/raw/main/charactermedalset.PNG" 
      alt="環境キャラメダルセット" 
      style="transform: scale(1); border-radius: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); border: 3px solid #d3801a;">
