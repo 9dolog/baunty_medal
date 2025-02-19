@@ -825,30 +825,7 @@ body, html {
             }
         }
 
-        #charactermedalset{
-            display: flex;
-            justify-content: center;
-            gap: 20px; /* 画像間のスペースを設定 */
-            background-color: #7c7c7c; /* セクションの背景色を統一 */
-            
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px auto;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            
-            
-            color: white; /* テキストの色を白に */
-            padding: 20px; /* 内側の余白を設定 */
-            border-radius: 10px; /* 角を丸くする */
-            margin: 20px auto; /* 上下にスペースを追加して中央揃え */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* 影を追加して立体感を演出 */
-            flex-direction: column;
-            align-items: center;
-        }
-
-    #charactermedalset h4{
-        font-size: 100%;
-    }
+        
 
     @media (max-width: 768px) {
       #charactermedalset img {
@@ -1044,7 +1021,7 @@ body, html {
     </footer>
     
     <div id="medalSelector">
-        <h1>メダルを長押ししてエリア内に移動</h1>
+        <h3>メダルを長押ししてエリア内に移動</h3>
         <form>
             <label>メダル1: <div id="medal1" class="drop-zone" ondrop="drop(event, 'medal1')" ondragover="allowDrop(event)"></div></label>
             <label>メダル2: <div id="medal2" class="drop-zone" ondrop="drop(event, 'medal2')" ondragover="allowDrop(event)"></div></label>
