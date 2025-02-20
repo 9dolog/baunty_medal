@@ -72,11 +72,11 @@ body, html {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    background-color: rgba(80, 80, 80, 0.8); /* 0.8は80%の不透明度 */;
-    border-radius: 10px;
+
+
     padding: 20px;
     margin: 20px auto;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+ 
     flex-direction: column;
     text-align: center; /* テキスト中央揃え */
     width: fit-content; /* 必要に応じて調整 */
@@ -240,7 +240,7 @@ body, html {
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
             padding: 10px 0;
             text-align: center;
-            font-size: 8px;
+            font-size: 20px;
             color: white;
             width: 100%;
         }
@@ -687,7 +687,7 @@ body, html {
         }
 
         .half-width-form textarea {
-            height: 20px; /* テキストエリアの高さを短く設定 */
+            height: 100px; /* テキストエリアの高さを短く設定 */
         }
 
         .half-width-form .checkbox-container {
@@ -732,12 +732,14 @@ body, html {
 
     <style>
         p {
-            background-color: rgba(124, 124, 124, 0.8); /* 0.8は80%の不透明度 */;
+            background-color: #7c7c7c;
+            box-shadow: 0 4px 6px rgb(0, 0, 0);
             color: white; /* テキストの色を白に */
             padding: 20px; /* 内側の余白を設定 */
             border-radius: 10px; /* 角を丸くする */
             margin: 20px auto; /* 上下にスペースを追加して中央揃え */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* 影を追加して立体感を演出 */
+      
+            font-size: 50%;
         }
         
 
@@ -821,9 +823,11 @@ body, html {
             }
 
             #profileImagesContainer img {
-                height: auto; /* モバイル用に高さを調整 */
-                max-width: 100%;
-            }
+    width: 150px; /* 幅を150pxに設定 */
+    height: auto; /* アスペクト比を維持 */
+    border-radius: 10px; /* 画像の角を丸くする（任意） */
+}
+
 
             .images-wrapper {
     flex-direction: column;
@@ -849,8 +853,9 @@ body, html {
     margin-bottom: 30px;
     padding: 15px;
     border-radius: 16px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: rgba(124, 124, 124, 0.8); /* 0.8は80%の不透明度 */;
+    background-color: #7c7c7c;
+            box-shadow: 0 4px 6px rgb(0, 0, 0);
+
     width: 70%;
 }
 
@@ -960,8 +965,9 @@ body, html {
     margin-bottom: 30px;
     padding: 15px;
     border-radius: 16px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: rgba(124, 124, 124, 0.8); /* 0.8は80%の不透明度 */;
+    background-color: #7c7c7c;
+            box-shadow: 0 4px 6px rgb(0, 0, 0);
+   
     max-width: 100%;
 }
 
@@ -976,13 +982,12 @@ body, html {
 
     </style>
 
-    <h1>バウンティラッシュ<br>メダル編成ツール<br>（長押ししてドラッグ＆ドロップ）<br>更新日時：2025/02/12</h1>
+    <h1>バウンティラッシュ<br>メダル編成ツール<br>（長押ししてドラッグ＆ドロップ）<br>更新日時：2025/02/20</h1>
 
     
 
     <div id="profileImagesContainer">
-        <h1>【自己紹介】</h1>
-        <p>このサイトの管理人は109シーズンランカー・第４回チャンピオンシップゴールドトーナメントベスト８入賞メンバーです。<br>立ち回りも大事ですが、メダル編成も大事です。使うキャラに合わせたタグを意識してメダルを選びましょう。<br>正直トップ層には実力では敵いませんが、メダルをしっかり考えるだけでランカーにはなれます。<br>メダルを考えたのち、立ち回りを勉強していきましょう。</p>
+        <h1>【自己紹介】<br><p>このサイトの管理人は109シーズンランカー・第４回チャンピオンシップゴールドトーナメントベスト８入賞メンバーです。<br>立ち回りも大事ですが、メダル編成も大事です。使うキャラに合わせたタグを意識してメダルを選びましょう。<br>正直トップ層には実力では敵いませんが、メダルをしっかり考えるだけでランカーにはなれます。<br>メダルを考えたのち、立ち回りを勉強していきましょう。</p></h1>
         <div class="images-wrapper">
         
         <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/profile.PNG" alt="プロフィール写真">
