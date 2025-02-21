@@ -47,6 +47,7 @@
       
 </head>
 
+
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0L15W1GK8P"></script>
 <script>
@@ -739,7 +740,7 @@ body, html {
             border-radius: 10px; /* 角を丸くする */
             margin: 20px auto; /* 上下にスペースを追加して中央揃え */
       
-            font-size: 50%;
+            font-size: 40%;
         }
         
 
@@ -812,28 +813,37 @@ body, html {
     object-fit: cover;      /* アスペクト比を維持しつつコンテナに収める */
 }
 
-        @media (max-width: 768px) {
-            .medal-section img {
-                width: 200px;
-            }
+@media (max-width: 768px) {
+    .medal-section img {
+        width: 200px;
+    }
 
-            #profileImagesContainer {
-                flex-direction: column;
-                align-items: center;
-            }
+    #profileImagesContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
 
-            #profileImagesContainer img {
-    width: 150px; /* 幅を150pxに設定 */
-    height: auto; /* アスペクト比を維持 */
-    border-radius: 10px; /* 画像の角を丸くする（任意） */
+    /* 画像を横並びに調整 */
+    #profileImagesContainer .images-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px; /* 画像間のスペース */
+        flex-wrap: nowrap; /* 折り返しを防止 */
+        
+    }
+
+    #profileImagesContainer img {
+        width: 50%; /* 小さめに設定して4枚を横並びに */
+        height: 80px; /* 高さを固定 */
+        object-fit: cover; /* アスペクト比を維持して切り抜き */
+        border-radius: 10px;
+        flex-shrink: 0; /* 画像の縮小を防止して横並び維持 */
+    }
 }
 
-
-            .images-wrapper {
-    flex-direction: column;
-    gap: 10px;              /* 画像間の隙間を調整 */
-}
-        }
 
         
 
@@ -990,9 +1000,9 @@ body, html {
         <h1>【自己紹介】<br><p>このサイトの管理人は109シーズンランカー・第４回チャンピオンシップゴールドトーナメントベスト８入賞メンバーです。<br>立ち回りも大事ですが、メダル編成も大事です。使うキャラに合わせたタグを意識してメダルを選びましょう。<br>正直トップ層には実力では敵いませんが、メダルをしっかり考えるだけでランカーにはなれます。<br>メダルを考えたのち、立ち回りを勉強していきましょう。</p></h1>
         <div class="images-wrapper">
         
-        <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/profile.PNG" alt="プロフィール写真">
+    
         <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/profile2.PNG" alt="プロフィール写真2">
-        <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/profile3.PNG" alt="プロフィール写真3">
+        
         <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/profile4.PNG" alt="プロフィール写真4">
         </div>
     </div>
