@@ -1,8 +1,8 @@
 /* 現在の背景画像設定 */
 body {
     background-image: url('https://github.com/9dolog/baunty_medal/raw/main/haikei.PNG');
-    background-position: center center; /* 背景画像を中央に配置 */
-    background-repeat: repeat;          /* 背景画像を繰り返す */
+ 
+
 }
 
 
