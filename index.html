@@ -884,9 +884,10 @@ body, html {
     line-height: 1.6;
     color: white;
     text-align: center;
-    margin-top: -50px; /* ネガティブマージンで密着度をさらにアップ */
+    margin-top: -90px; /* ネガティブマージンで密着度をさらにアップ */
     background-color: transparent !important; /* pタグの背景色を強制的に透明化 */
     box-shadow: none;
+    font-size: 150%;
 }
 
 
@@ -1013,23 +1014,18 @@ body, html {
         <h1>【最新メダル】</h1>
     
         <div class="medal-item">
-            <img src="https://github.com/9dolog/baunty_medal/raw/main/enteisabo.PNG" alt="最新メダル" style="transform: scale(0.5);">
-            <h4>【王手飛車メダル】<br>ついに登場炎帝サボ！必要最低限のタグは持っているが、”革命軍”と”義兄弟”は３タグ一致で発動させたいのでサボ３種で組むのが理想。</h4>
+            <img src="https://github.com/9dolog/baunty_medal/raw/main/itiji.PNG" alt="最新メダル" style="transform: scale(0.5);">
+            <h4>【イチジメダル】<br>敵チームのお宝エリアにいるとき、与えるダメージが5%増加する</h4>
         </div>
     
         <div class="medal-item">
-            <img src="https://github.com/9dolog/baunty_medal/raw/main/kakumeigunnnoonnnasensi.PNG" alt="最新メダル" style="transform: scale(0.5);">
-            <h4>【革命軍の女戦士メダル】<br>バレンタインキャンペーンの新キャラとして登場！</h4>
+            <img src="https://github.com/9dolog/baunty_medal/raw/main/niji.PNG" alt="最新メダル" style="transform: scale(0.5);">
+            <h4>【ニジメダル】<br>ジャスト回避時に、スキル1のクールタイムを3%短縮する</h4>
         </div>
     
         <div class="medal-item">
-            <img src="https://github.com/9dolog/baunty_medal/raw/main/tougunn.PNG" alt="最新メダル" style="transform: scale(0.5);">
-            <h4>【”東軍”軍隊長メダル”】<br>スキル1短縮・スキル2短縮・回避クールタイム短縮・奪取速度増加と最低限のタグは持っているのでふっとばしキャラには噛み合うかもしれない。<br><br>また、抽選に「キャラタイプ革命軍のときスキル2のクールタイム短縮速度増加があるので次の超フェスはサボなのか？！と勘ぐってしまいます。</h4>
-        </div>
-    
-        <div class="medal-item">
-            <img src="https://github.com/9dolog/baunty_medal/raw/main/tougunnhuku.PNG" alt="最新メダル" style="transform: scale(0.5);">
-            <h4>【”東軍”副軍隊長メダル】<br>このメダルの抽選にもキャラタイプ革命軍～と記載あるので、炎帝サボに期待？！</h4>
+            <img src="https://github.com/9dolog/baunty_medal/raw/main/yonji.PNG" alt="最新メダル" style="transform: scale(0.5);">
+            <h4>【ヨンジメダル】<br>体力が70％以上のとき、受けるダメージが5%減少する</h4>
         </div>
     </div>
     
@@ -1741,6 +1737,9 @@ body, html {
             {name: '”東軍”軍隊長メダル',random: ['キャラタイプ「革命軍」のとき、スキル2のクールタイム短縮速度が1%増加する','攻撃', '防御','クリティカル'],romaji: 'tougunn', ability: '敵をふっとばしたとき、スキル1のクールタイムを5%短縮する', tags: ['エッグヘッド','革命軍','超人系能力者','革命軍軍隊長']},
             {name: '”東軍”副軍隊長メダル',random: ['キャラタイプ「革命軍」のとき、スキル1のクールタイム短縮速度が1%増加する', '攻撃','防御','クリティカル'],romaji: 'tougunnhuku', ability: '体力が50%以下のとき、与えるダメージが3%増加する', tags: ['エッグヘッド','革命軍']},
             {name: '王手飛車メダル',random: ['体力', '攻撃','燃焼短縮'],romaji: 'enteisabo', ability: '敵チームのお宝エリアにいるとき、受けるダメージが5%減少する', tags: ['エッグヘッド','革命軍','自然系能力者','参謀総長','義兄弟']},
+            {name: 'イチジメダル',random: ['体力', '防御','クリティカル'],romaji: 'itiji', ability: '敵チームのお宝エリアにいるとき、与えるダメージが5%増加する', tags: ['ソウ・ホールケーキアイランド','王族','ジェルマ66']},
+            {name: 'ニジメダル',random: ['体力', '攻撃','感電短縮'],romaji: 'niji', ability: 'ジャスト回避時に、スキル1のクールタイムを3%短縮する', tags: ['ソウ・ホールケーキアイランド','王族','ジェルマ66']},
+            {name: 'ヨンジメダル',random: ['攻撃', '防御','クリティカル'],romaji: 'yonji', ability: '体力が70％以上のとき、受けるダメージが5%減少する', tags: ['ソウ・ホールケーキアイランド','王族','ジェルマ66']},
             // 他のメダルもここに追加...
         ];
 
