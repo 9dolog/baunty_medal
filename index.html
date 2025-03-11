@@ -293,7 +293,7 @@ body, html {
             color: white;
         
             z-index: 1000;
-            font-size: 8%;
+            font-size: 50%;
             overflow-y: auto;
             border-radius: 10px;
             transition: transform 0.3s ease-in-out; /* スムーズなアニメーション */
@@ -359,7 +359,7 @@ body, html {
                 padding: 15px;
                 background-color: rgba(130, 130, 130,0.9); 
                 z-index: 2000;
-                font-size: 5px;
+                font-size: 15%;
                 overflow-y: auto;
                 max-height: 70%; /* エリアの最大高さを指定 */
                 border-radius: 8px;
@@ -912,7 +912,12 @@ background-color: rgba(130,130,130,0.9); /* 0.8は80%の不透明度 */;
     
 
     <div id="profileImagesContainer">
-        <h1>【自己紹介】<br><p>このサイトの管理人は109シーズンランカー・第４回チャンピオンシップゴールドトーナメントベスト８入賞メンバーです。タグや抽選でメダル検索できますので、ぜひご活用ください！</p></h1>
+        <h1>【メダルセット作成ツール】<br><p>このサイトの管理人は109シーズンランカー・第４回チャンピオンシップゴールドトーナメントベスト８入賞メンバーです。<br><br>タグや抽選でメダル検索やメダルを長押ししてドラッグアンドドロップで任意のメダルセットを作成できますので、ぜひご活用ください！</p></h1>
+        <div>
+            <a href="#medalList" style="display: block; text-align: center; margin-top: -60px; font-size: 150%;"><u>メダル作成ツールへ</u></a>
+        </div>
+        
+        
         <div class="images-wrapper">
         
     
@@ -1014,7 +1019,7 @@ background-color: rgba(130,130,130,0.9); /* 0.8は80%の不透明度 */;
     </footer>
     
     <div id="medalSelector">
-        <h3>メダルを長押ししてエリア内に移動</h3>
+        <h4>メダルを長押ししてエリアに移動</h4>
         <form>
             <label>メダル1: <div id="medal1" class="drop-zone" ondrop="drop(event, 'medal1')" ondragover="allowDrop(event)"></div></label>
             <label>メダル2: <div id="medal2" class="drop-zone" ondrop="drop(event, 'medal2')" ondragover="allowDrop(event)"></div></label>
@@ -1043,7 +1048,7 @@ background-color: rgba(130,130,130,0.9); /* 0.8は80%の不透明度 */;
     </div>
     
     <div id="result">
-        <h3>タグ効果</h3>
+        <h4>タグ効果</h4>
         <ul id="tagEffects"></ul>
     </div>
     
