@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://9dolog.github.io/baunty_medal/">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0L15W1GK8P"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0L15W1GK8P');
+</script>
 
-    <style>
-        body {
+<style>
+    body {
           margin: 0;
           font-family: Arial, sans-serif;
-        }
+    }
 
-        
-        .header {
+    .header {
           display: flex;
           justify-content: space-around;
           align-items: center;
@@ -22,8 +29,9 @@
           padding: 10px 0;
           width: 100%;
           max-width: 100%;
-        }
-        .header-item {
+    }
+
+    .header-item {
           flex: 1;
           text-align: center;
           padding: 10px;
@@ -31,57 +39,43 @@
           font-size: clamp(12px, 2vw, 16px); /* フォントサイズを調整 */
           white-space: nowrap; /* 改行防止 */
 
-        }
-        .header-item:last-child {
+    }
+
+    .header-item:last-child {
           border-right: none;
-        }
-        .header-item a {
+    }
+
+    .header-item a {
           color: white;
           text-decoration: none;
           font-weight: bold;
-        }
-        .header-item a:hover {
+    }
+
+    .header-item a:hover {
           text-decoration: underline;
-        }
-      </style>
-      
-</head>
+    }
 
+    body, html {
+        overflow-x: hidden;
+    }
 
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0L15W1GK8P"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-0L15W1GK8P');
-</script>
-
-    <style>
-
-body, html {
-    overflow-x: hidden;
-}
-
-        /* 立体的な影を付けるスタイル */
-        h1 {
+    h1 {
     color: white;
-            
+    background-color: #546bc9;
     font-family: 'Arial', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-
-
-    padding: 20px;
-    margin: 20px auto;
- 
     flex-direction: column;
-    text-align: center; /* テキスト中央揃え */
-    width: fit-content; /* 必要に応じて調整 */
+    width: 100%;
+    padding: 20px 0;
+    margin: 0;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 文字に影を追加 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 帯の下に影を追加 */
 }
+
+
 
     
         
@@ -359,7 +353,7 @@ body, html {
                 padding: 15px;
                 background-color: rgba(130, 130, 130,0.9); 
                 z-index: 2000;
-                font-size: 15%;
+                font-size: 100%;
                 overflow-y: auto;
                 max-height: 70%; /* エリアの最大高さを指定 */
                 border-radius: 8px;
@@ -449,9 +443,8 @@ body, html {
         /* タグフィルターのスタイル */
         #tagFilter {
             position: static;
-            background-color: rgba(130, 130, 130,0.9); 
-            margin-top: 20px; /* フッターとの間隔を広げる */    
-            font-size: 50%;
+            background-color: rgba(130, 130, 130,0.9);    
+       
             z-index: 1000;
             height: 70%;
       
@@ -461,7 +454,7 @@ body, html {
             position: static;
             background-color: rgba(130, 130, 130,0.9); 
             width: 100%;
-            font-size: 50%;
+       
             z-index: 1000;
             height: 70%;
         }
@@ -701,20 +694,21 @@ body, html {
 
     <style>
         p {
-         
-            color: white; /* テキストの色を白に */
-           
-            border-radius: 10px; /* 角を丸くする */
-          
-           
-            font-size: 75%;
+            color: white;     
+            font-size: 150%;
+            font-weight: bold;
+
+ 
+
+    text-align: center; /* テキスト中央揃え */
+    width: fit-content; /* 必要に応じて調整 */
+    margin-bottom: 50px;
         }
         
 
         .medal-section {
             background-color: #7c7c7c; /* セクションの背景色を統一 */
-            padding: 20px;
-            margin: 20px auto;
+            
         }
 
       
@@ -725,11 +719,6 @@ body, html {
             height: auto;
         }
 
-        .medal-section p {
-            text-align: left;
-            color: #005b96; /* テキストの色を統一 */
-            color: white;
-        }
 
         #profileImagesContainer {
     display: flex;
@@ -825,7 +814,6 @@ background-color: rgba(130,130,130,0.9); /* 0.8は80%の不透明度 */;
     justify-content: center;
     gap: 20px; /* 画像間のスペースを設定 */
     background-color: rgba(130,130,130,0.9); /* 0.8は80%の不透明度 */;
-    margin: 20px auto;
     flex-direction: column;
     align-items: center;
     color: white; /* テキストの色を白に */
@@ -894,8 +882,8 @@ background-color: rgba(130,130,130,0.9); /* 0.8は80%の不透明度 */;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-bottom: 30px;
     background-color: rgba(130,130,130,0.9); /* 0.8は80%の不透明度 */;
+    font-size: 150%;
 }
 
 .medal-items img{
@@ -906,13 +894,16 @@ background-color: rgba(130,130,130,0.9); /* 0.8は80%の不透明度 */;
     .medal-items img{
         width: 100%;}
 }
+#medalList {
+    margin-top: -10px; /* 隙間を強制的になくす */
+}
 
     </style>
 
     
 
     <div id="profileImagesContainer">
-        <h1>【メダルセット作成ツール】<br><p>このサイトの管理人は109シーズンランカー・第４回チャンピオンシップゴールドトーナメントベスト８入賞メンバーです。<br><br>タグや抽選でメダル検索やメダルを長押ししてドラッグアンドドロップで任意のメダルセットを作成できますので、ぜひご活用ください！</p></h1>
+        <h1>【メダルセット作成ツール】</h1><p>このサイトの管理人は109シーズンランカー・第４回チャンピオンシップゴールドトーナメントベスト８入賞メンバーです。<br><br>タグや抽選でメダル検索やメダルを長押ししてドラッグアンドドロップで任意のメダルセットを作成できますので、ぜひご活用ください！</p>
         <div>
             <a href="#medalList" style="display: block; text-align: center; margin-top: -60px; font-size: 150%;"><u>メダル作成ツールへ</u></a>
         </div>
@@ -934,12 +925,12 @@ background-color: rgba(130,130,130,0.9); /* 0.8は80%の不透明度 */;
     
         <div class="medal-item">
             <img src="https://github.com/9dolog/baunty_medal/raw/main/akatarou.PNG" alt="最新メダル" style="transform: scale(0.5);">
-            <h4>【赤太郎メダル】</h4>
+            <h4>【赤太郎メダル】<br>敵陣に一人で攻めるスキル2が強力なゲッター用のメダル。特定のキャラタイプを持つキャラに使用すると被ダメージが減少するという珍しい抽選もある。バギ太郎と3タグ一致で使うのが無難か。</h4>
         </div>
     
         <div class="medal-item">
             <img src="https://github.com/9dolog/baunty_medal/raw/main/bagijirou.PNG" alt="最新メダル" style="transform: scale(0.5);">
-            <h4>【バギ次郎メダル】</h4>
+            <h4>【バギ次郎メダル】<br>現時点では赤太郎と一緒に組みたいが、バラバラメダルとも相性が良いので、ゲッター以外にも使い道はありそうだ。</h4>
         </div>
     </div>
     
@@ -982,16 +973,14 @@ background-color: rgba(130,130,130,0.9); /* 0.8は80%の不透明度 */;
 
 </div>
     
-    </div>
     <!-- modify this form HTML and place wherever you want your form -->
+    <h1>お問い合わせフォーム</h1>
     <form
     action="https://formspree.io/f/xzzbvwvj"
     method="POST"
     class="half-width-form"
     style="background-color: rgba(130,130,130,0.9); /* 背景色を半透明の黒に設定 */ /* 背景色を半透明の黒に設定 */; padding: 20px; border-radius: 10px; color:white;">
-    <label>
-    <B>お問い合わせフォーム</B>
-    </label>
+    
     <label>
     メールアドレス
     <input type="email" name="email">
@@ -1041,7 +1030,7 @@ background-color: rgba(130,130,130,0.9); /* 0.8は80%の不透明度 */;
     </div>
     
     <div id="medalList">
-     
+        <h1>メダル一覧</h1>
         <input type="text" id="searchInput" placeholder="メダル名、能力、タグで検索" oninput="filterMedals()">
         <div id="medalContainer"></div>
         
