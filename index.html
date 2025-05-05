@@ -20,40 +20,7 @@
           font-family: Arial, sans-serif;
     }
 
-    .header {
-          display: flex;
-          justify-content: space-around;
-          align-items: center;
-          background-color: #4CAF50;
-          color: white;
-          padding: 10px 0;
-          width: 100%;
-          max-width: 100%;
-    }
-
-    .header-item {
-          flex: 1;
-          text-align: center;
-          padding: 10px;
-          border-right: 1px solid white;
-          font-size: clamp(12px, 2vw, 16px); /* フォントサイズを調整 */
-          white-space: nowrap; /* 改行防止 */
-
-    }
-
-    .header-item:last-child {
-          border-right: none;
-    }
-
-    .header-item a {
-          color: white;
-          text-decoration: none;
-          font-weight: bold;
-    }
-
-    .header-item a:hover {
-          text-decoration: underline;
-    }
+    
 
     body, html {
         overflow-x: hidden;
@@ -682,13 +649,72 @@
 
 <body>
     <div class="header">
-        <div class="header-item"><a href="#charactermedalset"><u>新キャラメダル</u></a></div>
+       
         <div class="header-item"><a href="#medalList"><u>メダル一覧</u></a></div>
         <div class="header-item"><a href="#tagFilter"><u>タグから選ぶ</u></a></div>
         <div class="header-item"><a href="#randomFilter"><u>抽選から選ぶ</u></a></div>
       
    
     </div>
+    <style>
+        .header {
+            position: fixed; /* 画面上に固定 */
+            top: 0; /* 上部に配置 */
+            left: 0; /* 左端に配置 */
+            width: 100%; /* 幅を100%に設定 */
+            background-color: white; /* 背景色（必要に応じて） */
+            z-index: 1000; /* 他の要素よりも上に表示 */
+        }
+    
+        .header-item {
+            display: inline-block;
+            padding: 10px 20px;
+        }
+    
+        .header-item a {
+            text-decoration: none; /* 下線を外す */
+            color: black; /* 文字色 */
+        }
+    
+        body {
+            padding-top: 60px; /* ヘッダーの高さ分だけ下に余白を追加（コンテンツが隠れないように） */
+        }
+
+        .header {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          background-color: #4CAF50;
+          color: white;
+          padding: 10px 0;
+          width: 100%;
+          max-width: 100%;
+    }
+
+    .header-item {
+          flex: 1;
+          text-align: center;
+          padding: 10px;
+          border-right: 1px solid white;
+          font-size: clamp(12px, 2vw, 16px); /* フォントサイズを調整 */
+          white-space: nowrap; /* 改行防止 */
+
+    }
+
+    .header-item:last-child {
+          border-right: none;
+    }
+
+    .header-item a {
+          color: white;
+          text-decoration: none;
+          font-weight: bold;
+    }
+
+    .header-item a:hover {
+          text-decoration: underline;
+    }
+    </style>
   </body>
 
 <body>
@@ -953,69 +979,6 @@ background-color: rgba(130,130,130,0.9); /* 0.8は80%の不透明度 */;
     </div>
 
     
-
-    <div class="medal-section" id="latest">
-        <h1>【最新メダル】</h1>
-    
-        <div class="medal-item">
-            <img src="https://github.com/9dolog/baunty_medal/raw/main/porutye.PNG" alt="最新メダル" style="transform: scale(0.5);">
-            <h4>【ポルチェメダル】<br></h4>
-        </div>
-    
-        <div class="medal-item">
-            <img src="https://github.com/9dolog/baunty_medal/raw/main/hanba-gu.PNG" alt="最新メダル" style="transform: scale(0.5);">
-            <h4>【ハンバーグメダル】<br></h4>
-        </div>
-
-        <div class="medal-item">
-            <img src="https://github.com/9dolog/baunty_medal/raw/main/fureiru.PNG" alt="最新メダル" style="transform: scale(0.5);">
-            <h4>【連接鎚矛メダル】<br></h4>
-        </div>
-
-        <div class="medal-item">
-            <img src="https://github.com/9dolog/baunty_medal/raw/main/fokusi-.PNG" alt="最新メダル" style="transform: scale(0.5);">
-            <h4>【フォクシーメダル】<br></h4>
-        </div>
-    </div>
-    
-
-    <div id="charactermedalset">
-        <div class="medal-section" id="recommendations">
-            <h1>【炎帝サボメダルセット】</h1>
-            
-        
-       
-
-        
-            <div class="medal-items">
-                <img src="https://github.com/9dolog/baunty_medal/raw/main/medalexample2.PNG" alt="環境キャラメダルセット" style="transform: scale(1);">
-                <h4>【⇧⇧オススメ理由⇧⇧】<br>
-                    <span style="color: rgb(235, 201, 28);">敵陣での与ダメUP、奪取時回復</span>に加え全タグ一致のゲッター専用メダルセット。<br>
-                    炎帝サボの特性で通常攻撃の性能が高い+奪取時回復を元々持っているので、<span style="color: rgb(235, 201, 28);">シナジー効果大。</span><br>
-                    ルーシーメダルはイベントメダルだが、復刻ラインナップされているので必ず手に入れよう。
-                </h4>
-            </div>
-        
-            <div class="medal-items">
-                <img src="https://github.com/9dolog/baunty_medal/raw/main/medalexample5.PNG" alt="環境キャラメダルセット" style="transform: scale(1);">
-                <h4>【⇧⇧オススメ理由⇧⇧】<br>
-                    全タグ一致に加え、炎帝サボは敵旗に１人で攻めることが多いため、<span style="color: rgb(235, 201, 28);">スキル１とスキル２を高回転で打てる。</span><br>
-                    特に炎帝状態が現状かなり強い強化状態のため、スキル２を中心に暴れまわろう！
-                </h4>
-            </div>
-        
-            <div class="medal-items">
-                <img src="https://github.com/9dolog/baunty_medal/raw/main/medalexample6.PNG" alt="環境キャラメダルセット" style="transform: scale(1);">
-                <h4>【⇧⇧オススメ理由⇧⇧】<br>
-                    <span style="color: rgb(235, 201, 28);">燃焼状態を付与したときに回復かつ燃焼状態の敵から受けるダメージをカット</span>できる点が強力。<br>
-                    但し、現環境状態異常短縮のキャラが多いため優先度は少し下がる。
-                </h4>
-            </div>
-        </div>
-        
-    
-
-</div>
     
     <!-- modify this form HTML and place wherever you want your form -->
     <h1>お問い合わせフォーム</h1>
