@@ -1092,7 +1092,10 @@ background-color: rgba(130,130,130,0.9); /* 0.8は80%の不透明度 */;
         <button id="toggleSelectorButton">メダルセットを作成</button>
     </div>
 
+    
+
     <script>
+        
         const medals = [
             {name: 'クロオビメダル', random: ['攻撃', '防御', 'クリティカル'],romaji: 'kuroobi',ability: '体力が70％以上のとき、スキル1のクールタイム短縮速度が10％増加する', tags: ['東の海', 'アーロン一味', '魚人', '魚人空手']},
             {name: 'チュウメダル',random: ['体力', '防御', 'クリティカル'],romaji: 'tyuu', ability: '敵をK.O.したとき、クリティカルが20秒間90％増加する（重複不可）', tags: ['東の海', 'アーロン一味', '魚人']},
@@ -2043,6 +2046,7 @@ container.appendChild(medalDiv);
     });
 }
 
+    
 
 
     function createTagCheckboxes() {
@@ -2076,7 +2080,38 @@ container.appendChild(medalDiv);
     }
 
 
-    
+    document.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("randomCheckboxContainer");
+    const checkboxes = Array.from(container.children);
+
+    const priorityLabels = ["体力", "攻撃", "防御", "クリティカル"];
+
+    const group1 = []; // 「体力」「攻撃」「防御」「クリティカル」
+    const group2 = []; // 「短縮」含む（ただし「キャラタイプ」は含まない）
+    const group3 = []; // 「キャラタイプ」を含む（短縮を含んでいても）
+
+    checkboxes.forEach(cb => {
+        const label = cb.textContent.trim();
+
+        if (priorityLabels.includes(label)) {
+            group1.push(cb);
+        } else if (label.includes("キャラタイプ")) {
+            group3.push(cb); // キャラタイプは常に最後
+        } else if (label.includes("短縮")) {
+            group2.push(cb); // 短縮はキャラタイプ除外済み
+        } else {
+            group2.push(cb); // その他は短縮と同じグループへ（必要に応じてgroup4を追加可）
+        }
+    });
+
+    // オプションでグループ内ソートも可能（名前順など）
+    group1.sort((a, b) => priorityLabels.indexOf(a.textContent.trim()) - priorityLabels.indexOf(b.textContent.trim()));
+    group2.sort((a, b) => a.textContent.localeCompare(b.textContent));
+    group3.sort((a, b) => a.textContent.localeCompare(b.textContent));
+
+    const sorted = [...group1, ...group2, ...group3];
+    sorted.forEach(cb => container.appendChild(cb));
+});
 
     function updateResult() {
     const selectedMedals = ['medal1', 'medal2', 'medal3']
