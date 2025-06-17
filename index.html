@@ -672,6 +672,7 @@
     <div class="header">
        
         <div class="header-item"><a href="#medalList"><u>メダル一覧</u></a></div>
+        <div class="header-item"><a href="#charamedal"><u>新キャラキャラメダル</u></a></div>
         <div class="header-item"><a href="#latest"><u>キャラサポート</u></a></div>
         <div class="header-item"><a href="#tagFilter"><u>タグから選ぶ</u></a></div>
         <div class="header-item"><a href="#randomFilter"><u>抽選から選ぶ</u></a></div>
@@ -718,7 +719,7 @@
           text-align: center;
           padding: 10px;
           border-right: 1px solid white;
-          font-size: clamp(12px, 2vw, 16px); /* フォントサイズを調整 */
+          font-size: clamp(6px, 2vw, 16px); /* フォントサイズを調整 */
           white-space: nowrap; /* 改行防止 */
 
     }
@@ -927,6 +928,38 @@ background-color: rgba(130,130,130,0.9); /* 0.8は80%の不透明度 */;
     z-index: 1;
 }
 
+#charamedal {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* 画像間のスペースを設定 */
+    background-color: rgba(130,130,130,0.9); /* 0.8は80%の不透明度 */;
+    flex-direction: column;
+    align-items: center;
+    color: white; /* テキストの色を白に */
+    position: relative; /* ⭐ 擬似要素のために必要 */
+    overflow: hidden;   /* ⭐ 画像がはみ出さないように */
+}
+
+#charamedal::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-size: cover;
+    background-position: center;
+ 
+    z-index: 0;   /* ⭐ 背景を一番下に配置 */
+}
+
+/* ⭐ テキストや他の要素を前面に表示 */
+#charamedal > * {
+    position: relative;
+    z-index: 1;
+}
+
 
 .medal-items{
     width: 90%;
@@ -999,6 +1032,20 @@ background-color: rgba(130,130,130,0.9); /* 0.8は80%の不透明度 */;
         <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/profile4.PNG" alt="プロフィール写真4">
         </div>
     </div>
+
+    <div id="charamedal">
+        <h1>【新キャラおすすめメダル】</h1>
+        <P>
+            <span style="font-size: 20px; font-weight: bold; background-color: black; color: white; padding: 16px 16px; border-radius: 8px;">【黄猿　ボルサリーノ】</span>
+            <br><br><br><br>
+
+            <br><br><br>
+            調査中です。<br>
+            ブックマーク登録してお待ちください。
+
+        </P>
+    </div>
+
 
     <div id="latest">
         <h1>【おすすめサポート】</h1>
