@@ -27,7 +27,7 @@
     </script>
 
     <meta name="description" content="バウンティラッシュのメダルセット編成・サポート構築に役立つツール。王下七武海、最悪の世代などのタグから検索・編成が可能。状態異常短縮系タグにも対応。目的に合ったメダルセットを効率的に作成。">
-    <meta name="keywords" content="バウンティラッシュ, メダルセット, メダルセット編成, シュミレーター, シミュレーター, ワンピース, 王下七武海, 状態異常短縮, サポート, and検索, 抽選, 効率, 超フェス,  ランカー">
+    <meta name="keywords" content="チャンピオンシップ, CS, バウンティラッシュ, メダルセット, メダルセット編成, シュミレーター, シミュレーター, ワンピース, 王下七武海, 状態異常短縮, サポート, and検索, 抽選, 効率, 超フェス,  ランカー">
     <meta name="author" content="シーズン109 TOP100経験者・第4回CSゴールドトーナメント進出メンバー">
     <meta property="og:title" content="【第5回チャンピオンシップ開催間近！】おすすめサポート・メダルセット作成ツール">
     <meta property="og:description" content="バウンティラッシュのメダルセット編成やサポート効果を簡単に管理・構築できるツール。タグや抽選から理想のセットを探し、ランカーの知見を活かした効率的な構成を実現。">
@@ -56,7 +56,7 @@
     
     <link rel="stylesheet" href="style.css">
 
-    <title>【新超フェス黄猿・ボルサリーノ】おすすめサポート・メダルセット作成ツール</title>
+    <title>【第5回チャンピオンシップ開催間近！】おすすめサポート・メダルセット作成ツール</title>
 
     <style>
         body {
@@ -74,7 +74,7 @@
 
         h1 {
             color: white;
-            background-color: #546bc9;
+            background-color: #C3073F;
             font-family: 'Arial', sans-serif;
             display: flex;
             justify-content: center;
@@ -99,7 +99,7 @@
             width: 100vw; /* ビューポート幅に合わせる */
             max-width: 100%;
             height: auto;
-            background-color: rgba(130, 130, 130,0.9)!important; /* ここに背景色を追加 */
+            background-color: rgba(26, 26, 29, .85); /* ここに背景色を追加 */
         }
 
         /* モバイル画面用のスタイル */
@@ -121,7 +121,7 @@
             max-width: 100%; /* 修正: max-width を追加 */
             box-sizing: border-box; /* 内側の余白を幅に含む */
             text-align: center; /* フォーム内の文字を中央揃え */
-            background-color: rgba(130, 130, 130,0.9); /* 背景色を半透明の黒に設定 */   
+            background-color: rgba(26, 26, 29, .85); /* 背景色を半透明の黒に設定 */   
         }
 
         /* フォーム内のラベル */
@@ -174,7 +174,7 @@
 
         /* フッターのデザイン */
         footer {
-            background-color: rgba(130, 130, 130,0.9); /* 背景色を半透明の黒に設定 */
+            
             text-align: center;
             font-size: 20px;
             color: white;
@@ -235,7 +235,7 @@
         /* #medalSelector と #result を右下に固定 */
         #medalSelector, #result {
             padding: 20px;
-            background-color: rgba(130, 130, 130,0.9); /* 背景色を半透明の黒に設定 */
+            background-color: rgba(26, 26, 29, .85); /* 背景色を半透明の黒に設定 */
             color: white;
         
             z-index: 1000;
@@ -303,7 +303,7 @@
                 vertical-align: bottom; /* 下に揃える */
                 width: 40%; /* 横並びで2つを表示 */
                 padding: 15px;
-                background-color: rgba(130, 130, 130,0.9); 
+                background-color: rgba(26, 26, 29, .85); 
                 z-index: 2000;
                 font-size: 100%;
                 overflow-y: auto;
@@ -322,7 +322,7 @@
         
         /* メダル一覧を固定しない */
         #medalList {
-            background-color: rgba(130, 130, 130,0.9); /* 背景色を半透明の黒に設定 */
+            background-color: rgba(26, 26, 29, .85); /* 背景色を半透明の黒に設定 */
             font-size: 20px;
             z-index: 1000;
             width: 50%;
@@ -332,7 +332,7 @@
 
         @media (max-width: 768px) {
         #medalList {
-            background-color: rgba(130, 130, 130,0.9);  /* 背景色を半透明の黒に設定 */
+            background-color: rgba(26, 26, 29, .85);  /* 背景色を半透明の黒に設定 */
             font-size: 10px;
             z-index: 1000;
             width: 50%;
@@ -385,14 +385,14 @@
         /* タグフィルターのスタイル */
         #tagFilter {
             position: static;
-            background-color: rgba(130, 130, 130,0.9);    
+            background-color: rgba(26, 26, 29, .85);    
             z-index: 1000;
             height: 70%;
         }
 
         #randomFilter{
             position: static;
-            background-color: rgba(130, 130, 130,0.9); 
+            background-color: rgba(26, 26, 29, .85); 
             width: 100%;
             z-index: 1000;
             height: 70%;
@@ -637,7 +637,9 @@
             display: flex;
             justify-content: space-around;
             align-items: center;
-            background-color: #4CAF50;
+            background: rgba(255,255,255,0.18);
+border-bottom: 1px solid rgba(255,255,255,.28);
+
             color: white;
             padding: 10px 0;
             width: 100%;
@@ -679,7 +681,7 @@
         }
         
         .medal-section {
-            background-color: #7c7c7c; /* セクションの背景色を統一 */
+            background-color: rgba(26, 26, 29, .85); /* セクションの背景色を統一 */
             
         }
 
@@ -692,7 +694,7 @@
         #profileImagesContainer {
             display: flex;
             justify-content: center;
-            background-color: rgba(130,130,130,0.9); /* 背景色は80%の不透明度 */
+            background-color: rgba(26, 26, 29, .85); /* 背景色は80%の不透明度 */
             color: white; /* テキストの色を白に */
             flex-direction: column;
             align-items: center;
@@ -756,7 +758,7 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            background-color: rgba(130,130,130,0.9); /* 0.8は80%の不透明度 */;
+            background-color: rgba(26, 26, 29, .85); /* 0.8は80%の不透明度 */;
             width: 90%;
         }
 
@@ -771,7 +773,7 @@
             display: flex;
             justify-content: center;
             gap: 20px; /* 画像間のスペースを設定 */
-            background-color: rgba(130,130,130,0.9); /* 0.8は80%の不透明度 */;
+            background-color: rgba(26, 26, 29, .85); /* 0.8は80%の不透明度 */;
             flex-direction: column;
             align-items: center;
             color: white; /* テキストの色を白に */
@@ -802,7 +804,7 @@
             display: flex;
             justify-content: center;
             gap: 20px; /* 画像間のスペースを設定 */
-            background-color: rgba(130,130,130,0.9); /* 0.8は80%の不透明度 */;
+            background-color: rgba(26, 26, 29, .85); /* 0.8は80%の不透明度 */;
             flex-direction: column;
             align-items: center;
             color: white; /* テキストの色を白に */
@@ -832,7 +834,7 @@
             display: flex;
             justify-content: center;
             gap: 20px; /* 画像間のスペースを設定 */
-            background-color: rgba(130,130,130,0.9); /* 0.8は80%の不透明度 */;
+            background-color: rgba(26, 26, 29, .85); /* 0.8は80%の不透明度 */;
             flex-direction: column;
             align-items: center;
             color: white; /* テキストの色を白に */
@@ -857,6 +859,35 @@
             position: relative;
             z-index: 1;
         }
+        #tier {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* 画像間のスペースを設定 */
+            background-color: rgba(26, 26, 29, .85); /* 0.8は80%の不透明度 */;
+            flex-direction: column;
+            align-items: center;
+            color: white; /* テキストの色を白に */
+            position: relative; /* ⭐ 擬似要素のために必要 */
+            overflow: hidden;   /* ⭐ 画像がはみ出さないように */
+        }
+
+        #tier::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 0;   /* ⭐ 背景を一番下に配置 */
+        }
+
+        /* ⭐ テキストや他の要素を前面に表示 */
+        #tier > * {
+            position: relative;
+            z-index: 1;
+        }
 
         .medal-items{
             width: 90%;
@@ -865,7 +896,7 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            background-color: rgba(130,130,130,0.9); /* 0.8は80%の不透明度 */;
+            background-color: rgba(26, 26, 29, .85); /* 0.8は80%の不透明度 */;
             font-size: 150%;
         }
 
@@ -909,11 +940,82 @@
             transform: translateY(-2px);
             box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.4);
         }
+        /* ===== Tier表専用CSS ===== */
+#tier-list {
+  width: 100%;
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 10px;
+  font-family: inherit;
+}
+
+.tier-title {
+  text-align: center;
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.tier-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 8px 0;
+  background: rgba(0,0,0,0.05);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.tier-label {
+  min-width: 50px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 8px;
+  border-radius: 10px;
+  color: #fff;
+}
+
+/* Tierごとの色 */
+.tier-s .tier-label { background-color: #e74c3c; }
+.tier-a .tier-label { background-color: #f1c40f; }
+.tier-b .tier-label { background-color: #3498db; }
+.tier-c .tier-label { background-color: #9b59b6; }
+.tier-d .tier-label { background-color: #7f8c8d; }
+
+/* キャラ画像を横並びに */
+.tier-characters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-left: 15px;
+}
+
+/* キャラ画像のサイズ設定（正方形） */
+.tier-characters img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid #fff;
+  background: #999;
+}
+
+/* スマホ対応 */
+@media (max-width: 480px) {
+  .tier-label { min-width: 40px; font-size: 1.1rem;}
+  .tier-characters img {
+    width: 55px;
+    height: 55px;
+  }
+}
+
 
     </style>
 </head>
 
 <body>
+    
     <div style="width: 100vw; max-width: 100%;">
     <!-- 修正: max-width:100%; を追加 -->
     <!-- Google Ads 設定 -->
@@ -926,8 +1028,9 @@
 
     <div class="header">
         <div class="header-item"><a href="#medalList"><u>メダル一覧</u></a></div>
-        <div class="header-item"><a href="#charamedal"><u>新キャラメダル</u></a></div>
-        <div class="header-item"><a href="#latest"><u>キャラサポート</u></a></div>
+         <div class="header-item"><a href="#tier"><u>Tier表</u></a></div>
+        <div class="header-item"><a href="#charamedal"><u>汎用メダル</u></a></div>
+       
         <div class="header-item"><a href="#tagFilter"><u>タグから選ぶ</u></a></div>
         <div class="header-item"><a href="#randomFilter"><u>抽選から選ぶ</u></a></div>
     </div>
@@ -943,6 +1046,8 @@
             ドラッグアンドドロップで任意のメダルセットを作成できますので、ぜひご活用ください！
             <br><br>
             〇更新日　R7/10/27
+
+
         </p>
         <div>
             <a href="#medalList" class="button-style">メダル作成ツールへ</a>
@@ -953,54 +1058,119 @@
         </div>
     </div>
 
+    <div id="tier">
+          <h1>キャラクターTier表</h1>
+                            <table style="border: 1px solid black;">
+  <section id="tier-list">
+
+  <div class="tier-row tier-s">
+    <div class="tier-label">S</div>
+    <div class="tier-characters">
+      <!-- ★ここに <img> を追加していってね！ -->
+  
+    </div>
+  </div>
+
+  <div class="tier-row tier-a">
+    <div class="tier-label">A</div>
+    <div class="tier-characters">
+        <img src="images/sata-nnicon.PNG" alt="">
+        <img src="images/nikaicon.PNG" alt="">
+    <img src="images/kizaruicon.PNG" alt="">
+        
+    </div>
+  </div>
+
+  <div class="tier-row tier-b">
+    <div class="tier-label">B</div>
+    <div class="tier-characters">
+        <img src="images/saboicon.PNG" alt="">
+        <img src="images/tyoppa-icon.PNG" alt="">
+        <img src="images/kuzannicon.PNG" alt="">
+        <img src="images/nijiicon.PNG" alt="">
+        
+    </div>
+  </div>
+
+  <div class="tier-row tier-c">
+    <div class="tier-label">C</div>
+    <div class="tier-characters">
+        <img src="images/roja-icon.PNG" alt="">
+        <img src="images/seraicon.PNG" alt="">
+        <img src="images/ga-puicon.PNG" alt="">
+    </div>
+  </div>
+
+  <div class="tier-row tier-d">
+    <div class="tier-label">D</div>
+    <div class="tier-characters">
+    </div>
+  </div>
+
+</section>
+
+</table>
+    </div>
+    
     <div id="charamedal">
-        <h1>【新キャラおすすめメダル】</h1>
-<span style="font-size: 16px; font-weight: bold; background-color: black; color: white; padding: 16px; border-radius: 8px; white-space: nowrap; display: inline-flex; align-items: center;">
-  <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/zefa-icon.png" alt="ゼファー" style="height: 20px; margin-right: 8px;">
-  【FILM　Z　ゼファー】
+        <h1>【汎用おすすめメダル】</h1>
+
+
+        
+<span style="font-size: 16px; font-weight: bold; background-color: #4E4E50; color: white; padding: 16px; border-radius: 8px; white-space: nowrap; display: inline-flex; align-items: center;">
+  <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/kizaruicon.PNG" alt="黄猿" style="height: 20px; margin-right: 8px;">
+  【アタッカー】
+</span>
+        <p>
+            〇アタッカーは、自チームのお宝エリアが少ないときはディフェンダーを狙い、多いときはゲッター処理を行う。<br>
+            そのため、短時間で狙った敵を破壊しないといけない。<br>
+            ステータス振りは<span style="color: #ffff33;">攻撃・与ダメ増加</span>にぶっぱしよう。
+        </p>
+        <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/kizaru3.PNG" alt="黄猿３">
+        <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/kizaru4.PNG" alt="黄猿４">
+        <p>    
+            〇現環境アタッカーで言えば、黄猿は任意の旗に比較的簡単に瞬間移動できる。<br>
+            そのため、ルフィ３種といった<br>
+            <span style="color: #ffff33;">旗内で強さを発揮する</span>メダルが良いだろう。
+            <br><br><br>
+
+            <hr style="border: none; border-top: 3px dashed white; width: 100vw; margin-left: calc(-50vw + 50%);">   
+<span style="font-size: 16px; font-weight: bold; background-color: #4E4E50; color: white; padding: 16px; border-radius: 8px; white-space: nowrap; display: inline-flex; align-items: center;">
+  <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/nikaicon.PNG" alt="ニカ" style="height: 20px; margin-right: 8px;">
+  【ゲッター】
+</span>
+        <p>
+            〇ゲッターは、常に相手の旗を狙う動きが強い。<br>
+            個人的には、奪取性能が高いゲッターは体力・防御振りの奪取速度増加メダル、<br>
+            対面性能が高いゲッターは攻撃振りでルフィ３種のメダルが望ましい。
+        </p>
+        <p>
+            〇奪取速度増加
+        </p>
+        <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/nika3.PNG" alt="ニカ３">
+        <p>
+            〇与ダメ増加
+        </p>
+        <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/nika1.PNG" alt="ニカ１">
+        <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/nika2.PNG" alt="ニカ２">
+        
+            <br><br><br>
+            <hr style="border: none; border-top: 3px dashed white; width: 100vw; margin-left: calc(-50vw + 50%);">  
+<span style="font-size: 16px; font-weight: bold; background-color: #4E4E50; color: white; padding: 16px; border-radius: 8px; white-space: nowrap; display: inline-flex; align-items: center;">
+  <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/sata-nnicon.PNG" alt="サターン" style="height: 20px; margin-right: 8px;">
+  【ディフェンダー】
 </span>
 
 
         <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/zefa-0.png" alt="ゼファー０">
         <p>    
-            〇ゼファーはディフェンダーのため、被弾回数が多い。<br>
+            〇ディフェンダーは、アタッカー・ゲッターから常に旗を狙われるため、被弾回数が多い。<br>
             そのため、カイドウ+火災メダルセットのような<br>
             <span style="color: #ffff33;">被弾によるスキル短縮</span>メダルが良いだろう。
             <br><br><br>
-        <hr style="border: none; border-top: 3px dashed black; width: 100vw; margin-left: calc(-50vw + 50%);">    
-<span style="font-size: 16px; font-weight: bold; background-color: black; color: white; padding: 16px; border-radius: 8px; white-space: nowrap; display: inline-flex; align-items: center;">
-  <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/kizaruicon.PNG" alt="黄猿" style="height: 20px; margin-right: 8px;">
-  【黄猿　ボルサリーノ】
-</span>
-        <p>
-            〇ステータス振りは<span style="color: #ffff33;">体力・攻撃</span>にぶっぱしよう。<br>
-            ※最近は防御無視のスキルが多く、黄猿も<span style="color: #ffff33;">得意属性に攻撃して１０秒間</span>しか防御力が増加しないため
-        </p>
-        <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/kizaru1.PNG" alt="黄猿１">
-        <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/kizaru2.PNG" alt="黄猿２">
-        <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/kizaru3.PNG" alt="黄猿３">
-        <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/kizaru4.PNG" alt="黄猿４">
-        <p>    
-            〇黄猿は任意の旗に比較的簡単に瞬間移動できる。<br>
-            そのため、カイドウ３種やルフィ３種といった<br>
-            <span style="color: #ffff33;">旗内で強さを発揮する</span>メダルが良いだろう。
-            <br><br>
-            〇加えて、上記２つのメダルセットでは<br>
-            回復不能短縮を付けられるメダルがある。
-            <br><br>
-            〇カイドウメダルセットでは<br>
-            メダルを１つ降三世引奈落メダルに変更する必要があるが、<br>
-            <span style="color: #ffff33;">降三世引奈落メダル</span>が回復不能短縮を付けることができる。<br>
-            ルフィメダルセットでは<br>
-            <span style="color: #ffff33;">火拳銃メダル（画像中央のメダル）</span>が回復不能短縮を付けることができる。
-            <br><br>
-            〇回復不能は相手のサポート（王下七武海）によるが<span style="color: #ffff33;">約９～１２秒間付与</span>されてしまうので<br>
-            気になる人は対策しよう。
-            <br><br><br>
-
     </div>
 
-    <div id="latest">
+   <!-- <div id="latest">
         <h1>【おすすめサポート】</h1>
         <span style="font-size: 16px; font-weight: bold; background-color: black; color: white; padding: 16px 16px; border-radius: 8px;">【FILM　Z　ゼファー】</span>
         <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/zefa-saiaku.PNG" alt="ゼファー１">
@@ -1071,7 +1241,7 @@
             ※このサイトの管理人はクロコダイルがLv.100ではないため画像では未発動。
             <br><br><br>
         </p>
-    </div>
+    </div>-->
     
     <!-- modify this form HTML and place wherever you want your form -->
     <h1>お問い合わせフォーム</h1>
@@ -1079,7 +1249,7 @@
     action="https://formspree.io/f/xzzbvwvj"
     method="POST"
     class="half-width-form"
-    style="background-color: rgba(130,130,130,0.9); /* 背景色を半透明の黒に設定 */ /* 背景色を半透明の黒に設定 */; padding: 20px; border-radius: 10px; color:white;">
+    style="background-color: rgba(26, 26, 29, .85); /* 背景色を半透明の黒に設定 */ /* 背景色を半透明の黒に設定 */; padding: 20px; border-radius: 10px; color:white;">
     
     <label>
         メールアドレス
