@@ -95,12 +95,15 @@
         }
         
         .adsbygoogle {
-            display: block;
-            width: 100vw; /* ビューポート幅に合わせる */
-            max-width: 100%;
-            height: auto;
-            background-color: rgba(26, 26, 29, .85); /* ここに背景色を追加 */
-        }
+    display: block;
+    width: 100%;                /* ← 100vw ではなく 100% に変更 */
+    max-width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 0;
+    background-color: rgba(26, 26, 29, .85); /* 背景色はそのままOK */
+}
+
 
         /* モバイル画面用のスタイル */
         @media (max-width: 768px) {
@@ -639,9 +642,7 @@
             color: black; /* 文字色 */
         }
     
-        body {
-            padding-top: 60px; /* ヘッダーの高さ分だけ下に余白を追加（コンテンツが隠れないように） */
-        }
+        
 
         .header {
             display: flex;
@@ -1025,15 +1026,7 @@
 
 <body>
     
-    <div style="width: 100vw; max-width: 100%;">
-    <!-- 修正: max-width:100%; を追加 -->
-    <!-- Google Ads 設定 -->
-    <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-6817396835174555"
-        data-ad-slot="3281944548"
-        data-full-width-responsive="true"></ins>
-    </div>
+    
 
     <div class="header">
         <div class="header-item"><a href="#medalList"><u>メダル一覧</u></a></div>
@@ -1044,15 +1037,22 @@
         <div class="header-item"><a href="#randomFilter"><u>抽選から選ぶ</u></a></div>
     </div>
     
+    <div style="width: 100vw; max-width: 100%;">
+    <!-- 修正: max-width:100%; を追加 -->
+    <!-- Google Ads 設定 -->
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-6817396835174555"
+        data-ad-slot="3281944548"
+        data-full-width-responsive="true"></ins>
+    </div>
     <!-- 自己紹介エリア -->
     <div id="introduction">
 
     <div id="profileImagesContainer">
         <h1>はじめに</h1>
         <p>このサイトの管理人は、<br>
-            109シーズンランカー<br>
-            第4回CSゴールドベスト8入賞メンバー<br>
-            です。
+            109シーズンランカー・第4回CSゴールドベスト8入賞メンバーです。
             <br><br>
             是非参考にしていただければ幸いです！
             <br><br>
@@ -1081,14 +1081,14 @@
     <div class="tier-label">S</div>
     <div class="tier-characters">
       <!-- ★ここに <img> を追加していってね！ -->
-  
+  <img src="https://github.com/9dolog/baunty_medal/raw/main/sata-nnicon.PNG" alt="">
     </div>
   </div>
 
   <div class="tier-row tier-a">
     <div class="tier-label">A</div>
     <div class="tier-characters">
-        <img src="https://github.com/9dolog/baunty_medal/raw/main/sata-nnicon.PNG" alt="">
+        
         <img src="https://github.com/9dolog/baunty_medal/raw/main/nikaicon.PNG" alt="">
     <img src="https://github.com/9dolog/baunty_medal/raw/main/kizaruicon.PNG" alt="">
         
@@ -1099,9 +1099,10 @@
     <div class="tier-label">B</div>
     <div class="tier-characters">
         <img src="https://github.com/9dolog/baunty_medal/raw/main/saboicon.PNG" alt="">
+         <img src="https://github.com/9dolog/baunty_medal/raw/main/nijiicon.PNG" alt="">
         <img src="https://github.com/9dolog/baunty_medal/raw/main/tyoppa-icon.PNG" alt="">
         <img src="https://github.com/9dolog/baunty_medal/raw/main/kuzannicon.PNG" alt="">
-        <img src="https://github.com/9dolog/baunty_medal/raw/main/nijiicon.PNG" alt="">
+       
         
     </div>
   </div>
@@ -1109,8 +1110,9 @@
   <div class="tier-row tier-c">
     <div class="tier-label">C</div>
     <div class="tier-characters">
-        <img src="https://github.com/9dolog/baunty_medal/raw/main/roja-icon.PNG" alt="">
+       
         <img src="https://github.com/9dolog/baunty_medal/raw/main/seraicon.PNG" alt="">
+         <img src="https://github.com/9dolog/baunty_medal/raw/main/roja-icon.PNG" alt="">
         <img src="https://github.com/9dolog/baunty_medal/raw/main/ga-puicon.PNG" alt="">
     </div>
   </div>
@@ -1135,13 +1137,35 @@
   <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/kizaruicon.PNG" alt="黄猿" style="height: 30px; margin-right: 8px;">
   【アタッカー】
 </span>
-       <!-- <p>
-            〇アタッカーは、自チームのお宝エリアが少ないときはディフェンダーを狙い、多いときはゲッター処理を行う。<br>
-            そのため、短時間で狙った敵を破壊しないといけない。<br>
+       <p>
+            〇基本的にアタッカーは、自チームのお宝エリアが少ないときはディフェンダーを狙い、多いときはゲッター処理を行う。<br>
             ステータス振りは<span style="color: #ffff33;">攻撃・与ダメ増加</span>にぶっぱしよう。
-        </p>-->
-        <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/kizaru3.PNG" alt="黄猿３">
-        <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/kizaru4.PNG" alt="黄猿４">
+            <br><br>
+            〇現環境アタッカーで言えば、特に黄猿は任意の旗に比較的簡単に瞬間移動できる。<br>
+            そのため、ルフィ３種といった<span style="color: #ffff33;">旗内で強さを発揮する</span>メダルが良いだろう。
+        </p>
+        <img id="profileImage"
+     src="https://github.com/9dolog/baunty_medal/raw/main/kizaru3.PNG"
+     alt="黄猿３"
+     style="
+       display:block;
+       margin:0 auto;
+       width:clamp(240px,45vw,520px);
+       max-width:95vw;
+       height:auto;
+       object-fit:contain;
+     ">
+<img id="profileImage"
+     src="https://github.com/9dolog/baunty_medal/raw/main/kizaru4.PNG"
+     alt="黄猿４"
+     style="
+       display:block;
+       margin:0 auto;
+       width:clamp(240px,45vw,520px);
+       max-width:95vw;
+       height:auto;
+       object-fit:contain;
+     ">
      <!--   <p>    
             〇現環境アタッカーで言えば、黄猿は任意の旗に比較的簡単に瞬間移動できる。<br>
             そのため、ルフィ３種といった<br>
@@ -1153,35 +1177,75 @@
   <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/nikaicon.PNG" alt="ニカ" style="height: 30px; margin-right: 8px;">
   【ゲッター】
 </span>
-     <!--   <p>
+        <p>
             〇ゲッターは、常に相手の旗を狙う動きが強い。<br>
-            個人的には、奪取性能が高いゲッターは体力・防御振りの奪取速度増加メダル、<br>
-            対面性能が高いゲッターは攻撃振りでルフィ３種のメダルが望ましい。
-        </p>-->
+            個人的には、奪取性能が高いゲッターは体力・防御ステータス振りの<span style="color: #ffff33;">奪取速度増加メダル</span>、<br>
+            対面性能が高いゲッターは攻撃振りで<span style="color: #ffff33;">与ダメ増加メダル</span>が望ましい。
+        </p>
         <p>
             〇パターン１：奪取速度増加
         </p>
-        <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/nika3.PNG" alt="ニカ３">
+        <img id="profileImage"
+     src="https://github.com/9dolog/baunty_medal/raw/main/nika3.PNG"
+     alt="ニカ３"
+     style="
+       display:block;
+       margin:0 auto;
+       width:clamp(240px,45vw,520px);
+       max-width:95vw;
+       height:auto;
+       object-fit:contain;
+     ">
         <p>
             〇パターン２：与ダメ増加
         </p>
-        <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/nika1.PNG" alt="ニカ１">
-        <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/nika2.PNG" alt="ニカ２">
+        <img id="profileImage"
+     src="https://github.com/9dolog/baunty_medal/raw/main/nika1.PNG"
+     alt="ニカ１"
+     style="
+       display:block;
+       margin:0 auto;
+       width:clamp(240px,45vw,520px);
+       max-width:95vw;
+       height:auto;
+       object-fit:contain;
+     ">
+        <img id="profileImage"
+     src="https://github.com/9dolog/baunty_medal/raw/main/nika2.PNG"
+     alt="ニカ２"
+     style="
+       display:block;
+       margin:0 auto;
+       width:clamp(240px,45vw,520px);
+       max-width:95vw;
+       height:auto;
+       object-fit:contain;
+     ">
         
             <hr style="border: none; border-top: 3px dashed white; width: 100vw; margin-left: calc(-50vw + 50%);">  
 <span style=" font-size: 20px;font-weight: bold;  color: white; padding: 16px; border-radius: 8px; white-space: nowrap; display: inline-flex; align-items: center;">
   <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/sata-nnicon.PNG" alt="サターン" style="height: 30px; margin-right: 8px;">
   【ディフェンダー】
 </span>
-
-
-        <img id="profileImage" src="https://github.com/9dolog/baunty_medal/raw/main/zefa-0.png" alt="ゼファー０">
-        <br>
-    <!--    <p>    
+<p>    
             〇ディフェンダーは、アタッカー・ゲッターから常に旗を狙われるため、被弾回数が多い。<br>
             そのため、カイドウ+火災メダルセットのような<br>
             <span style="color: #ffff33;">被弾によるスキル短縮</span>メダルが良いだろう。
-            <br><br><br>-->
+     </p>
+
+        <img id="profileImage"
+     src="https://github.com/9dolog/baunty_medal/raw/main/zefa-0.png"
+     alt="ゼファー０"
+     style="
+       display:block;
+       margin:0 auto;
+       width:clamp(240px,45vw,520px);
+       max-width:95vw;
+       height:auto;
+       object-fit:contain;
+     ">
+        <br>
+     
     </div>
 
    <!-- <div id="latest">
@@ -1279,6 +1343,8 @@
     <button type="submit">
         送信
     </button>
+
+    <br><br><br>
 
     <footer>
         <h>&copy; 2024 Bounty Medal Tool. All Rights Reserved.</h>
