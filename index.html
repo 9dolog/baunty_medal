@@ -1061,7 +1061,7 @@
             タグや抽選でメダル検索やメダルを長押しして<br>
             ドラッグアンドドロップで任意のメダルセットを作成できますので、ぜひご活用ください！
             <br><br>
-            〇更新日　R7/10/27
+            〇更新日　R7/10/29
 
 
         </p>
@@ -2074,6 +2074,8 @@
             {name: '100倍強ェぞメダル',random: ['振動状態の敵に攻撃したとき、与えるダメージが10％増加する','体力','攻撃','防御'],romaji: '100bai', ability: '自分がお宝を奪取したとき、スキル1のクールタイムを8％短縮する', tags: ['エッグヘッド','麦わらの一味','動物系能力者','船長','四皇','義兄弟']},
             {name: 'サンジ（未来服）メダル',random: ['キャラタイプ「自然系能力者」の敵に攻撃したとき、与えるダメージが3％増加する','体力','攻撃','防御'],romaji: 'sanjimiraihuku', ability: '敵をふっとばしたとき、スキル2のクールタイムを3％短縮する', tags: ['エッグヘッド','麦わらの一味','コック']},
             {name: 'フランキー（未来服）メダル',random: ['得意属性の敵に攻撃したとき、与えるダメージが3％増加する','体力','防御','クリティカル'],romaji: 'huranki-miraihuku', ability: '攻撃増加中の敵から攻撃されたとき、受けるダメージを3％減少する', tags: ['エッグヘッド','麦わらの一味','船大工']},
+            {name: 'エッグヘッドフランキーメダル',random: ['体力','クリティカル','振動短縮'],romaji: 'egguhuranki-', ability: 'スキル2で敵に攻撃したとき、与えるダメージが5%増加する', tags: ['エッグヘッド','麦わらの一味','船大工']},
+            {name: 'エッグヘッドジンベエメダル',random: ['体力','攻撃','混乱短縮'],romaji: 'eggujinbee', ability: '敵チームのお宝エリアにいるとき、スキル2のクールタイム短縮速度が13％増加する', tags: ['エッグヘッド','麦わらの一味','王下七武海/元王下七武海','操舵手','魚人','魚人空手']},
             // 他のメダルもここに追加...
         ];
 
@@ -2452,6 +2454,7 @@ container.appendChild(medalDiv);
     const group1 = []; // 「体力」「攻撃」「防御」「クリティカル」
     const group2 = []; // 「短縮」含む（ただし「キャラタイプ」は含まない）
     const group3 = []; // 「キャラタイプ」を含む（短縮を含んでいても）
+    const group4 = []; // 上記3つのどれにも該当しないもの
 
     checkboxes.forEach(cb => {
         const label = cb.textContent.trim();
@@ -2460,10 +2463,10 @@ container.appendChild(medalDiv);
             group1.push(cb);
         } else if (label.includes("キャラタイプ")) {
             group3.push(cb); // キャラタイプは常に最後
-        } else if (label.includes("短縮")) {
-            group2.push(cb); // 短縮はキャラタイプ除外済み
+        } else if (label.includes("短縮") && !label.includes("キャラタイプ") && !label.includes("装備したキャラ")) {
+        group2.push(cb);
         } else {
-            group2.push(cb); // その他は短縮と同じグループへ（必要に応じてgroup4を追加可）
+            group4.push(cb); 
         }
     });
 
@@ -2471,8 +2474,9 @@ container.appendChild(medalDiv);
     group1.sort((a, b) => priorityLabels.indexOf(a.textContent.trim()) - priorityLabels.indexOf(b.textContent.trim()));
     group2.sort((a, b) => a.textContent.localeCompare(b.textContent));
     group3.sort((a, b) => a.textContent.localeCompare(b.textContent));
+    group4.sort((a, b) => a.textContent.localeCompare(b.textContent)); // 追加グループも並び替え
 
-    const sorted = [...group1, ...group2, ...group3];
+    const sorted = [...group1, ...group2, ...group3, ...group4];
     sorted.forEach(cb => container.appendChild(cb));
 });
 
